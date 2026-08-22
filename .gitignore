@@ -1,0 +1,25 @@
+# FVS7 Data Platform - Backup Repository
+# Configuracoes do OpenCode e knowledge base da agencia
+
+# Nao versionar
+.env
+.env.*
+*.backup-*
+session-env/
+cache/
+telemetry/
+node_modules/
+package-lock.json
+*.log
+
+# Nao versionar dados sensiveis
+**/secrets/
+**/*token*
+**/*key*
+**/*password*
+
+# Manter apenas configs e knowledge
+!opencode/
+!claude/
+!agency/
+!BACKUP_MANIFEST.md
