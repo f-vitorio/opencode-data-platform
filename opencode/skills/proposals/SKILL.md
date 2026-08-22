@@ -5,6 +5,19 @@ description: Criação de propostas comerciais estratégicas orientadas a valor,
 
 # PROPOSALS — Skill de Propostas Comerciais
 
+## FLUXO OBRIGATÓRIO — SALVAMENTO NO BANCO
+
+**Toda proposta criada DEVE ser salva no banco de dados Supabase.**
+
+Ao finalizar uma proposta, SEMPRE execute:
+
+1. Inserir registro na tabela `proposals`
+2. Atualizar o `stage` do cliente para `'PROPOSTA'` na tabela `clients`
+
+Isso garante rastreabilidade completa do pipeline comercial.
+
+---
+
 ## 1. OBJETIVO
 
 Criar propostas comerciais que aumentem a percepção de valor da solução antes de apresentar o investimento.
@@ -520,11 +533,16 @@ Nunca sacrificar margem apenas para aumentar a chance de fechamento.
 
 ---
 
-# 22. INTEGRAÇÃO COM BANCO DE DADOS
+# 22. INTEGRAÇÃO COM BANCO DE DADOS — OBRIGATÓRIO
 
-## Registrar Proposta
+## ⚠️ FLUXO OBRIGATÓRIO
 
-Toda proposta deve ser registrada na tabela `proposals` do Supabase.
+**Ao criar qualquer proposta, você DEVE:**
+
+1. Criar registro na tabela `proposals`
+2. Atualizar o `stage` do cliente para `'PROPOSTA'`
+
+**NÃO** finalize uma proposta sem salvar no banco.
 
 ### Criar registro de proposta
 

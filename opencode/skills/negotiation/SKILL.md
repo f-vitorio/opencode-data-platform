@@ -9,6 +9,19 @@ metadata:
 
 # NEGOTIATION — NEGOCIAÇÃO COMERCIAL
 
+## FLUXO OBRIGATÓRIO — SALVAMENTO NO BANCO
+
+**Toda interação de negociação DEVE ser salva no banco de dados Supabase.**
+
+Ao compartilhar uma conversa de negociação com cliente, SEMPRE execute:
+
+1. Criar ou atualizar registro na tabela `negotiations`
+2. Registrar interação na tabela `interactions`
+
+Isso garante histórico completo de cada negociação.
+
+---
+
 ## Objetivo
 
 Ajudar o usuário a negociar de forma racional, estratégica e profissional, protegendo valor, margem, escopo e relacionamento com o cliente.
@@ -387,11 +400,16 @@ Priorizar acordos sustentáveis em vez de simplesmente fechar negócios.
 
 ---
 
-# 18. INTEGRAÇÃO COM BANCO DE DADOS
+# 18. INTEGRAÇÃO COM BANCO DE DADOS — OBRIGATÓRIO
 
-## Registrar Negociação
+## ⚠️ FLUXO OBRIGATÓRIO
 
-Toda negociação deve ser registrada na tabela `negotiations` do Supabase.
+**Ao compartilhar qualquer conversa de negociação, você DEVE:**
+
+1. Criar ou atualizar registro na tabela `negotiations`
+2. Registrar interação na tabela `interactions`
+
+**NÃO** finalize uma negociação sem salvar no banco.
 
 ### Criar registro de negociação
 

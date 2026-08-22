@@ -5,6 +5,19 @@ description: Geração e revisão de contratos comerciais da agência, com colet
 
 # CONTRACTS — Skill de Contratos
 
+## FLUXO OBRIGATÓRIO — SALVAMENTO NO BANCO
+
+**Todo contrato criado DEVE ser salvo no banco de dados Supabase.**
+
+Ao finalizar um contrato, SEMPRE execute:
+
+1. Inserir registro na tabela `contracts`
+2. Atualizar o `stage` do cliente para `'CONTRATO'` na tabela `clients`
+
+Isso garante rastreabilidade completa do pipeline comercial.
+
+---
+
 ## 1. OBJETIVO
 
 Esta Skill é responsável por criar, revisar e estruturar contratos comerciais para a agência.
@@ -544,9 +557,16 @@ Não utilizar o contrato para criar condições que não foram discutidas sem in
 
 # 27. INTEGRAÇÃO COM BANCO DE DADOS
 
-## Registrar Contrato
+# 27. INTEGRAÇÃO COM BANCO DE DADOS — OBRIGATÓRIO
 
-Todo contrato deve ser registrado na tabela `contracts` do Supabase.
+## ⚠️ FLUXO OBRIGATÓRIO
+
+**Ao criar qualquer contrato, você DEVE:**
+
+1. Criar registro na tabela `contracts`
+2. Atualizar o `stage` do cliente para `'CONTRATO'`
+
+**NÃO** finalize um contrato sem salvar no banco.
 
 ### Criar registro
 
