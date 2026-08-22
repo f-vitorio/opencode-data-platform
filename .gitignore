@@ -17,6 +17,7 @@ package-lock.json
 **/*token*
 **/*key*
 **/*password*
+opencode/opencode.jsonc
 
 # Manter apenas configs e knowledge
 !opencode/
