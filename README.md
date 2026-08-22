@@ -32,3 +32,4 @@ rsync -av claude/ ~/.claude/
 - NUNCA commitar arquivos .env
 - NUNCA commitar chaves ou tokens
 - Usar SSH para push no GitHub
+# opencode-data-platform
