@@ -1,0 +1,8 @@
+# FVS7 Agency - Cron Jobs
+# Adicionar ao crontab do usuario: crontab -e
+
+# Keepalive do Supabase - a cada 3 dias (evita pausa de 7 dias)
+0 10 */3 * * /home/fvitorio/.config/opencode/scripts/keepalive.sh >> /tmp/fvs7-keepalive.log 2>&1
+
+# Backup diario para GitHub - todo dia as 23h
+0 23 * * * /home/fvitorio/.config/opencode/scripts/backup-agent.sh >> /tmp/fvs7-backup.log 2>&1
