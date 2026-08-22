@@ -61,6 +61,23 @@
 - Flexibilizei: não exigi contrato de 6 meses
 - Próximo passo: ligação segunda ou quarta-feira
 
+## Proposta Enviada
+
+**Arquivo:** Proposta de Estrutura Digital e Aquisição de Pacientes - Luciana.pdf
+**Data:** 07/08/2026
+**Status:** ENVIADA
+
+| Serviço | Descrição | Valor |
+|---|---|---|
+| Landing Page Básica | Copy + rastreamento | R$ 1.400 |
+| Landing Page Otimizada | Copy estratégica + CRO avançado | R$ 2.497 |
+| Google Ads | Verba para o Google (mensal, separado) | R$ 800/mês |
+
+**Valor total proposta:** R$ 2.497,00
+**Valor mensal recorrente:** R$ 800,00 (Google Ads)
+
+---
+
 ## Próximos Passos
 - [ ] Ligar segunda-feira (25/08) para alinhar proposta
 - [ ] Esclarecer últimos questionamentos
