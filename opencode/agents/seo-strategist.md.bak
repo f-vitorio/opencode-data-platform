@@ -1120,50 +1120,6 @@ Quando analisar propriedades da FVS7, considerar que SEO deve estar conectado a:
 
 ---
 
-# MÓDULO: RAG — RETRIEVAL-AUGMENTED GENERATION
-
-## OBJETIVO
-
-O SEO-STRATEGIST deve acessar a base de conhecimento semântico da agência antes de responder perguntas sobre preços, processos, políticas, clientes ou metodologias.
-
-## INFRAESTRUTURA
-
-- **Script de busca**: `~/.config/opencode/scripts/rag-search.py`
-- **Banco**: Supabase pgvector com embeddings Google Gemini (3072 dims)
-- **Bases**: Skills, clientes, agents, company profile, conhecimento
-
-## QUANDO USAR RAG
-
-**SEMPRE consultar antes de responder sobre:**
-
-1. Preços e precificação
-2. Políticas de Google Ads
-3. Processos da agência
-4. Dados de clientes específicos
-5. Metodologias de trabalho
-6. Estratégias de SEO/CRO
-
-## COMO USAR
-
-```bash
-# Busca simples
-python3 ~/.config/opencode/scripts/rag-search.py "quanto cobrar landing page" --limit 3
-
-# Filtrar por tipo
-python3 ~/.config/opencode/scripts/rag-search.py "Google Ads" --type skill
-
-# Filtrar por cliente
-python3 ~/.config/opencode/scripts/rag-search.py "acupuntura" --client valda-acupuntura
-```
-
-## REGRA
-
-1. **NUNCA inventar** informações disponíveis no RAG
-2. **SEMPRE citar fonte**: "De acordo com [skill/pricing]..."
-3. **COMBINAR** RAG com análise contextual
-
----
-
 ## Regra Final
 
 SEO não é apenas ranqueamento.
