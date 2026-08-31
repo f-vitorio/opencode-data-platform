@@ -1,6 +1,181 @@
+---
+name: playwright-automation
+description: Automação real de navegador com Playwright para testar, navegar, clicar, preencher, validar formulários, auditar sites e extrair dados. Use quando o usuário disser "teste", "acesse", "clique", "preencha", "verifique", "navegue", "execute no navegador", "audite o site", "teste minha landing page". Combina wrappers técnicos + regras comportamentais de execução direta (não explique, execute).
+---
+
 # PLAYWRIGHT AUTOMATION SKILL
 
-Skill compartilhada para automação de navegador com Playwright. Fornece wrappers reutilizáveis, padrões de teste, helpers de extração de dados e utilitários para relatórios.
+---
+
+## REGRAS COMPORTAMENTAIS — BROWSER AGENT (EXECUTE, NÃO EXPLIQUE)
+
+### REGRA PRINCIPAL
+
+**Sempre diferencie:**
+- "me explique como fazer" → responda com instruções
+- "faça isso para mim" / "teste" / "acesse" / "clique" / "preencha" / "verifique" / "navegue" / "execute" / "cadastre" / "confira" / "corrija pelo navegador" → **USE O MCP DO NAVEGADOR E EXECUTE A TAREFA**
+
+**NÃO responda apenas com instruções.** NÃO diga:
+- "Abra o Chrome..."
+- "Clique em..."
+- "Você pode preencher..."
+- "Para fazer isso..."
+- "Acesse o site..."
+- "Verifique se..."
+
+Se a tarefa puder ser realizada pelo navegador, **realize-a**.
+
+---
+
+### FLUXO OPERACIONAL OBRIGATÓRIO
+
+Para qualquer tarefa de navegador, siga:
+
+**OBSERVAR → AGIR → VERIFICAR → CORRIGIR → CONFIRMAR**
+
+| Etapa | Ação |
+|-------|------|
+| **OBSERVAR** | Entenda o estado atual da página (DOM, URL, elementos visíveis) |
+| **AGIR** | Execute a ação solicitada (clicar, preencher, navegar, etc.) |
+| **VERIFICAR** | Confira o resultado real (mudança de URL, conteúdo, estado) |
+| **CORRIGIR** | Se houver erro, investigue e tente abordagem alternativa |
+| **CONFIRMAR** | Informe ao usuário o resultado final com evidência |
+
+---
+
+### NUNCA CONFIE APENAS NO DOM INICIAL
+
+Sites modernos usam JavaScript, React, Vue, carregamento assíncrono, modais, elementos dinâmicos.
+
+1. Observe o estado atual
+2. Execute a ação
+3. Aguarde a atualização
+4. Leia novamente o estado da página
+5. Confirme o resultado
+
+---
+
+### TESTES FUNCIONAIS REAIS (NÃO APENAS VISUAIS)
+
+Quando o usuário disser "teste minha landing page" ou equivalente:
+
+**Verifique interagindo:**
+- **Navegação:** menu, links, âncoras, botões, CTAs, links externos/internos
+- **Formulários:** campos obrigatórios/opcionais, validação, mensagens erro/sucesso, envio, comportamento pós-envio, redirecionamento, integração WhatsApp/backend
+- **Conversão:** CTA principal clicável? Botão leva ao destino? Formulário envia? WhatsApp abre? Link tem parâmetros? Botão/link quebrado? Usuário chega ao objetivo? Erros JS? Elemento impede conversão?
+
+**Teste negativo:** deixe campo obrigatório vazio, e-mail inválido, telefone incompleto. Verifique validação.
+
+---
+
+### AUTONOMIA OPERACIONAL
+
+O usuário não precisa dizer cada clique. Se ele disser "Teste o formulário de contato", você deve decidir:
+- Onde está o formulário
+- Quais campos preencher
+- Quais valores de teste usar
+- Como verificar resultado
+
+Só peça esclarecimento quando houver ambiguidade que **impede a execução** ou ação com consequências relevantes.
+
+---
+
+### EVIDÊNCIA OBRIGATÓRIA
+
+Baseie diagnóstico no observado no navegador.
+
+❌ Ruim: "O formulário provavelmente está quebrado."
+✅ Correto: "Cliquei em Enviar com campos válidos. O botão respondeu, mas não houve mensagem de sucesso, redirecionamento ou alteração visível na página."
+
+---
+
+### NÃO SIMULE
+
+**REGRA CRÍTICA:** Não diga que executou se não executou.
+
+- Não diga "Testei o formulário" se apenas analisou código
+- Não diga "O botão funciona" se não clicou
+- Não diga "O formulário foi enviado" se não verificou resultado
+
+Quando o MCP não permitir uma ação, diga claramente que a ferramenta não conseguiu executá-la.
+
+---
+
+### AÇÕES IRREVERSÍVEIS — CUIDADO ESPECIAL
+
+Antes de: excluir, publicar, cancelar, enviar, comprar, pagar, alterar configurações importantes, apagar dados, enviar mensagens, publicar conteúdo:
+
+**Confirme que corresponde exatamente ao pedido do usuário.** Não faça suposições.
+
+---
+
+### FORMATO DA RESPOSTA APÓS EXECUÇÃO
+
+**Executado**
+- ação realizada
+- resultado
+- problemas encontrados
+
+**Problemas encontrados** (se houver)
+- problema
+- evidência
+- página/URL
+- possível causa
+
+**Bloqueio** (se não puder executar)
+- explique exatamente qual ferramenta, permissão ou intervenção humana está faltando
+
+**Não transforme uma tarefa operacional em um tutorial.**
+
+---
+
+## FERRAMENTAS MCP DISPONÍVEIS (OPENCODE)
+
+Quando executar tarefas de navegador no opencode, use as ferramentas **Playwright MCP** disponíveis:
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `mcp__playwright__browser_navigate` | Navegar para URL |
+| `mcp__playwright__browser_click` | Clicar em elemento |
+| `mcp__playwright__browser_type` | Preencher input/textarea |
+| `mcp__playwright__browser_select_option` | Selecionar opção em select |
+| `mcp__playwright__browser_hover` | Hover sobre elemento |
+| `mcp__playwright__browser_drag` | Drag and drop |
+| `mcp__playwright__browser_press_key` | Pressionar tecla |
+| `mcp__playwright__browser_snapshot` | Capturar snapshot acessibilidade (DOM) |
+| `mcp__playwright__browser_take_screenshot` | Capturar screenshot |
+| `mcp__playwright__browser_pdf_save` | Salvar página como PDF |
+| `mcp__playwright__browser_network_requests` | Ver requisições de rede |
+| `mcp__playwright__browser_console_messages` | Ver mensagens do console |
+| `mcp__playwright__browser_handle_dialog` | Lidar com dialogs (alert, confirm, prompt) |
+| `mcp__playwright__browser_file_upload` | Upload de arquivo |
+| `mcp__playwright__browser_install` | Instalar navegadores |
+| `mcp__playwright__browser_resize` | Redimensionar viewport |
+| `mcp__playwright__browser_wait_for` | Aguardar elemento/estado |
+| `mcp__playwright__browser_tab_list` | Listar abas |
+| `mcp__playwright__browser_tab_new` | Nova aba |
+| `mcp__playwright__browser_tab_select` | Selecionar aba |
+| `mcp__playwright__browser_tab_close` | Fechar aba |
+| `mcp__playwright__browser_evaluate` | Executar JavaScript na página |
+
+**Exemplo de fluxo:**
+```bash
+# 1. Navegar
+mcp__playwright__browser_navigate "https://exemplo.com"
+
+# 2. Observar estado (snapshot)
+mcp__playwright__browser_snapshot
+
+# 3. Agir (clicar)
+mcp__playwright__browser_click "seletor-do-botao"
+
+# 4. Verificar (snapshot novamente)
+mcp__playwright__browser_snapshot
+
+# 5. Confirmar resultado
+```
+
+**Prefira sessão existente:** Se já houver Chrome aberto pelo usuário, o MCP reutiliza automaticamente.
 
 ---
 
