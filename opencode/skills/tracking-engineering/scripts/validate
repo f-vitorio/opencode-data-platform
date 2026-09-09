@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# tracking-engineering: validate
+# Valida a presença do dataLayer e a consistência de carga única.
+# Uso: validate [diretorio-do-projeto]
+set -uo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=lib/events.sh
+source "$DIR/lib/events.sh"
+
+ROOT="${1:-.}"
+if [ ! -d "$ROOT" ]; then
+  echo "✗ diretório inválido: $ROOT"
+  exit 1
+fi
+
+echo "VALIDATE DATA LAYER — $ROOT"
+echo "────────────────────────────"
+
+if ! grep -rq "dataLayer" "$ROOT" 2>/dev/null; then
+  echo "✗ dataLayer não encontrado no projeto."
+  exit 1
+fi
+echo "✓ dataLayer presente"
+
+for ev in "${FVS7_EVENTS[@]}"; do
+  if event_present "$ROOT" "$ev"; then
+    echo "✓ evento: $ev"
+  else
+    echo "⚠ evento ausente: $ev"
+  fi
+done
+
+echo
+echo "CARGA ÚNICA"
+DIRECT_GTAG=$(rgrep "$ROOT" "googletagmanager.com/gtag")
+GTM_LOAD=$(rgrep "$ROOT" "googletagmanager.com/gtm")
+if [ -n "$DIRECT_GTAG" ] && [ -n "$GTM_LOAD" ]; then
+  echo "⚠ gtag.js carregado DIRETO e via GTM no mesmo projeto — risco de page_view duplicado. Revise se o GTM também hosteia o Google Tag."
+else
+  echo "✓ Sem combinação gtag direto + GTM"
+fi
+
+echo
+echo "Concluído. Sem validação definitiva de schema — conferir docs oficiais."
+exit 0

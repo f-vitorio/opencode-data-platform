@@ -1,330 +1,72 @@
 ---
 name: seo-audit
-description: Skill de auditoria SEO técnica e on-page. Metodologia sistemática para diagnosticar problemas, classificar severidade e produzir evidências acionáveis.
+description: "Audit a website and deliver a one-page, plain-language SEO report anyone can act on, centered on a single do-this-week action."
 ---
 
-# SEO-AUDIT — Skill de Auditoria SEO
+# OpenSEO SEO Audit
 
-## 1. OBJETIVO
+## Goal
 
-Ensinar o agente a executar auditorias SEO técnicas e on-page de maneira sistemática, com base em evidências observáveis, classificação de severidade e recomendações acionáveis.
+Audit a domain and produce a one-page HTML report that anyone, including a complete SEO beginner, can read once and act on. The whole report exists to support ONE action the owner can take this week; everything else is supporting detail.
 
-Esta Skill não é um checklist genérico. É uma metodologia de diagnóstico.
+Use this when asked for an SEO audit or review of a domain, especially when the output is a shareable report for a non-expert. For expert-facing analysis of a competitor or market, use `competitor-analysis` or `competitive-landscape` instead.
 
----
+## Required inputs
 
-## 2. PRINCÍPIO
+- Domain to audit
+- `projectId` (use `list_projects`; if no project matches the domain, create one with `create_project`)
 
-Auditoria SEO não é listar 50 itens e marcar "ok/nok".
+## Project context
 
-Auditoria é:
+The project-context tools are free and shared with the app and other agents.
 
-1. Observar o que existe
-2. Classificar o que importa
-3. Entender por que importa
-4. Priorizar o que mudar
-5. Explicar o que acontece se não mudar
+1. Call `get_project_context` first and ground the report in it — what the business does decides which findings matter and what the one thing should be.
+2. This skill needs `business_overview`. If it is empty, run a minimal inline setup: infer what the business does from the site and confirm it with the user in one question, write it back with `update_project_context`, then continue the audit. Never front-load the full interview; suggest `seo-project-setup` at the end for the rest.
+3. Before spending credits, check the research log. If the same research ran within the last 30 days, reuse that result and say so instead of re-buying it.
+4. On finish, write back what is durable — a corrected `business_overview`, the pages the report singles out via `addKeyPages` — and append a research log entry: `{ appendResearchLog: { summary: "Site audit: <domain>. Verdict: <conclusion>" } }`.
 
----
+## OpenSEO MCP tools
 
-## 3. CLASSIFICAÇÃO DE SEVERIDADE
+- `whoami`: confirm connection and remaining credits before spending anything. If OpenSEO is not connected, stop and ask the user to connect it.
+- `list_projects` / `create_project`: resolve the `projectId`.
+- `run_site_audit`: start the crawl (default page budget). Leave Lighthouse off (its default) — it adds several minutes and this report doesn't need it; pass `runLighthouse: true` only when the user asks for performance/Core Web Vitals depth. Then check `get_audit_status` (the crawl takes a minute or two — wait between checks rather than polling in a loop) and read `get_audit_issues`. Use `get_audit_pages` when per-page evidence helps.
+- `get_backlinks_overview`: backlink and referring-domain picture; usually the deciding data for the "one thing".
+- `get_domain_overview`: estimated organic traffic and organic keyword count. Skip when the site is clearly dead.
+- `research_keywords`: keyword ideas with volume and difficulty, used to propose a starting focus area. One call with 1-3 seeds taken from what the site is actually about. Skip when the site is down.
 
-### CRÍTICO
+Keep total spend modest: one audit, one backlinks overview, at most one domain overview, and at most one keyword-research call. Only the overview and keyword lookups spend credits.
 
-Impede indexação, causa penalidade ou destrui tráfego existente.
+## Workflow
 
-Exemplos:
-- robots.txt bloqueando indexação
-- redirects em loop
-- conteúdo duplicado massivo com canonical errado
-- status 500 em páginas importantes
-- noindex acidental em páginas que devem ser indexadas
+1. `whoami`, then resolve the `projectId`.
+2. `run_site_audit` for the domain (Lighthouse stays off unless the user asked for performance depth). While it crawls, fetch `get_backlinks_overview`.
+3. When the crawl finishes, read `get_audit_issues` (and `get_domain_overview` if the site is alive).
+4. If the audit comes back broken or nearly empty (certificate errors, 5xx, one page crawled): investigate before writing. Check the certificate and redirect variants yourself, and search the web for the business. A dead domain often has a live successor site, which flips the whole recommendation to "redirect the old domain".
+5. Verify every finding you plan to report against the live page HTML by fetching pages yourself. Report nothing you have not seen evidence for.
+6. Decide the one thing. Derive it from the data, never from generic advice. Common patterns:
+   - Clean site, no backlinks: outreach to guests, partners, or directories, with a ready-to-send message.
+   - Dead domain, live successor site: permanent redirect via hosting support, with the exact sentence to send them.
+   - Blocked or noindexed pages: remove the block.
+   It must be doable this week by a non-technical person, with copy-paste-ready mechanics included.
+7. When the site is healthy, propose a starting focus area: run one `research_keywords` call seeded from the site's actual topic, then pick one theme and 3 to 5 specific, low-difficulty keywords the site can realistically rank for, each with the page or post to make. This is a starting direction, not a keyword strategy; point the user at the `keyword-research` skill for the full workflow. Skip this step entirely when the site is down — the one thing is all that matters there.
+8. Write the report using `template.html` in this skill directory (see Output format).
+9. Review before delivering: run an adversarial pass with a second agent or model if your environment has one, otherwise do a fresh self-review. Give the reviewer the verified facts and have it attack four things: claims beyond the facts, unglossed jargon, anything overwhelming for a beginner, and dramatic language. The reviewer may also flag true facts it was not given; check those against your evidence instead of "fixing" them.
+10. Deliver the report: if your environment can publish or preview HTML (for example as an artifact), do that; otherwise save the HTML file and tell the user to open it in their browser.
 
-### ALTO
+## Output format
 
-Degrada significativamente o desempenho SEO ou a experiência do usuário.
+Use `template.html` next to this file. Fill in content; keep the CSS and structure as they are (light palette only, no dark mode).
 
-Exemplos:
-- title ausente ou duplicado
-- meta description ausente
-- H1 ausente ou duplicado
-- imagens sem alt text em contexto relevante
-- URLs com parâmetros indexáveis
-- links internos quebrados em páginas importantes
-- schema com erros
-- mobile não responsivo
+- Header: domain as the title, the review date on its own line under it, then a 2-3 sentence summary of the whole report (overall state; the main gap and the one thing; what the report covers).
+- Section order: verdict, the one thing, small fixes (5 to 10 max, ordered by impact), where to focus first (healthy sites only), already working, method footer.
+- Each fix row shows the exact evidence (a quoted tag or number) and concrete steps a non-technical person can follow.
+- "Where to focus first" names one topic area and 3 to 5 keywords, each with its search volume in plain words and the page or post to make. Omit the section when the site is down.
 
-### MÉDIO
+## Guardrails
 
-Afeta a qualidade SEO mas não é urgente.
-
-Exemplos:
-- title muito longo ou muito curto
-- headings mal hierarquizados
-- conteúdo raso em página comercial
-- links internos pouco distribuídos
-- imagens pesadas sem compressão
-- dados estruturados incompletos
-
-### BAIXO
-
-Melhoria desejável, sem impacto significativo.
-
-Exemplos:
-- Open Graph incompleto
-- breadcrumbs ausentes
-- breadcrumbs com schema incorreto
-- metadata de segunda linha
-- melhorias de legibilidade
-
-### OPORTUNIDADE
-
-Área onde uma ação pode gerar ganho acima da média.
-
-Exemplos:
-- keyword com intenção comercial não explorada
-- página órfã com potencial
-- concorrente fraco em um segmento específico
-- lacuna de conteúdo relevante
-- possibilidade de featured snippet
-
----
-
-## 4. CHECKLIST TÉCNICO
-
-Para cada item, observar, classificar e justificar.
-
-### 4.1 INDEXABILIDADE
-
-- [ ] robots.txt existe e está acessível
-- [ ] robots.txt não bloqueia páginas importantes
-- [ ] robots.txt referencia sitemap
-- [ ] meta robots não contém noindex acidental
-- [ ] canonical está definido
-- [ ] canonical aponta para a URL correta
-- [ ] páginas com status HTTP 200
-- [ ] sem redirects desnecessários (máximo 1 cadeia)
-- [ ] sem redirects para páginas 404
-
-### 4.2 SITEMAP
-
-- [ ] sitemap.xml existe
-- [ ] sitemap.xml é acessível
-- [ ] sitemap.xml contém URLs relevantes
-- [ ] sitemap.xml não contém URLs 404 ou redirecionadas
-- [ ] sitemap.xml segue formato padrão
-- [ ] sitemap.xml é referenciado no robots.txt
-- [ ] sitemap não excede 50.000 URLs (quando aplicável)
-
-### 4.3 URLs
-
-- [ ] URLs são amigáveis (readable)
-- [ ] URLs contêm keyword quando apropriado
-- [ ] URLs não possuem parâmetros desnecessários
-- [ ] URLs são consistentes (sem trailing slash duplo, etc.)
-- [ ] URLs não contêm caracteres especiais
-- [ ] URLs têm hierarquia lógica (/servico/subservico/)
-
-### 4.4 HEADINGS
-
-- [ ] H1 existe em cada página
-- [ ] H1 é único por página
-- [ ] H1 contém a keyword principal quando apropriado
-- [ ] hierarquia H1 → H2 → H3 respeitada
-- [ ] headings não são saltados (H1 → H3 sem H2)
-
-### 4.5 TITLE E META DESCRIPTION
-
-- [ ] title existe em todas as páginas importantes
-- [ ] title é único por página
-- [ ] title contém keyword principal
-- [ ] title respeita limite de caracteres (~55-60)
-- [ ] title é atraente para cliques
-- [ ] meta description existe
-- [ ] meta description é única por página
-- [ ] meta description contém keyword e CTA
-- [ ] meta description respeita limite (~150-160)
-
-### 4.6 IMAGENS
-
-- [ ] imagens possuem alt text
-- [ ] alt text é descritivo e relevante
-- [ ] imagens são comprimidas
-- [ ] imagens usam formato moderno quando aplicável (WebP)
-- [ ] imagens não são carregadas com lazy loading que prejudique indexação
-- [ ] dimensões (width/height) estão definidas para evitar layout shift
-
-### 4.7 LINKS
-
-- [ ] links internos apontam para páginas relevantes
-- [ ] links internos não quebrados (status 404)
-- [ ] links externos são relevantes e de qualidade
-- [ ] links externos possuem rel="noopener" quando necessário
-- [ ] links não utilizam JavaScript para navegação básica
-- [ ] anchor text dos links internos é relevante
-
-### 4.8 DADOS ESTRUTURADOS
-
-- [ ] schema está presente quando aplicável
-- [ ] schema está válido (testar com ferramenta Google)
-- [ ] schema contém propriedades obrigatórias
-- [ ] schema não contém erros de sintaxe
-- [ ] schema está alinhado com o conteúdo da página
-
-### 4.9 PERFORMANCE (quando observável)
-
-- [ ] tempo de carregamento não é excessivo
-- [ ] recursos críticos não estão bloqueados
-- [ ] JavaScript não impede renderização do conteúdo
-- [ ] CSS crítico está inline ou carregado primeiro
-- [ ] fonts não bloqueiam renderização
-
-### 4.10 MOBILE
-
-- [ ] viewport meta tag está definida
-- [ ] layout é responsivo
-- [ ] texto é legível sem zoom
-- [ ] botões/links são clicáveis em tela pequena
-- [ ] não há conteúdo horizontal overflow
-
----
-
-## 5. CHECKLIST ON-PAGE
-
-### 5.1 CONTEÚDO
-
-- [ ] página cobre a intenção de busca
-- [ ] conteúdo é substantivo (não薄い)
-- [ ] conteúdo possui profundidade adequada ao tópico
-- [ ] conteúdo é único (não copiado)
-- [ ] conteúdo atualizado quando relevante
-- [ ] conteúdo escaneável (headings, listas, parágrafos curtos)
-
-### 5.2 ENTIDADES E SEMÂNTICA
-
-- [ ] entidade principal está clara
-- [ ] entidades secundárias são relevantes
-- [ ] termos relacionados estão presentes
-- [ ] não há keyword stuffing
-- [ ] conteúdo cobre subtópicos relevantes
-- [ ] conteúdo responde a perguntas do público
-
-### 5.3 SINAIS COMERCIAIS
-
-- [ ] CTA está presente
-- [ ] proposta de valor está clara
-- [ ] diferenciais estão visíveis
-- [ ] prova social está presente quando relevante
-- [ ] contato está acessível
-- [ ] formulário funciona
-- [ ] WhatsApp está acessível quando relevante
-
-### 5.4 ALINHAMENTO KEYWORD-PÁGINA
-
-- [ ] keyword principal está no title
-- [ ] keyword principal está no H1
-- [ ] keyword principal está no primeiro parágrafo
-- [ ] keyword está distribuída naturalmente no conteúdo
-- [ ] a página é a mais relevante para a keyword (não há canibalização)
-
----
-
-## 6. CRITÉRIOS DE AVALIAÇÃO
-
-Para cada problema encontrado, documentar:
-
-### 6.1 LOCALIZAÇÃO
-
-- URL exata
-- Elemento específico (tag, atributo, trecho)
-
-### 6.2 EVIDÊNCIA
-
-- O que foi observado
-- Como foi verificado
-- Por que é um problema
-
-### 6.3 IMPACTO
-
-- Impacto na indexação
-- Impacto no ranqueamento
-- Impacto na experiência do usuário
-- Impacto na conversão
-
-### 6.4 RECOMENDAÇÃO
-
-- O que deve ser feito
-- Como deve ser feito
-- Dependências
-
-### 6.5 ESFORÇO
-
-- Fácil (menos de 1 hora)
-- Médio (1-4 horas)
-- Complexo (mais de 4 horas)
-- Estrutural (requer mudança de arquitetura)
-
----
-
-## 7. LIMITAÇÕES
-
-A Skill de auditoria NÃO pode:
-
-- acessar Google Search Console
-- acessar Google Analytics
-- acessar dados de backlinks de ferramentas pagas
-- medir Core Web Vitals com precisão (a menos que o usuário forneça)
-- acessar dados de tráfego
-- verificar posicionamento exato no Google
-- acessar dados de usuários
-- testar formulários internamente
-- verificar velocidade de servidor com precisão
-
-Quando não for possível avaliar algo, declarar:
-
-> "Não foi possível avaliar [item] sem acesso a [ferramenta/dado]. Recomendação: verificar manualmente ou fornecer os dados."
-
----
-
-## 8. FORMATO DE SAÍDA DA AUDITORIA
-
-Para cada seção, usar:
-
-### PROBLEMA
-
-Descrição do que foi encontrado.
-
-### EVIDÊNCIA
-
-Como foi verificado. O que foi observado.
-
-### IMPACTO
-
-Por que importa. O que pode acontecer.
-
-### RECOMENDAÇÃO
-
-O que fazer. Como fazer.
-
-### SEVERIDADE
-
-CRÍTICO | ALTO | MÉDIO | BAIXO | OPORTUNIDADE
-
-### ESFORÇO
-
-Fácil | Médio | Complexo | Estrutural
-
----
-
-## 9. REGRA FINAL
-
-Uma auditoria SEO sem priorização é inútil.
-
-O cliente não precisa saber de 47 problemas. Ele precisa saber:
-
-1. O que está impedindo resultados
-2. O que pode gerar mais resultado com menos esforço
-3. O que fazer primeiro
-4. Por quê
-
-Priorizar por impacto comercial, não por volume de problemas.
+- Tone: calm and plain. No exclamation points, no drama words, no em dashes, no "Not X. Y." contrasts, no filler. Severity words only where literally true (a down site is critical; a long title is not).
+- Gloss every term of art in plain English on first use: canonical, meta description, alt text, crawler, 301, structured data.
+- Skip nitpicks that do not matter for the specific site. A beginner report with twenty findings has failed.
+- Missing backlink or ranking data means "no recorded data", not a penalty; say so rather than dramatizing it.
+- Favor keywords the site can win now: specific intent, low difficulty. Do not list head terms a new site cannot rank for yet.
+- Separate what the tools reported from what you verified yourself, and note both in the method footer.

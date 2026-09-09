@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# tracking-engineering: test
+# Valida um container JSON de importacao GTM: sintaxe + regras de schema FVS7.
+# Uso: test [caminho-do-container.json]
+set -uo pipefail
+JSON="${1:-}"
+
+if [ -z "$JSON" ]; then
+  JSON=$(ls scripts/configs/*.import.json 2>/dev/null | head -1)
+fi
+if [ -z "$JSON" ] || [ ! -f "$JSON" ]; then
+  echo "Uso: test <caminho-do-container.json>  (ou rode da raiz da skill com configs/*.import.json presente)"
+  exit 1
+fi
+
+echo "TEST GTM CONTAINER — $JSON"
+
+python3 - "$JSON" <<'PY'
+import json, sys
+p = sys.argv[1]
+try:
+    d = json.load(open(p))
+except json.JSONDecodeError as e:
+    print(f"✗ JSON inválido: {e}")
+    sys.exit(1)
+print("✓ JSON é sintaticamente válido")
+
+cv = d.get("containerVersion", {})
+if not cv:
+    print("✗ falta containerVersion")
+    sys.exit(1)
+
+issues = []
+def walk(n, path=""):
+    if isinstance(n, dict):
+        t = n.get("type")
+        if t in ("template","map","boolean","integer","list","customEvent","pageview","equals"):
+            issues.append(f"enum antigo [{t}] em {path}")
+        if t in ("MAP","LIST"):
+            issues.append(f"MAP/LIST presente em {path} (evitar no import; usar a UI)")
+        if isinstance(n.get("value"), str) and ("<" in n["value"] or ">" in n["value"]):
+            issues.append(f"placeholder < > em {path}/value")
+        for k,v in n.items(): walk(v, f"{path}/{k}")
+    elif isinstance(n, list):
+        for i,v in enumerate(n): walk(v, f"{path}[{i}]")
+
+walk(cv)
+# Google Ads tags fora do padrão (conversão deve ser direto no Google Ads)
+for t in cv.get("tag", []):
+    if t.get("type") in ("awct",):
+        issues.append(f"tag Google Ads ({t.get('name')}) no container — remover; importar conversão direto no Google Ads")
+
+if issues:
+    print("⚠ Problemas encontrados:")
+    for i in issues:
+        print("   -", i)
+    sys.exit(1)
+
+print("✓ Passou nas regras do schema FVS7")
+print(f"  tags: {len(cv.get('tag', []))}  triggers: {len(cv.get('trigger', []))}  vars: {len(cv.get('variable', []))}")
+PY
+
+exit 0

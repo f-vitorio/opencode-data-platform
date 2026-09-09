@@ -1,0 +1,1080 @@
+---
+name: landing-page-audit
+description: Sistema completo de auditoria comercial de sites e landing pages. Faz descoberta de todas as páginas do domínio, auditoria página por página, CRO, copywriting, UX/UI, SEO, Google Ads, GA4, Search Console, Google Business Profile, concorrentes locais, OpenSEO, oportunidades de palavras-chave, estimativa de perda de tráfego/leads e geração de relatório HTML comercial usando a skill de frontend disponível no projeto.
+---
+
+# LANDING PAGE & WEBSITE AUDIT PRO
+
+## OBJETIVO
+
+Executar uma auditoria profunda, comercial e técnica de um site ou landing page.
+
+O objetivo não é simplesmente encontrar erros.
+
+O objetivo é descobrir:
+
+1. o que está impedindo o site de gerar mais negócios;
+2. quais oportunidades estão sendo perdidas;
+3. quanto tráfego potencial pode estar sendo perdido;
+4. quanto de demanda comercial pode estar sendo desperdiçada;
+5. quais problemas reduzem conversão;
+6. quais problemas prejudicam SEO;
+7. quais problemas prejudicam Google Ads;
+8. como o cliente está posicionado contra concorrentes;
+9. quais oportunidades existem no Google Business Profile;
+10. quais ações devem ser executadas;
+11. quais serviços da agência podem resolver esses problemas.
+
+O resultado deve funcionar simultaneamente como:
+
+- auditoria;
+- diagnóstico;
+- plano estratégico;
+- proposta de melhoria;
+- relatório comercial.
+
+---
+
+# REGRA ABSOLUTA: NÃO AUDITAR APENAS A HOME
+
+Quando receber um domínio, NÃO considerar a homepage suficiente.
+
+A primeira obrigação é descobrir a estrutura do site.
+
+Criar um INVENTÁRIO DE URLs.
+
+Encontrar, quando disponíveis:
+
+- sitemap.xml;
+- sitemap index;
+- robots.txt;
+- links internos;
+- menus;
+- páginas de serviços;
+- páginas de produtos;
+- landing pages;
+- páginas locais;
+- categorias;
+- artigos;
+- páginas institucionais;
+- contato;
+- FAQ;
+- páginas comerciais;
+- outras páginas indexáveis.
+
+Utilizar múltiplas fontes para descobrir URLs.
+
+Prioridade:
+
+1. sitemap;
+2. sitemap index;
+3. links internos;
+4. navegação;
+5. Search Console;
+6. OpenSEO;
+7. descoberta pelo domínio.
+
+Se o site possuir muitas páginas, classificar e priorizar.
+
+NUNCA assumir que a home representa todo o site.
+
+---
+
+# 1. INVENTÁRIO DO SITE
+
+Antes da auditoria detalhada, produzir internamente uma tabela:
+
+| URL | Tipo | Intenção | Importância | Status |
+|---|---|---|---|---|
+
+Classificar páginas como:
+
+- Homepage
+- Serviço
+- Produto
+- Landing Page
+- Local
+- Categoria
+- Blog
+- Institucional
+- Contato
+- Conversão
+- Outro
+
+Também identificar:
+
+- páginas duplicadas;
+- páginas muito semelhantes;
+- páginas órfãs;
+- páginas importantes sem links;
+- páginas sem intenção clara;
+- páginas sem potencial comercial.
+
+---
+
+# 2. PRIORIZAÇÃO DAS PÁGINAS
+
+Nem todas as páginas precisam receber o mesmo nível de análise.
+
+Priorizar:
+
+### PRIORIDADE 1
+
+- homepage;
+- páginas de serviços;
+- páginas de produtos;
+- landing pages;
+- páginas que recebem tráfego pago;
+- páginas com maior tráfego orgânico;
+- páginas com maior potencial comercial.
+
+### PRIORIDADE 2
+
+- páginas locais;
+- categorias;
+- páginas de apoio;
+- páginas com potencial de SEO.
+
+### PRIORIDADE 3
+
+- blog;
+- institucionais;
+- páginas de menor impacto.
+
+Porém:
+
+> Páginas de baixa prioridade ainda devem ser identificadas e consideradas no diagnóstico geral.
+
+---
+
+# 3. AUDITORIA PÁGINA POR PÁGINA
+
+Para cada página comercial importante, avaliar:
+
+- URL;
+- título;
+- H1;
+- intenção;
+- proposta de valor;
+- conteúdo;
+- CTA;
+- oferta;
+- confiança;
+- prova social;
+- copy;
+- UX;
+- SEO;
+- conversão;
+- mobile;
+- performance;
+- links internos;
+- indexação;
+- schema;
+- tracking.
+
+Não fazer apenas uma avaliação geral do domínio.
+
+Identificar problemas específicos por página.
+
+---
+
+# 4. PÁGINAS COMERCIAIS
+
+Para cada serviço/produto relevante, perguntar:
+
+1. Existe uma página específica?
+2. Ela está indexada?
+3. Ela possui intenção comercial clara?
+4. Ela está otimizada para as keywords relevantes?
+5. Ela possui CTA?
+6. Ela possui prova?
+7. Ela possui diferenciação?
+8. Ela possui oferta clara?
+9. Ela pode receber tráfego Google Ads?
+10. Ela possui potencial de conversão?
+
+Se um serviço importante não possui uma página específica:
+
+registrar como OPORTUNIDADE ESTRUTURAL.
+
+---
+
+# 5. DESCOBERTA DE OPORTUNIDADES
+
+Usar OpenSEO para pesquisar:
+
+- palavras-chave;
+- volume;
+- CPC;
+- intenção;
+- SERP;
+- concorrentes;
+- domain keywords;
+- oportunidades;
+- gaps.
+
+Priorizar palavras-chave:
+
+- comerciais;
+- transacionais;
+- locais;
+- relacionadas diretamente aos serviços;
+- com potencial de geração de leads.
+
+Não escolher keywords apenas pelo volume.
+
+---
+
+# 6. QUANTO O CLIENTE ESTÁ PERDENDO
+
+Sempre que houver dados suficientes, estimar oportunidades.
+
+A análise pode considerar:
+
+- volume de busca;
+- CTR potencial;
+- posição atual;
+- CPC;
+- tráfego atual;
+- taxa de conversão;
+- leads;
+- custo por lead;
+- valor potencial do lead.
+
+Exemplo de raciocínio:
+
+DEMANDA DE BUSCA
+→ TRÁFEGO POTENCIAL
+→ CONVERSÃO POTENCIAL
+→ LEADS POTENCIAIS
+→ VALOR POTENCIAL
+
+Quando não for possível calcular com segurança:
+
+não inventar.
+
+Apresentar como:
+
+"Estimativa baseada em premissas."
+
+Mostrar as premissas utilizadas.
+
+---
+
+# 7. GAP DE SEO
+
+Cruzar:
+
+- keywords relevantes;
+- volume;
+- posições;
+- páginas;
+- concorrentes;
+- intenção.
+
+Identificar:
+
+### GAP 1 — KEYWORD SEM PÁGINA
+
+Existe demanda, mas o cliente não possui página adequada.
+
+### GAP 2 — PÁGINA SEM VISIBILIDADE
+
+Existe página, mas ela não possui boa visibilidade.
+
+### GAP 3 — PÁGINA MAL ALINHADA
+
+A página existe, mas não responde adequadamente à intenção.
+
+### GAP 4 — CTR BAIXO
+
+Existe impressão, mas poucos cliques.
+
+### GAP 5 — CONCORRENTE À FRENTE
+
+Concorrentes capturam demanda que o cliente poderia disputar.
+
+---
+
+# 8. GOOGLE SEARCH CONSOLE
+
+Quando disponível, analisar:
+
+- cliques;
+- impressões;
+- CTR;
+- posição;
+- queries;
+- páginas;
+- dispositivos.
+
+Procurar:
+
+- páginas com muitas impressões e poucos cliques;
+- keywords nas posições 4–20;
+- keywords comerciais com baixo CTR;
+- páginas com potencial de crescimento;
+- queries sem página adequada;
+- páginas que estão recebendo intenção errada.
+
+Cruzar esses dados com OpenSEO.
+
+---
+
+# 9. GOOGLE ADS
+
+Quando houver Google Ads disponível:
+
+cruzar:
+
+KEYWORD
+→ ANÚNCIO
+→ LANDING PAGE
+→ CONVERSÃO
+
+Avaliar:
+
+- relevância;
+- CTR;
+- CPC;
+- conversões;
+- CPA;
+- termos de pesquisa;
+- Quality Score;
+- experiência da landing page.
+
+Identificar páginas que estão sendo usadas para tráfego pago.
+
+Verificar se existe uma página melhor para cada intenção.
+
+---
+
+# 10. GA4
+
+Quando disponível, analisar:
+
+- landing pages;
+- usuários;
+- sessões;
+- origem;
+- campanhas;
+- eventos;
+- conversões;
+- engagement;
+- dispositivos.
+
+Procurar:
+
+- páginas com muito tráfego e pouca conversão;
+- páginas com tráfego pago e baixo resultado;
+- diferenças mobile/desktop;
+- páginas com comportamento anormal;
+- gargalos do funil.
+
+---
+
+# 11. GOOGLE BUSINESS PROFILE
+
+Quando o negócio for local ou possuir presença local, esta análise é OBRIGATÓRIA quando os dados estiverem disponíveis.
+
+Verificar os dados do Google Business Profile.
+
+Analisar:
+
+- visualizações;
+- pesquisas;
+- ligações;
+- solicitações de rota;
+- cliques no site;
+- ações dos usuários;
+- avaliações;
+- quantidade de avaliações;
+- nota média;
+- frequência de avaliações;
+- categorias;
+- categoria principal;
+- categorias secundárias;
+- descrição;
+- serviços;
+- produtos quando aplicável;
+- fotos;
+- frequência de atualizações;
+- completude do perfil;
+- consistência das informações.
+
+Não inventar métricas.
+
+Se o acesso ao GBP não estiver disponível:
+
+informar:
+
+"Dados do Google Business Profile não disponíveis para esta auditoria."
+
+Não substituir números reais por estimativas sem deixar isso explícito.
+
+---
+
+# 12. GBP — ANÁLISE COMERCIAL
+
+Não limitar a análise do GBP a "perfil completo".
+
+Avaliar:
+
+- potencial de geração de chamadas;
+- potencial de geração de rotas;
+- potencial de geração de visitas ao site;
+- posicionamento local;
+- categoria;
+- avaliações;
+- concorrentes;
+- presença local.
+
+Quando houver dados:
+
+calcular:
+
+- taxa de ação;
+- tendência;
+- crescimento;
+- oportunidade.
+
+---
+
+# 13. CONCORRENTES LOCAIS
+
+Para negócios locais, identificar concorrentes próximos do cliente.
+
+Utilizar:
+
+- OpenSEO;
+- pesquisa local;
+- SERP;
+- Google Maps/GBP quando disponível;
+- dados de mercado disponíveis.
+
+Não comparar somente concorrentes nacionais.
+
+Priorizar:
+
+1. concorrentes próximos;
+2. concorrentes que aparecem para as principais buscas;
+3. concorrentes com forte presença local;
+4. concorrentes com maior autoridade comercial.
+
+Criar comparação:
+
+| Critério | Cliente | Concorrente 1 | Concorrente 2 | Concorrente 3 |
+|---|---|---|---|---|
+| Presença local | | | | |
+| Avaliações | | | | |
+| Nota | | | | |
+| Categorias | | | | |
+| Site | | | | |
+| Páginas de serviço | | | | |
+| SEO | | | | |
+| Conteúdo | | | | |
+| CTA | | | | |
+| Oferta | | | | |
+| Prova social | | | | |
+| Diferenciação | | | | |
+
+Quando dados não estiverem disponíveis, marcar:
+
+"N/D".
+
+---
+
+# 14. COPYWRITING DO RELATÓRIO
+
+O relatório não deve ser escrito como um laudo técnico frio.
+
+Utilizar princípios de copywriting consultivo.
+
+O relatório deve conduzir o leitor:
+
+PROBLEMA
+→ CONSEQUÊNCIA
+→ OPORTUNIDADE
+→ SOLUÇÃO
+→ PRÓXIMO PASSO
+
+Não utilizar medo artificial.
+
+Não exagerar números.
+
+Não inventar perdas.
+
+Mostrar claramente o custo de oportunidade.
+
+Exemplo de lógica:
+
+"Seu site recebe X impressões para determinadas buscas, mas gera apenas Y cliques. Isso significa que existe demanda sendo apresentada ao mercado, mas uma parte relevante dela não está chegando ao seu negócio."
+
+Depois:
+
+"Além disso, concorrentes próximos aparecem melhor posicionados para buscas comerciais relevantes."
+
+Depois:
+
+"Isso cria uma oportunidade concreta de capturar uma parcela maior dessa demanda através de SEO, Google Ads e melhoria das páginas comerciais."
+
+---
+
+# 15. RELATÓRIO VOLTADO PARA VENDA
+
+O relatório deve apresentar os problemas de forma que o cliente entenda:
+
+- o que está acontecendo;
+- por que importa;
+- quanto pode estar deixando de capturar;
+- o que precisa ser feito;
+- como a agência pode resolver.
+
+NÃO transformar o relatório em propaganda exagerada.
+
+A venda deve acontecer através do diagnóstico.
+
+---
+
+# 16. DADOS DA AGÊNCIA
+
+O relatório final deve utilizar os dados institucionais da agência disponíveis no sistema.
+
+Antes de gerar o relatório:
+
+procurar informações em:
+
+- agency knowledge;
+- arquivos de contexto da agência;
+- configuração do projeto;
+- documentação institucional;
+- perfil da agência;
+- dados já disponíveis no ambiente.
+
+Utilizar:
+
+- nome da agência;
+- logotipo quando disponível;
+- site;
+- serviços;
+- posicionamento;
+- diferenciais;
+- informações de contato;
+- identidade visual;
+- CTA comercial.
+
+NÃO inventar dados institucionais.
+
+Se houver um arquivo oficial de identidade/branding da agência, utilizá-lo como fonte principal.
+
+---
+
+# 17. POSICIONAMENTO DA AGÊNCIA
+
+O relatório deve posicionar a agência como especialista capaz de resolver os problemas encontrados.
+
+Relacionar problemas com serviços relevantes.
+
+Exemplo:
+
+PROBLEMA:
+Página comercial não captura determinada intenção.
+
+OPORTUNIDADE:
+Criar/otimizar landing page específica.
+
+SERVIÇO RELACIONADO:
+Landing Page de Alta Conversão + SEO.
+
+---
+
+# 18. FRONTEND / DESIGN DO RELATÓRIO
+
+O relatório final deve ser entregue em HTML.
+
+NÃO entregar apenas Markdown quando o usuário solicitar auditoria completa.
+
+Antes de construir o relatório:
+
+procurar e utilizar a skill de frontend disponível no ambiente.
+
+Se existir uma skill específica de frontend/UI/design:
+
+OBRIGATORIAMENTE utilizá-la.
+
+O relatório deve possuir qualidade visual profissional.
+
+---
+
+# 19. DESIGN DO RELATÓRIO
+
+O HTML deve parecer um relatório produzido por uma agência profissional.
+
+Utilizar:
+
+- layout responsivo;
+- excelente tipografia;
+- hierarquia visual;
+- cards;
+- tabelas;
+- gráficos quando houver dados;
+- indicadores;
+- badges;
+- barras de progresso;
+- destaques;
+- comparações;
+- seções bem separadas;
+- navegação interna;
+- versão mobile;
+- impressão em PDF quando possível.
+
+Evitar:
+
+- excesso de cores;
+- aparência de dashboard genérico;
+- texto sem hierarquia;
+- tabelas ilegíveis;
+- design infantil;
+- excesso de animações.
+
+---
+
+# 20. ESTRUTURA VISUAL DO HTML
+
+O relatório deve conter:
+
+## CAPA
+
+- nome do cliente;
+- domínio;
+- data;
+- "Auditoria Digital";
+- logo da agência;
+- identidade visual da agência.
+
+## RESUMO EXECUTIVO
+
+Cards com:
+
+- Saúde geral;
+- SEO;
+- Conversão;
+- Google Ads;
+- Presença Local;
+- Performance.
+
+## OPORTUNIDADE
+
+Mostrar visualmente:
+
+"Existe demanda sendo perdida."
+
+Apresentar dados reais e estimativas claramente identificadas.
+
+## SITE
+
+Mapa/resumo das páginas analisadas.
+
+## PÁGINAS PRIORITÁRIAS
+
+Tabela ou cards mostrando:
+
+- URL;
+- problema;
+- oportunidade;
+- prioridade.
+
+## SEO
+
+- keywords;
+- posições;
+- gaps;
+- oportunidades.
+
+## GOOGLE ADS
+
+Quando aplicável:
+
+- CPC;
+- CTR;
+- conversão;
+- landing pages;
+- oportunidades.
+
+## GBP
+
+- métricas;
+- avaliações;
+- categorias;
+- oportunidades locais.
+
+## CONCORRENTES
+
+Comparação visual.
+
+## CRO
+
+Problemas de conversão.
+
+## COPY
+
+Problemas e oportunidades de mensagem.
+
+## PERFORMANCE
+
+Dados reais.
+
+## MOBILE
+
+Problemas encontrados.
+
+## TOP 10 OPORTUNIDADES
+
+As ações com maior potencial.
+
+## PLANO DE AÇÃO
+
+Agora / 7 dias / 30 dias.
+
+## COMO A AGÊNCIA PODE AJUDAR
+
+Relacionar problemas encontrados com serviços relevantes.
+
+## CTA FINAL
+
+Convidar o cliente para uma conversa/análise estratégica.
+
+---
+
+# 21. RELATÓRIO POR PÁGINA
+
+Para páginas comerciais prioritárias, apresentar:
+
+### URL
+
+### OBJETIVO DA PÁGINA
+
+### INTENÇÃO
+
+### O QUE ESTÁ FUNCIONANDO
+
+### PROBLEMAS
+
+### OPORTUNIDADES
+
+### SEO
+
+### CRO
+
+### COPY
+
+### UX
+
+### CTA
+
+### PRIORIDADE
+
+### AÇÃO RECOMENDADA
+
+---
+
+# 22. SCORE
+
+Usar escala de 0–100 para visão executiva.
+
+Categorias:
+
+- Conversão;
+- SEO;
+- Google Ads;
+- UX;
+- Copy;
+- Performance;
+- Mobile;
+- Confiança;
+- Presença Local;
+- Tracking.
+
+O score é diagnóstico.
+
+Não apresentar como métrica oficial do Google.
+
+---
+
+# 23. IMPACTO FINANCEIRO
+
+Sempre que possível, quantificar:
+
+- tráfego perdido;
+- demanda não capturada;
+- leads potenciais;
+- custo de oportunidade;
+- oportunidades de conversão.
+
+Sempre apresentar:
+
+### DADO REAL
+
+ou
+
+### ESTIMATIVA
+
+ou
+
+### HIPÓTESE
+
+Nunca misturar.
+
+---
+
+# 24. MATRIZ DE PRIORIDADE
+
+Para cada recomendação:
+
+IMPACTO:
+- Muito alto
+- Alto
+- Médio
+- Baixo
+
+ESFORÇO:
+- Muito baixo
+- Baixo
+- Médio
+- Alto
+
+PRIORIDADE:
+
+P0 — Crítico
+P1 — Alto
+P2 — Médio
+P3 — Baixo
+
+Priorizar:
+
+ALTO IMPACTO + BAIXO ESFORÇO
+
+---
+
+# 25. 80/20
+
+Encontrar:
+
+### TOP 5 PROBLEMAS
+
+que mais prejudicam o resultado.
+
+### TOP 5 OPORTUNIDADES
+
+com maior potencial de crescimento.
+
+### TOP 10 AÇÕES
+
+que devem ser executadas primeiro.
+
+Não transformar o relatório em uma lista infinita.
+
+---
+
+# 26. COPY DA RECOMENDAÇÃO
+
+Cada recomendação deve seguir:
+
+PROBLEMA
+→ EVIDÊNCIA
+→ CONSEQUÊNCIA
+→ OPORTUNIDADE
+→ SOLUÇÃO
+
+Exemplo:
+
+"Hoje, sua página X aparece para uma demanda relevante, porém não apresenta uma oferta suficientemente alinhada à intenção comercial. Isso pode reduzir tanto o aproveitamento orgânico quanto a eficiência de campanhas pagas. A oportunidade é transformar essa página em uma página comercial específica, alinhada à busca e construída para conversão."
+
+---
+
+# 27. TESTES E HIPÓTESES
+
+Quando não houver certeza:
+
+criar hipótese.
+
+Para cada hipótese:
+
+- hipótese;
+- motivo;
+- mudança;
+- métrica;
+- critério de sucesso.
+
+Não apresentar hipótese como conclusão definitiva.
+
+---
+
+# 28. REGRAS DE DADOS
+
+Nunca inventar:
+
+- métricas;
+- tráfego;
+- leads;
+- conversões;
+- avaliações;
+- posição;
+- volume;
+- CPC;
+- concorrentes;
+- GBP;
+- performance;
+- resultados financeiros.
+
+Quando não houver dados:
+
+"N/D — dado não disponível."
+
+Quando houver estimativa:
+
+"Estimativa."
+
+Sempre explicar premissas relevantes.
+
+---
+
+# 29. PROFUNDIDADE MÍNIMA
+
+Uma auditoria completa deve obrigatoriamente conter:
+
+1. inventário do site;
+2. análise das páginas comerciais;
+3. análise da home;
+4. análise das páginas de serviço;
+5. SEO;
+6. OpenSEO;
+7. Google Ads quando disponível;
+8. GA4 quando disponível;
+9. Search Console quando disponível;
+10. GBP quando aplicável;
+11. concorrentes locais;
+12. CRO;
+13. copywriting;
+14. UX;
+15. performance;
+16. mobile;
+17. tracking;
+18. oportunidades;
+19. estimativa de perda/oportunidade;
+20. plano de ação;
+21. relatório HTML.
+
+Se qualquer uma dessas áreas não puder ser analisada:
+
+informar explicitamente o motivo.
+
+---
+
+# 30. FLUXO OBRIGATÓRIO
+
+Executar nesta ordem:
+
+FASE 1
+→ Descobrir domínio e estrutura.
+
+FASE 2
+→ Criar inventário de URLs.
+
+FASE 3
+→ Identificar páginas comerciais.
+
+FASE 4
+→ Auditar páginas prioritárias.
+
+FASE 5
+→ Consultar OpenSEO.
+
+FASE 6
+→ Consultar Search Console.
+
+FASE 7
+→ Consultar GA4.
+
+FASE 8
+→ Consultar Google Ads.
+
+FASE 9
+→ Consultar dados GBP quando disponíveis.
+
+FASE 10
+→ Identificar concorrentes locais.
+
+FASE 11
+→ Comparar cliente × concorrentes.
+
+FASE 12
+→ Calcular oportunidades e perdas estimadas.
+
+FASE 13
+→ Aplicar análise 80/20.
+
+FASE 14
+→ Construir estratégia de melhoria.
+
+FASE 15
+→ Construir relatório HTML.
+
+FASE 16
+→ Revisar o relatório antes de entregar.
+
+---
+
+# 31. QA DO RELATÓRIO
+
+Antes de finalizar:
+
+verificar:
+
+- todas as páginas importantes foram analisadas?
+- a home não foi tratada como o site inteiro?
+- as páginas de serviço foram avaliadas?
+- as principais keywords foram analisadas?
+- OpenSEO foi utilizado quando disponível?
+- GBP foi analisado quando aplicável?
+- concorrentes próximos foram analisados?
+- dados reais estão diferenciados de estimativas?
+- os números fazem sentido?
+- o relatório possui dados da agência?
+- o branding da agência foi aplicado?
+- o relatório está visualmente profissional?
+- o HTML funciona em desktop?
+- o HTML funciona em mobile?
+- o CTA da agência está presente?
+- as recomendações estão priorizadas?
+- o cliente consegue entender quanto está perdendo?
+- o cliente consegue entender como resolver?
+
+Se a resposta for NÃO para algum item relevante:
+
+corrigir antes de entregar.
+
+---
+
+# 32. REGRA FINAL
+
+O objetivo desta Skill é produzir uma auditoria que o cliente leia e pense:
+
+> "Agora eu entendi exatamente onde estou perdendo oportunidades."
+
+E depois:
+
+> "Eu preciso resolver isso."
+
+O relatório deve transformar:
+
+DADOS
+→ INSIGHT
+→ PROBLEMA
+→ OPORTUNIDADE
+→ IMPACTO
+→ SOLUÇÃO
+→ SERVIÇO
+→ PRÓXIMO PASSO.
+
+A auditoria deve ser tecnicamente rigorosa, comercialmente persuasiva, visualmente profissional e baseada em evidências.

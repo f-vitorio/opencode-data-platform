@@ -1,0 +1,1338 @@
+---
+name: landing-page-audit
+description: Metodologia profissional para auditoria minuciosa de landing pages e sites, com foco em conversão, UX, CRO, SEO, Google Ads, performance, intenção de busca, arquitetura, conteúdo, confiança, rastreamento e geração de leads. Deve cruzar dados reais do site com Google Ads, GA4, Search Console, OpenSEO e ferramentas de navegador quando disponíveis.
+---
+
+# LANDING PAGE & WEBSITE AUDIT
+
+## OBJETIVO
+
+Executar uma auditoria extremamente minuciosa de landing pages e sites com foco em:
+
+1. aumentar conversão;
+2. aumentar geração de leads;
+3. melhorar qualidade dos leads;
+4. melhorar ROI do tráfego pago;
+5. melhorar experiência do usuário;
+6. melhorar relevância para Google Ads;
+7. melhorar SEO;
+8. melhorar performance;
+9. eliminar problemas técnicos;
+10. aumentar confiança;
+11. reduzir fricção;
+12. criar uma experiência coerente entre anúncio, busca, página e conversão.
+
+A auditoria deve avaliar a página como um sistema completo de aquisição e conversão.
+
+Não analisar somente estética.
+
+Uma página bonita que não converte deve ser considerada problemática.
+
+---
+
+# 1. PRINCÍPIO CENTRAL
+
+A análise deve responder:
+
+> "Se eu enviar uma pessoa qualificada para esta página, quais fatores podem fazer ela não converter?"
+
+E também:
+
+> "O que precisa mudar para aumentar a probabilidade de conversão sem depender simplesmente de aumentar o tráfego?"
+
+A análise deve considerar:
+
+TRÁFEGO
+→ INTENÇÃO
+→ PROMESSA
+→ LANDING PAGE
+→ CONFIANÇA
+→ OFERTA
+→ CTA
+→ CONVERSÃO
+
+Quando houver dados disponíveis:
+
+TRÁFEGO
+→ LANDING PAGE
+→ LEAD
+→ QUALIFICAÇÃO
+→ VENDA
+
+---
+
+# 2. ESCOPO
+
+A auditoria deve analisar, quando aplicável:
+
+- estratégia;
+- proposta de valor;
+- posicionamento;
+- intenção de busca;
+- copywriting;
+- estrutura;
+- UX;
+- UI;
+- CRO;
+- CTA;
+- formulário;
+- WhatsApp;
+- confiança;
+- prova social;
+- autoridade;
+- objeções;
+- oferta;
+- conteúdo;
+- SEO on-page;
+- SEO técnico;
+- arquitetura;
+- links internos;
+- dados estruturados;
+- indexação;
+- performance;
+- Core Web Vitals;
+- mobile;
+- acessibilidade;
+- rastreamento;
+- conversões;
+- Google Ads;
+- GA4;
+- Search Console;
+- concorrentes;
+- SERP;
+- landing pages concorrentes.
+
+Não assumir que todos os dados estarão disponíveis.
+
+---
+
+# 3. FONTES DE DADOS
+
+Utilizar as ferramentas disponíveis.
+
+Prioridade:
+
+1. inspeção real do site;
+2. Google Ads;
+3. GA4;
+4. Google Search Console;
+5. OpenSEO;
+6. navegador/devtools;
+7. análise visual;
+8. conhecimento técnico.
+
+Quando dados reais estiverem disponíveis, preferir dados reais a opiniões.
+
+---
+
+# 4. INSPEÇÃO DO SITE
+
+Antes de analisar a estratégia, acessar a página real.
+
+Verificar:
+
+- URL;
+- status HTTP;
+- redirecionamentos;
+- HTTPS;
+- carregamento;
+- estrutura;
+- navegação;
+- versão mobile;
+- elementos visíveis;
+- CTAs;
+- formulários;
+- links;
+- imagens;
+- vídeos;
+- scripts;
+- elementos interativos.
+
+Quando possível, utilizar ferramentas de navegador para verificar comportamento real.
+
+Não confiar somente no HTML ou no código-fonte quando o comportamento visual/interativo puder ser diferente.
+
+---
+
+# 5. PRIMEIRA IMPRESSÃO — 5 SEGUNDOS
+
+Avaliar o que um visitante entende nos primeiros segundos.
+
+Perguntar:
+
+1. O que esta empresa oferece?
+2. Para quem oferece?
+3. Qual problema resolve?
+4. Qual benefício entrega?
+5. Por que escolher esta empresa?
+6. O que devo fazer agora?
+
+Se essas respostas não forem claras rapidamente, considerar problema de clareza.
+
+Avaliar:
+
+- headline;
+- subheadline;
+- CTA;
+- imagem principal;
+- proposta de valor;
+- hierarquia visual;
+- excesso de informação;
+- distrações.
+
+---
+
+# 6. PROPOSTA DE VALOR
+
+Avaliar se a página apresenta uma proposta de valor forte.
+
+Uma boa proposta deve deixar claro:
+
+- público;
+- problema;
+- solução;
+- benefício;
+- diferencial;
+- próximo passo.
+
+Evitar propostas genéricas como:
+
+"Transformamos seu negócio."
+
+"Resultados para sua empresa."
+
+"Marketing que funciona."
+
+Essas frases só são consideradas fortes quando acompanhadas de uma proposta específica e verificável.
+
+Perguntar:
+
+> "Por que alguém deveria escolher esta empresa em vez de outra?"
+
+Se a resposta não estiver clara, registrar como oportunidade.
+
+---
+
+# 7. INTENÇÃO DE BUSCA
+
+Identificar a intenção principal:
+
+- informacional;
+- comercial;
+- transacional;
+- local;
+- navegacional.
+
+Avaliar se a página corresponde à intenção.
+
+Exemplo:
+
+Keyword:
+"agência Google Ads em São Paulo"
+
+A página precisa responder rapidamente:
+
+- serviço;
+- localização;
+- benefício;
+- diferenciais;
+- prova;
+- CTA.
+
+Não recomendar conteúdo genérico quando a intenção for altamente transacional.
+
+---
+
+# 8. ALINHAMENTO GOOGLE ADS
+
+Quando houver Google Ads, analisar:
+
+KEYWORD
+→ ANÚNCIO
+→ LANDING PAGE
+
+Verificar:
+
+- correspondência semântica;
+- promessa;
+- oferta;
+- headline;
+- CTA;
+- serviço;
+- localização;
+- intenção.
+
+Perguntar:
+
+> "A pessoa que clicou no anúncio encontra exatamente aquilo que esperava?"
+
+Identificar:
+
+- quebra de expectativa;
+- mensagem genérica;
+- páginas muito amplas;
+- páginas que atendem várias intenções;
+- falta de relevância;
+- excesso de etapas.
+
+---
+
+# 9. CRO — CONVERSION RATE OPTIMIZATION
+
+Avaliar todos os elementos que influenciam conversão.
+
+## CTA
+
+Verificar:
+
+- visibilidade;
+- clareza;
+- posicionamento;
+- frequência;
+- texto;
+- contraste;
+- contexto;
+- benefício.
+
+Evitar CTA genérico quando houver oportunidade de torná-lo orientado à ação.
+
+Exemplo:
+
+"Enviar"
+
+pode ser inferior a:
+
+"Quero receber uma análise"
+
+quando essa segunda opção representa melhor o próximo passo.
+
+---
+
+# 10. HIERARQUIA VISUAL
+
+Avaliar:
+
+- tamanho;
+- contraste;
+- espaçamento;
+- ordem;
+- agrupamento;
+- títulos;
+- subtítulos;
+- imagens;
+- CTAs.
+
+O usuário deve conseguir escanear a página.
+
+Identificar:
+
+- blocos excessivamente densos;
+- excesso de elementos;
+- ausência de hierarquia;
+- excesso de texto;
+- CTAs escondidos;
+- elementos competindo pela atenção.
+
+---
+
+# 11. COPYWRITING
+
+Avaliar:
+
+- clareza;
+- especificidade;
+- benefício;
+- diferenciação;
+- credibilidade;
+- objetividade;
+- persuasão;
+- linguagem;
+- escaneabilidade.
+
+Separar:
+
+CARACTERÍSTICA
+→ BENEFÍCIO
+→ RESULTADO
+
+Não assumir que características técnicas são benefícios.
+
+---
+
+# 12. ESTRUTURA DE COPY
+
+Avaliar a sequência:
+
+## HERO
+
+- problema;
+- solução;
+- benefício;
+- CTA.
+
+## PROBLEMA
+
+O visitante se reconhece?
+
+## SOLUÇÃO
+
+A empresa explica como resolve?
+
+## BENEFÍCIOS
+
+O que muda para o cliente?
+
+## PROVA
+
+Existe evidência?
+
+## PROCESSO
+
+O cliente entende como funciona?
+
+## OBJEÇÕES
+
+As principais dúvidas são respondidas?
+
+## OFERTA
+
+Está claro o que será recebido?
+
+## CTA
+
+Existe uma próxima ação clara?
+
+---
+
+# 13. OBJEÇÕES
+
+Identificar possíveis objeções:
+
+- preço;
+- confiança;
+- risco;
+- prazo;
+- experiência;
+- resultado;
+- segurança;
+- contrato;
+- dificuldade;
+- comparação;
+- garantia;
+- suporte.
+
+Verificar se a página responde preventivamente às objeções relevantes.
+
+---
+
+# 14. CONFIANÇA
+
+Avaliar:
+
+- depoimentos;
+- avaliações;
+- casos;
+- números;
+- clientes;
+- certificações;
+- experiência;
+- equipe;
+- dados empresariais;
+- contato;
+- endereço quando relevante;
+- políticas;
+- segurança;
+- transparência.
+
+Não recomendar provas sociais falsas ou inventadas.
+
+Se não houver prova suficiente, registrar como GAP DE CONFIANÇA.
+
+---
+
+# 15. PROVA SOCIAL
+
+Avaliar:
+
+- especificidade;
+- autenticidade;
+- contexto;
+- resultados;
+- identificação;
+- relevância.
+
+Um depoimento genérico como:
+
+"Excelente serviço!"
+
+possui menor força do que um depoimento contextualizado.
+
+Priorizar provas relacionadas diretamente ao serviço vendido.
+
+---
+
+# 16. OFERTA
+
+Avaliar:
+
+- o que está sendo oferecido;
+- para quem;
+- preço quando relevante;
+- escopo;
+- diferenciais;
+- bônus quando existirem;
+- condições;
+- risco;
+- próximo passo.
+
+Perguntar:
+
+> "O visitante entende exatamente o que receberá?"
+
+---
+
+# 17. FORMULÁRIO
+
+Avaliar:
+
+- quantidade de campos;
+- relevância;
+- ordem;
+- labels;
+- placeholders;
+- validação;
+- mensagens de erro;
+- feedback;
+- CTA;
+- privacidade;
+- mobile;
+- acessibilidade.
+
+Analisar cada campo:
+
+> "Este campo é realmente necessário para gerar ou qualificar o lead?"
+
+Eliminar fricção desnecessária.
+
+---
+
+# 18. WHATSAPP
+
+Quando houver WhatsApp:
+
+avaliar:
+
+- visibilidade;
+- contexto;
+- CTA;
+- mensagem pré-preenchida;
+- origem;
+- qualificação;
+- transição para atendimento;
+- rastreamento.
+
+Verificar se o WhatsApp funciona como:
+
+CTA principal
+
+ou
+
+CTA secundário.
+
+Não recomendar múltiplos CTAs concorrentes sem justificativa.
+
+---
+
+# 19. CONVERSÃO E RASTREAMENTO
+
+Verificar, quando possível:
+
+- GA4;
+- Google Ads conversion tracking;
+- GTM;
+- eventos;
+- formulários;
+- cliques em WhatsApp;
+- telefone;
+- envio de formulário;
+- páginas de obrigado;
+- eventos duplicados;
+- eventos que não disparam;
+- parâmetros UTM;
+- atribuição.
+
+Pergunta fundamental:
+
+> "Conseguimos saber se a pessoa que chegou por Google Ads virou lead?"
+
+Se não, registrar como problema crítico de mensuração.
+
+---
+
+# 20. GOOGLE ANALYTICS
+
+Quando disponível, analisar:
+
+- landing pages;
+- sessões;
+- usuários;
+- origem/mídia;
+- eventos;
+- conversões;
+- engagement;
+- dispositivos;
+- comportamento.
+
+Comparar:
+
+- desktop;
+- mobile.
+
+Procurar diferenças relevantes.
+
+---
+
+# 21. GOOGLE SEARCH CONSOLE
+
+Quando disponível, analisar:
+
+- impressões;
+- cliques;
+- CTR;
+- posição;
+- queries;
+- páginas;
+- países;
+- dispositivos.
+
+Identificar:
+
+- páginas com muitas impressões e baixo CTR;
+- páginas próximas do topo;
+- keywords com potencial;
+- páginas sem tráfego;
+- intenção desalinhada;
+- oportunidades de title/meta;
+- oportunidades de conteúdo.
+
+---
+
+# 22. SEO ON-PAGE
+
+Avaliar:
+
+- title;
+- meta description;
+- H1;
+- H2;
+- headings;
+- conteúdo;
+- keywords;
+- entidades;
+- semântica;
+- intenção;
+- imagens;
+- alt;
+- links internos;
+- canonical;
+- indexabilidade.
+
+Não aplicar keyword stuffing.
+
+Priorizar relevância e intenção.
+
+---
+
+# 23. SEO TÉCNICO
+
+Verificar quando possível:
+
+- indexação;
+- robots.txt;
+- sitemap;
+- canonical;
+- status codes;
+- redirects;
+- páginas duplicadas;
+- noindex;
+- hreflang quando aplicável;
+- URLs;
+- arquitetura;
+- breadcrumbs;
+- structured data;
+- schema;
+- Open Graph;
+- metadata;
+- JavaScript;
+- renderização.
+
+---
+
+# 24. STRUCTURED DATA
+
+Verificar dados estruturados relevantes.
+
+Possibilidades:
+
+- Organization;
+- LocalBusiness;
+- Service;
+- Product;
+- Article;
+- BreadcrumbList;
+- FAQ quando realmente apropriado.
+
+Não adicionar schema apenas para "ter schema".
+
+Deve representar conteúdo real da página.
+
+---
+
+# 25. PERFORMANCE
+
+Avaliar:
+
+- LCP;
+- INP;
+- CLS;
+- FCP;
+- TTFB;
+- tamanho da página;
+- imagens;
+- fontes;
+- JavaScript;
+- CSS;
+- terceiros;
+- cache;
+- compressão;
+- lazy loading.
+
+Quando ferramentas estiverem disponíveis, utilizar dados reais.
+
+Não inventar métricas de performance.
+
+---
+
+# 26. MOBILE
+
+A análise mobile é obrigatória.
+
+Verificar:
+
+- layout;
+- texto;
+- botões;
+- menu;
+- formulários;
+- WhatsApp;
+- imagens;
+- espaçamento;
+- velocidade;
+- elementos cortados;
+- scroll horizontal;
+- tamanho dos elementos clicáveis;
+- legibilidade.
+
+Uma página que funciona bem apenas no desktop deve ser considerada incompleta.
+
+---
+
+# 27. ACESSIBILIDADE
+
+Verificar:
+
+- contraste;
+- tamanho de fonte;
+- headings;
+- labels;
+- alt;
+- foco;
+- navegação;
+- elementos clicáveis;
+- semântica;
+- mensagens de erro.
+
+Priorizar problemas que também afetam conversão.
+
+---
+
+# 28. UX
+
+Avaliar:
+
+- clareza;
+- navegação;
+- fricção;
+- previsibilidade;
+- consistência;
+- feedback;
+- velocidade percebida;
+- facilidade de encontrar informações.
+
+Perguntar:
+
+> "O usuário sabe o que fazer em cada etapa?"
+
+---
+
+# 29. ARQUITETURA DO SITE
+
+Quando analisando um site completo, avaliar:
+
+- arquitetura;
+- categorias;
+- serviços;
+- páginas;
+- hierarquia;
+- navegação;
+- links internos;
+- páginas órfãs;
+- profundidade;
+- intenção.
+
+Identificar se o site possui páginas suficientes para capturar diferentes intenções comerciais.
+
+---
+
+# 30. SEO + CRO
+
+Não tratar SEO e CRO como objetivos separados.
+
+Perguntar:
+
+> "Esta página consegue atrair a busca certa e converter essa pessoa?"
+
+Uma página pode:
+
+- rankear e não converter;
+- converter e não receber tráfego;
+- receber tráfego irrelevante;
+- ter boa posição mas CTR baixo;
+- ter CTR alto mas baixa conversão.
+
+Diagnosticar a causa.
+
+---
+
+# 31. COMPETIDORES
+
+Quando relevante, utilizar OpenSEO para analisar concorrentes.
+
+Avaliar:
+
+- SERP;
+- keywords;
+- páginas;
+- títulos;
+- posicionamento;
+- ofertas;
+- diferenciais;
+- estrutura;
+- conteúdo;
+- intenção;
+- sinais de autoridade.
+
+Não copiar concorrentes.
+
+Identificar:
+
+- padrões de mercado;
+- lacunas;
+- oportunidades;
+- diferenciação.
+
+---
+
+# 32. ANÁLISE DE SERP
+
+Para as principais keywords:
+
+analisar:
+
+- intenção;
+- resultados;
+- títulos;
+- formatos;
+- concorrentes;
+- páginas;
+- features;
+- anúncios quando disponíveis.
+
+Perguntar:
+
+> "Minha página corresponde ao tipo de resultado que o Google considera relevante para esta busca?"
+
+---
+
+# 33. LANDING PAGE SCORE
+
+Criar avaliação por categoria.
+
+Utilizar escala:
+
+0 = crítico/inexistente
+1 = muito ruim
+2 = ruim
+3 = aceitável
+4 = bom
+5 = excelente
+
+Avaliar:
+
+- Clareza
+- Proposta de valor
+- Intenção
+- Copy
+- Oferta
+- CTA
+- UX
+- Confiança
+- Prova social
+- CRO
+- Formulário
+- Mobile
+- Performance
+- SEO
+- Tracking
+- Diferenciação
+
+Não usar a pontuação como verdade absoluta.
+
+Usar para identificar prioridades.
+
+---
+
+# 34. MATRIZ DE IMPACTO
+
+Classificar cada problema:
+
+## IMPACTO
+
+- Muito alto
+- Alto
+- Médio
+- Baixo
+
+## ESFORÇO
+
+- Muito baixo
+- Baixo
+- Médio
+- Alto
+
+Priorizar:
+
+ALTO IMPACTO + BAIXO ESFORÇO
+
+antes de:
+
+BAIXO IMPACTO + ALTO ESFORÇO
+
+---
+
+# 35. PRIORIDADES
+
+Usar:
+
+## P0 — CRÍTICO
+
+Pode impedir conversões, causar perda financeira ou invalidar a mensuração.
+
+## P1 — ALTO
+
+Grande potencial de aumento de conversão, tráfego qualificado ou eficiência.
+
+## P2 — MÉDIO
+
+Melhoria relevante.
+
+## P3 — BAIXO
+
+Otimização secundária.
+
+---
+
+# 36. CLASSIFICAÇÃO DE EVIDÊNCIA
+
+Toda recomendação deve ser baseada em:
+
+## DADO REAL
+
+Obtido de ferramenta ou fonte real.
+
+## OBSERVAÇÃO
+
+Observado diretamente na página, SERP ou comportamento.
+
+## INFERÊNCIA
+
+Conclusão derivada de evidências.
+
+## HIPÓTESE
+
+Ideia que precisa ser testada.
+
+Nunca apresentar hipótese como fato.
+
+---
+
+# 37. TESTES A/B
+
+Quando uma mudança não puder ser considerada certa:
+
+recomendar teste.
+
+Exemplos:
+
+- headline;
+- CTA;
+- oferta;
+- formulário;
+- prova social;
+- layout;
+- preço;
+- mensagem.
+
+Para cada teste:
+
+- hipótese;
+- variável;
+- controle;
+- variante;
+- métrica principal;
+- métrica secundária;
+- critério de sucesso.
+
+---
+
+# 38. NÃO FAZER
+
+Não recomendar mudanças apenas porque:
+
+- "todo site deveria ter";
+- "isso é tendência";
+- "fica mais bonito";
+- "o concorrente faz";
+- "melhora o SEO" sem explicar como;
+- "aumenta Quality Score" sem relação com resultado;
+- "melhora UX" sem identificar problema.
+
+Toda recomendação importante deve responder:
+
+> "Qual problema isso resolve?"
+
+e
+
+> "Por que isso pode melhorar o resultado?"
+
+---
+
+# 39. NÃO INVENTAR
+
+Nunca inventar:
+
+- conversões;
+- CTR;
+- CPC;
+- velocidade;
+- Core Web Vitals;
+- keywords;
+- concorrentes;
+- posições;
+- dados de GA4;
+- dados de Search Console;
+- avaliações;
+- depoimentos;
+- clientes;
+- resultados.
+
+Se não houver dado:
+
+"Dado não disponível."
+
+Se for hipótese:
+
+"Hipótese."
+
+Se for inferência:
+
+"Inferência."
+
+---
+
+# 40. RELATÓRIO COMPLETO
+
+Quando o usuário solicitar uma auditoria completa, entregar:
+
+# 1. RESUMO EXECUTIVO
+
+- situação atual;
+- maiores problemas;
+- maiores oportunidades;
+- impacto potencial;
+- diagnóstico geral.
+
+# 2. SCORE GERAL
+
+Tabela com:
+
+| Categoria | Nota 0–5 | Diagnóstico |
+|---|---:|---|
+| Clareza | | |
+| Proposta de valor | | |
+| Intenção | | |
+| Copy | | |
+| Oferta | | |
+| CTA | | |
+| CRO | | |
+| Confiança | | |
+| UX | | |
+| Mobile | | |
+| Performance | | |
+| SEO | | |
+| Tracking | | |
+| Diferenciação | | |
+
+# 3. PRIMEIROS 5 SEGUNDOS
+
+Explique exatamente o que o visitante entende ao entrar.
+
+# 4. FUNIL DE CONVERSÃO
+
+Mapear:
+
+TRÁFEGO
+→ LANDING PAGE
+→ CTA
+→ FORMULÁRIO/WHATSAPP
+→ LEAD
+→ QUALIFICAÇÃO
+→ VENDA
+
+Identificar pontos de fricção.
+
+# 5. COPY
+
+Analisar seção por seção.
+
+# 6. CRO
+
+Identificar todos os problemas de conversão.
+
+# 7. UX/UI
+
+Analisar experiência e hierarquia.
+
+# 8. OFERTA
+
+Avaliar força, clareza e diferenciação.
+
+# 9. CONFIANÇA
+
+Identificar gaps de prova e credibilidade.
+
+# 10. FORMULÁRIO / WHATSAPP
+
+Avaliar fricção e conversão.
+
+# 11. GOOGLE ADS
+
+Se aplicável:
+
+KEYWORD
+→ ANÚNCIO
+→ LANDING PAGE
+
+# 12. SEO
+
+Avaliar:
+
+- on-page;
+- técnico;
+- intenção;
+- conteúdo;
+- arquitetura;
+- indexação.
+
+# 13. PERFORMANCE
+
+Apresentar dados reais quando disponíveis.
+
+# 14. MOBILE
+
+Listar problemas específicos.
+
+# 15. TRACKING
+
+Identificar problemas de mensuração.
+
+# 16. CONCORRENTES
+
+Apresentar:
+
+- padrões;
+- diferenciais;
+- gaps;
+- oportunidades.
+
+# 17. TOP 10 PROBLEMAS
+
+Somente os 10 mais importantes.
+
+Para cada:
+
+- problema;
+- evidência;
+- impacto;
+- solução;
+- prioridade;
+- confiança.
+
+# 18. TOP 10 OPORTUNIDADES
+
+Somente as maiores oportunidades.
+
+# 19. QUICK WINS
+
+Mudanças rápidas e de alto impacto.
+
+# 20. PLANO DE EXECUÇÃO
+
+## AGORA
+
+## PRÓXIMOS 7 DIAS
+
+## PRÓXIMOS 30 DIAS
+
+---
+
+# 41. PRINCÍPIO 80/20
+
+Não transformar a auditoria em uma lista infinita.
+
+O objetivo é encontrar:
+
+> os 20% de problemas responsáveis por aproximadamente 80% das perdas ou limitações.
+
+E também:
+
+> os 20% de melhorias com potencial para produzir a maior parte dos ganhos.
+
+Sempre terminar com uma lista curta de ações prioritárias.
+
+---
+
+# 42. MODO LANDING PAGE
+
+Quando o usuário fornecer uma única landing page:
+
+focar profundamente em:
+
+- conversão;
+- copy;
+- UX;
+- CTA;
+- oferta;
+- confiança;
+- intenção;
+- Google Ads;
+- formulário;
+- mobile;
+- performance;
+- SEO;
+- tracking.
+
+Não gastar tempo excessivo analisando arquitetura do restante do site.
+
+---
+
+# 43. MODO WEBSITE
+
+Quando o usuário fornecer um domínio:
+
+avaliar:
+
+- homepage;
+- páginas de serviço;
+- páginas comerciais;
+- arquitetura;
+- navegação;
+- SEO;
+- conteúdo;
+- conversão;
+- performance;
+- tracking;
+- páginas de contato;
+- páginas locais;
+- concorrentes.
+
+Identificar quais páginas deveriam existir e quais estão faltando.
+
+---
+
+# 44. MODO GOOGLE ADS LANDING PAGE
+
+Quando a auditoria estiver relacionada a campanhas Google Ads:
+
+priorizar:
+
+1. intenção;
+2. relevância;
+3. promessa;
+4. headline;
+5. oferta;
+6. CTA;
+7. confiança;
+8. conversão;
+9. velocidade;
+10. tracking.
+
+Cruzar dados do Google Ads com a página quando disponíveis.
+
+---
+
+# 45. MODO SEO LANDING PAGE
+
+Quando a auditoria estiver relacionada a SEO:
+
+priorizar:
+
+1. intenção;
+2. SERP;
+3. keyword;
+4. conteúdo;
+5. semântica;
+6. title;
+7. H1;
+8. arquitetura;
+9. links internos;
+10. indexação;
+11. schema;
+12. CTR;
+13. conversão.
+
+---
+
+# 46. REGRA FINAL
+
+Uma auditoria excelente não é a que encontra mais problemas.
+
+É a que identifica:
+
+1. o que está impedindo a conversão;
+2. por que isso acontece;
+3. qual evidência sustenta o diagnóstico;
+4. qual mudança deve ser feita;
+5. qual impacto pode gerar;
+6. qual deve ser a prioridade.
+
+Sempre utilizar:
+
+DADO
+→ DIAGNÓSTICO
+→ IMPACTO
+→ SOLUÇÃO
+→ PRIORIDADE
+→ TESTE/IMPLEMENTAÇÃO
+
+A análise deve ser minuciosa, técnica, estratégica e orientada a resultado financeiro.

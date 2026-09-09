@@ -1,0 +1,207 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-09-05T00:00:00.000Z",
+  "containerVersion": {
+    "accountId": "0",
+    "containerId": "0",
+    "container": {
+      "accountId": "0",
+      "containerId": "0",
+      "name": "FVS7 Tracking Standard",
+      "publicId": "GTM-XXXXXXX",
+      "usageContext": ["web"],
+      "domainName": ["example.com"]
+    },
+    "containerVersionId": "0",
+    "tag": [
+      {
+        "tagId": "1",
+        "name": "GA4 - Config",
+        "type": "gaawec",
+        "parameter": [
+          {
+            "key": "measurementId",
+            "type": "template",
+            "value": "G-XXXXXXXXXX"
+          }
+        ],
+        "firingTriggerId": ["1"],
+        "blockingTriggerId": [],
+        "tagFiringOption": "default"
+      },
+      {
+        "tagId": "2",
+        "name": "GA4 - Event generate_lead",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "key": "eventName",
+            "type": "template",
+            "value": "generate_lead"
+          }
+        ],
+        "firingTriggerId": ["6"],
+        "blockingTriggerId": [],
+        "tagFiringOption": "default"
+      },
+      {
+        "tagId": "3",
+        "name": "Google Ads - Lead",
+        "type": "gaawc",
+        "parameter": [
+          {
+            "key": "conversionId",
+            "type": "template",
+            "value": "AW-000000000"
+          },
+          {
+            "key": "conversionLabel",
+            "type": "template",
+            "value": "LABEL"
+          }
+        ],
+        "firingTriggerId": ["6"],
+        "blockingTriggerId": [],
+        "tagFiringOption": "default"
+      },
+      {
+        "tagId": "4",
+        "name": "Conversion Linker",
+        "type": "linkid",
+        "parameter": [],
+        "firingTriggerId": ["1"],
+        "blockingTriggerId": [],
+        "tagFiringOption": "default"
+      }
+    ],
+    "trigger": [
+      {
+        "triggerId": "1",
+        "name": "All Pages",
+        "type": "pageview",
+        "parameter": [],
+        "filter": [],
+        "checkValidation": false,
+        "uniqueTriggerId": "1"
+      },
+      {
+        "triggerId": "2",
+        "name": "History Change",
+        "type": "historyChange",
+        "parameter": [],
+        "filter": [],
+        "checkValidation": false,
+        "uniqueTriggerId": "2"
+      },
+      {
+        "triggerId": "6",
+        "name": "Custom - generate_lead",
+        "type": "customEvent",
+        "parameter": [
+          {
+            "key": "eventName",
+            "type": "template",
+            "value": "generate_lead"
+          }
+        ],
+        "filter": [],
+        "checkValidation": false,
+        "uniqueTriggerId": "6"
+      }
+    ],
+    "variable": [
+      {
+        "variableId": "1",
+        "name": "DL - event",
+        "type": "d",
+        "parameter": [
+          {
+            "key": "dataLayerVersion",
+            "type": "integer",
+            "value": "2"
+          },
+          {
+            "key": "name",
+            "type": "template",
+            "value": "event"
+          }
+        ]
+      },
+      {
+        "variableId": "2",
+        "name": "DL - lead_type",
+        "type": "d",
+        "parameter": [
+          {
+            "key": "dataLayerVersion",
+            "type": "integer",
+            "value": "2"
+          },
+          {
+            "key": "name",
+            "type": "template",
+            "value": "lead_type"
+          }
+        ]
+      },
+      {
+        "variableId": "3",
+        "name": "DL - service",
+        "type": "d",
+        "parameter": [
+          {
+            "key": "dataLayerVersion",
+            "type": "integer",
+            "value": "2"
+          },
+          {
+            "key": "name",
+            "type": "template",
+            "value": "service"
+          }
+        ]
+      },
+      {
+        "variableId": "4",
+        "name": "DL - page_path",
+        "type": "d",
+        "parameter": [
+          {
+            "key": "dataLayerVersion",
+            "type": "integer",
+            "value": "2"
+          },
+          {
+            "key": "name",
+            "type": "template",
+            "value": "page_path"
+          }
+        ]
+      }
+    ],
+    "folder": [],
+    "customTemplate": [],
+    "builtInVariable": [
+      {
+        "name": "Page Path",
+        "type": "1"
+      },
+      {
+        "name": "Event",
+        "type": "5"
+      },
+      {
+        "name": "Click URL",
+        "type": "6"
+      },
+      {
+        "name": "Click Text",
+        "type": "11"
+      },
+      {
+        "name": "Form ID",
+        "type": "22"
+      }
+    ]
+  }
+}

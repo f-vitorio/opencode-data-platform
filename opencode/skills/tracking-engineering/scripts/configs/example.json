@@ -1,0 +1,28 @@
+{
+  "gtmPublicId": "GTM-XXXXXXX",
+  "ga4MeasurementId": "G-XXXXXXXXXX",
+  "accountId": "1234567890",
+  "containerId": "123456789",
+  "containerName": "www.cliente.com.br",
+  "events": [
+    "page_view",
+    "form_submit_whatsapp",
+    "generate_lead",
+    "whatsapp_clicked",
+    "cta_click",
+    "scroll_90",
+    "phone_click",
+    "form_start",
+    "form_submit"
+  ],
+  "variables": [
+    "value",
+    "currency",
+    "page_path",
+    "service_interest",
+    "business_segment",
+    "event_label",
+    "lead_score",
+    "lead_temperature"
+  ]
+}

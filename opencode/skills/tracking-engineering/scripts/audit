@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# tracking-engineering: audit
+# Audita o tracking de um projeto a partir do código-fonte.
+# Uso: audit [diretorio-do-projeto]
+set -uo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=lib/events.sh
+source "$DIR/lib/events.sh"
+
+ROOT="${1:-.}"
+if [ ! -d "$ROOT" ]; then
+  echo "✗ diretório inválido: $ROOT"
+  exit 1
+fi
+
+SCORE=0
+TOTAL=0
+ok()  { echo "✓ $1"; SCORE=$((SCORE + 1)); }
+fail(){ echo "✗ $1  ($2)"; }
+
+echo "TRACKING AUDIT — $ROOT"
+echo "────────────────────────────"
+echo
+
+GTM_ID=$(rgrep "$ROOT" "GTM-[A-Z0-9]{6,}" | xargs grep -hoE "GTM-[A-Z0-9]{6,}" 2>/dev/null | head -1)
+GA4_ID=$(rgrep "$ROOT" "G-[A-Z0-9]{6,}" | xargs grep -hoE "G-[A-Z0-9]{6,}" 2>/dev/null | head -1)
+ADS_ID=$(rgrep "$ROOT" "AW-[0-9]{6,}" | xargs grep -hoE "AW-[0-9]{6,}" 2>/dev/null | head -1)
+DIRECT_GTAG=$(rgrep "$ROOT" "googletagmanager.com/gtag")
+GTM_LOAD=$(rgrep "$ROOT" "googletagmanager.com/gtm")
+
+echo "GA4"
+TOTAL=$((TOTAL + 1))
+if [ -n "$GA4_ID" ]; then ok "GA4 Measurement ID ($GA4_ID)"; else fail "GA4 Measurement ID" "não encontrado"; fi
+
+echo
+echo "GTM"
+TOTAL=$((TOTAL + 1))
+if [ -n "$GTM_ID" ]; then ok "Container GTM ($GTM_ID)"; else fail "Container GTM" "não encontrado"; fi
+
+echo
+echo "GOOGLE ADS"
+TOTAL=$((TOTAL + 1))
+if [ -n "$ADS_ID" ]; then ok "Conversion ID ($ADS_ID)"; else fail "Conversion ID" "não encontrado"; fi
+
+echo
+echo "CARGA ÚNICA (page_view duplicado)"
+TOTAL=$((TOTAL + 1))
+if [ -n "$DIRECT_GTAG" ] && [ -n "$GTM_LOAD" ]; then
+  fail "gtag direto + GTM" "possível page_view duplicado. Confira se o GTM também carrega o Google Tag."
+else
+  ok "Sem duplicação gtag/GTM aparente"
+fi
+
+echo
+echo "DATA LAYER (eventos padrão FVS7)"
+for ev in "${FVS7_EVENTS[@]}"; do
+  TOTAL=$((TOTAL + 1))
+  if event_present "$ROOT" "$ev"; then ok "$ev"; else fail "$ev" "ausente"; fi
+done
+
+echo
+echo "SCORE: ${SCORE}/${TOTAL}"
+exit 0
