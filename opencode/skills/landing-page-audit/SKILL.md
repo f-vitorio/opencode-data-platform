@@ -1211,7 +1211,7 @@ Antes de finalizar:
 - [ ] 06 — Tecnologia (site atual vs infraestrutura de crescimento)
 - [ ] 07 — Tracking (o que não pode ser medido)
 - [ ] 08 — Cenário Financeiro (3 cenários + disclaimer)
-- [ ] 09 — Custo de Não Agir (mensal + anual + tabela + disclaimer)
+- [ ] 09 — Custo de Não Agir AIDA (gancho + matriz + timeline + inércia vs ação + transição + disclaimer)
 - [ ] 10 — A Solução (funil visual)
 - [ ] 11 — Por Que FVS7 (5 capacidades × problemas)
 - [ ] 12 — Plano 90 Dias (timeline visual)
@@ -2210,29 +2210,258 @@ Para cada cenário, mostrar:
 
 ---
 
-# 34. CUSTO DE NÃO AGIR
+# 34. CUSTO DE NÃO AGIR — FRAMEWORK AIDA
 
-O relatório DEVE conter uma seção "O Custo de Não Agir" ou equivalente.
+⚠️ **REGRA ABSOLUTA:** Esta seção é a mais comercialmente estratégica de todo o relatório. Ela deve conduzir o cliente do diagnóstico à urgência de ação. Usar framework AIDA com tom urgente, consultivo e baseado em evidências.
 
-Esta seção deve quantificar:
+---
 
-- quanto custa mensalmente manter a situação atual;
-- quanto custa anualmente;
-- qual a oportunidade acumulada.
+## 34.1. OBJETIVO
 
-Componentes a considerar:
+Transformar dados técnicos em consequências financeiras tangíveis.
 
-| Componente | Cálculo | Impacto |
+O cliente deve ler esta seção e pensar:
+
+> "Cada dia que passo sem resolver isso, estou perdendo dinheiro."
+
+E depois:
+
+> "Preciso agir agora, não daqui a 3 meses."
+
+---
+
+## 34.2. ESTRUTURA AIDA
+
+### A — ATTENTION (ATENÇÃO)
+
+**Função:** Quebrar a resistência inicial com um dado ou pergunta que gere impacto imediato.
+
+**Técnicas:**
+
+1. **Pergunta provocativa** — direta, sem rodeios:
+   - "Quanto da demanda disponível para os seus serviços está sendo capturada hoje?"
+   - "Seu site está convertendo visitantes em clientes ou apenas recebendo tráfego?"
+   - "Quando foi a última vez que você verificou quantos leads estão sendo perdidos por mês?"
+
+2. **Dado de impacto** — usar dado real da auditoria quando disponível:
+   - "Seu site recebe X impressões mensais para buscas comerciais relevantes. Desse total, apenas Y geram cliques. Isso significa que Z% da demanda nunca chega ao seu negócio."
+
+3. **Comparação com concorrentes** — quando houver dados:
+   - "Enquanto isso, [Concorrente X] aparece nas primeiras posições para as mesmas buscas."
+
+**Regras:**
+- NUNCA inventar dados para o gancho. Se não houver dado real, usar pergunta provocativa.
+- O gancho deve ser específico ao cliente, não genérico.
+- Máximo 2-3 frases antes de transicionar para Interest.
+
+**Exemplo de abertura (dinâmico — gerado com dados reais):**
+
+"Seu site recebe [R01: número de impressões] impressões mensais para buscas relacionadas aos seus serviços. Porém, gera apenas [R02: número de cliques] cliques. Isso significa que aproximadamente [R03: % de perda] da demanda disponível está sendo redirecionada para concorrentes — sem que você sequer saiba que ela existia."
+
+---
+
+### I — INTEREST (INTERESSE)
+
+**Função:** Conectar cada problema técnico a uma consequência financeira real. O cliente deve entender QUEM perde com cada problema.
+
+**Estrutura por componente:**
+
+Para CADA problema encontrado na auditoria, criar uma mini-narrativa:
+
+```
+PROBLEMA IDENTIFICADO
+→ O que está acontecendo tecnicamente
+→ Por que isso acontece
+→ O que isso significa para o negócio
+→ Quanto isso pode estar custando
+```
+
+**Componentes obrigatórios a avaliar:**
+
+| Componente | O que investigar | Consequência financeira |
 |---|---|---|
-| Conversão prejudicada | Redução de X% na taxa de conversão | R$ Y/mês |
-| Demanda não capturada | Keywords sem página × CPC × volume | R$ Y/mês |
-| Baixo volume de avaliações | Posição inferior no Local Pack | Qualitativo |
-| Ausência de tracking | Impossibilidade de otimização | Qualitativo |
-| Tecnologia desatualizada | Riscos de segurança/compliance | Qualitativo |
+| **Conversão prejudicada** | Taxa de conversão atual vs potencial; CTA fraco; formulário problemático; copy desalinhada | Leads perdidos × ticket médio = R$ perdidos/mês |
+| **Demanda não capturada** | Keywords sem página dedicada; gaps de SEO; intenção sem resposta | Volume × CPC × CTR potencial = R$ em tráfego perdido |
+| **Tráfego pago desperdiçado** | Google Ads enviando para página irrelevante; Quality Score baixo; CPA elevado | CPC inflado × cliques = R$ em mídia subutilizada |
+| **Baixo volume de avaliações** | GBP com poucas reviews; concorrentes com mais avaliações | Posição inferior no Local Pack = menos chamadas/rotas |
+| **Ausência de tracking** | GTM ausente; GA4 mal configurado; conversões não mensuradas | Impossibilidade de otimizar = decisões no escuro |
+| **Performance ruim** | Core Web Vitals negativos; site lento; mobile pobre | Abandono + piora de SEO + CPC mais alto em Ads |
+| **Copy desalinhada** | Mensagem não conecta com intenção de busca; proposta de valor fraca | Visitante não entende o que é oferecido = bounce |
+| **Tecnologia desatualizada** | CMS antigo; plugin desatualizado; risco de segurança | Risco de compliance + manutenção cara + lentidão |
 
-Disclaimer obrigatório:
+**Regra de ouro:** Cada componente DEVE terminar com uma consequência financeira quantificada quando houver dados, ou qualificada quando não houver.
 
-"Valores representam oportunidade potencial, não faturamento garantido. Projeções baseadas em dados de mercado e premissas explícitas."
+**Exemplo de narrativa (dinâmica):**
+
+"Identificamos que sua página de [serviço X] recebe [R04: impressões] impressões mensais, mas possui uma taxa de conversão de apenas [R05: % conversão]. O benchmark do setor para páginas similares é [E01: benchmark]. Isso significa que, com o mesmo volume de tráfego, você poderia estar gerando [R06: leads potenciais] leads em vez de [R07: leads atuais]. A diferença representa [R08: leads perdidos] leads perdidos por mês, equivalente a R$ [R09: valor] em oportunidade comercial."
+
+---
+
+### D — DESIRE (DESEJO)
+
+**Função:** Transformar a consequência individual em um custo acumulado que gere urgência real.
+
+**Técnicas:**
+
+#### 34.2.1. MATRIZ DE CUSTO OCULTO
+
+Criar tabela visual expandida com TODOS os componentes:
+
+| # | Componente | O que está acontecendo | Consequência mensal | Acumulado 12 meses | Urgência |
+|---|---|---|---|---|---|
+| 1 | [problema] | [descrição técnica] | R$ [valor]/mês | R$ [valor] | 🔴 Alta |
+| 2 | [problema] | [descrição técnica] | R$ [valor]/mês | R$ [valor] | 🟡 Média |
+| ... | ... | ... | ... | ... | ... |
+| **TOTAL** | | | **R$ [total]/mês** | **R$ [total anual]** | |
+
+**Classificação de urgência:**
+- 🔴 **Alta** — impacto direto em receita, perda diária comprovada
+- 🟡 **Média** — impacto indireto, perda acumulável
+- 🟢 **Baixa** — melhoria oportunística, pode aguardar
+
+**Regra:** Se um componente não tiver dado quantitativo, usar "Impacto qualitativo" e descrever a consequência em texto. NUNCA inventar números.
+
+#### 34.2.2. COMPARAÇÃO TEMPORAL — TIMELINE DE PERDA
+
+Criar visual de timeline mostrando acumulação:
+
+```
+HOJE ──────────── 30 DIAS ──────────── 90 DIAS ──────────── 12 MESES
+  │                  │                     │                      │
+  │ [problema]       │ [perda acumulada]   │ [oportunidade]       │ [custo total]
+  │ opera assim      │ já são R$ X         │ poderia ser          │ soma R$ Y
+```
+
+**Regra:** A timeline deve ser gerada DINAMICAMENTE com base nos dados reais da auditoria. Nunca usar valores fixos.
+
+**Exemplo dinâmico:**
+
+"Se nada for alterado:
+- Em 30 dias: R$ [R10: perda 30d] em oportunidade perdida
+- Em 90 dias: R$ [R11: perda 90d] acumulados
+- Em 12 meses: R$ [R12: perda anual] em demanda que poderia ter sido capturada"
+
+#### 34.2.3. O CUSTO DA INÉRCIA vs O CUSTO DA AÇÃO
+
+Comparação visual lado a lado:
+
+| MANTER COMO ESTÁ | AGIR AGORA |
+|---|---|
+| Custo mensal: R$ [X] em oportunidade perdida | Investimento necessário: R$ [Y] |
+| Perda acumulada em 12 meses: R$ [Z] | ROI potencial em 12 meses: R$ [W] |
+| Concorrentes continuam capturando sua demanda | Posicionamento competitivo recuperado |
+| Tráfego pago continua subutilizado | Cada real investido trabalha melhor |
+| Decisões baseadas em intuição | Dados reais orientando cada decisão |
+
+**Tom:** Urgente, mas não ameaçador. Mostrar que a inércia tem custo, mas que agir é acessível.
+
+**Exemplo de narrativa:**
+
+"Enquanto esta estrutura permanecer assim, cada real investido em aquisição continuará levando usuários para uma experiência que não está preparada para converter. A perda não é apenas a atual — é acumulativa. Cada mês sem otimização aumenta a distância entre você e concorrentes que já investem nessa direção."
+
+---
+
+### A — ACTION (AÇÃO)
+
+**Função:** Transicionar naturalmente para a seção "A Solução" com clareza sobre o próximo passo.
+
+**Elementos obrigatórios:**
+
+1. **Frase de transição** — conectar custo à solução:
+   - "A boa notícia: tudo isso é corrigível. E o melhor momento para começar é agora."
+   - "O investimento para reverter essa situação é significativamente menor do que o custo de não agir."
+   - "A primeira ação não exige um orçamento enorme — exige decisão."
+
+2. **Próximo passo claro** — indicar que a seção seguinte mostra o caminho:
+   - "Na próxima seção, apresentamos exatamente como transformar cada um desses problemas em resultados."
+
+3. **Escassez legítima** — não ameaçadora, mas real:
+   - "Concorrentes não estão esperando. Cada dia que passa, eles fortalecem sua presença nas buscas que deveriam ser suas."
+   - "O mercado de buscas locais é dinâmico. A demanda existe hoje — mas alguém vai capturá-la."
+
+**Regras:**
+- NUNCA criar urgência falsa ("Só até sexta-feira!").
+- NUNCA inventar escassez artificial.
+- Usar escassez baseada em fatos: concorrentes agem, mercado muda, demanda existe.
+
+---
+
+## 34.3. REGRAS DE ESCRITA
+
+### TOM
+
+- **Urgente** — não condescendente, não passivo
+- **Consultivo** — orientado a resultado, não a medo
+- **Específico** — dados reais, não generalizações
+- **Honesto** — estimativas claramente identificadas
+
+### NUNCA
+
+- Usar medo artificial ("Você está perdendo milhões!")
+- Exagerar números
+- Inventar prejuízos
+- Criar falsa urgência
+- Pressionar emocionalmente sem base factual
+- Apresentar estimativas como fatos
+
+### SEMPRE
+
+- Conectar cada dado a uma consequência financeira
+- Identificar claramente dado real vs estimativa
+- Mostrar premissas quando houver projeção
+- Manter credibilidade técnica
+- Traduzir linguagem técnica em linguagem de negócio
+
+---
+
+## 34.4. SEPARAÇÃO OBRIGATÓRIA — DADO REAL vs ESTIMATIVA
+
+Cada número nesta seção DEVE possuir badge visual:
+
+- **DADO REAL** → badge verde, fonte explícita
+- **ESTIMATIVA** → badge azul, premissas listadas
+- **PROJEÇÃO** → badge laranja, disclaimer obrigatório
+
+Exemplo:
+
+"Leads perdidos/mês: [R13: número] — **DADO REAL** (fonte: GA4, período [data])"
+
+"Oportunidade anual estimada: R$ [E02: valor] — **ESTIMATIVA** (premissas: CTR hipotético de X%, taxa de conversão de Y%, ticket médio de R$ Z)"
+
+---
+
+## 34.5. DISCLAIMER OBRIGATÓRIO
+
+Toda projeção DEVE conter:
+
+"Valores representam oportunidade potencial, não faturamento garantido. Projeções baseadas em dados de mercado e premissas explícitas. Dados reais estão identificados com badge verde. Estimativas com badge azul. Projeções com badge laranja."
+
+---
+
+## 34.6. TRANSIÇÃO PARA SEÇÃO 10
+
+A seção "Custo de Não Agir" DEVE terminar com uma frase que conduza naturalmente à seção "A Solução":
+
+"Identificados os custos, o próximo passo é entender como resolver cada um deles de forma integrada e eficiente. A seção seguinte apresenta a estrutura completa para transformar esses problemas em resultados."
+
+---
+
+## 34.7. CHECKLIST ESPECÍFICO — SEÇÃO 09
+
+Antes de considerar esta seção pronta:
+
+- [ ] Gancho de Attention está presente e usa dado real ou pergunta provocativa
+- [ ] Cada componente técnico foi traduzido em consequência financeira
+- [ ] Matriz de Custo Oculto está completa com todos os componentes
+- [ ] Timeline de perda está presente (30d / 90d / 12 meses)
+- [ ] Comparação Inércia vs Ação está presente
+- [ ] Todos os números possuem fonte identificada
+- [ ] Badges de dado real/estimativa/projeção estão aplicados
+- [ ] Disclaimer está presente
+- [ ] Transição para seção "A Solução" existe
+- [ ] Tom é urgente mas consultivo
+- [ ] Nenhum número foi inventado
+- [ ] Estimativas estão claramente identificadas
 
 ---
 
@@ -2306,11 +2535,13 @@ O relatório HTML segue uma estrutura de 13 seções obrigatórias, organizadas 
 - Ticket médio ponderado
 - Disclaimer
 
-## 09 — O CUSTO DE NÃO AGIR
-- Custo mensal potencial
-- Custo anual potencial
-- Tabela de componentes
-- Disclaimer
+## 09 — O CUSTO DE NÃO AGIR (FRAMEWORK AIDA)
+- **ATTENTION:** Gancho de impacto (dado real ou pergunta provocativa)
+- **INTEREST:** Narrativa por componente: problema → consequência financeira
+- **DESIRE:** Matriz de Custo Oculto + Timeline de Perda (30d/90d/12m) + Comparação Inércia vs Ação
+- **ACTION:** Transição para seção "A Solução" + escassez legítima
+- Badges de dado real/estimativa/projeção em cada número
+- Disclaimer obrigatório
 
 ## 10 — A SOLUÇÃO
 - Site Convencional vs Infraestrutura de Crescimento
