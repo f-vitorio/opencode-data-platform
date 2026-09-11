@@ -835,6 +835,51 @@ def extract_mobile_usability(page: Page) -> Dict[str, Any]:
         
         return {viewport_width: viewport, issues: issues, issue_count: issues.length};
     }""")
+
+def validate_structured_data(page, seo_data) -> Dict[str, Any]:
+    """Valida dados estruturados contra schema.org e Google Rich Results."""
+    schemas = seo_data.get("structured_data", [])
+    
+    SCHEMA_RULES = {
+        "Organization": {"required": ["name", "url"], "recommended": ["logo", "contactPoint", "address"]},
+        "LocalBusiness": {"required": ["name", "address"], "recommended": ["telephone", "openingHours", "geo"]},
+        "ProfessionalService": {"required": ["name", "url"], "recommended": ["serviceType", "areaServed", "description"]},
+        "Service": {"required": ["name", "provider"], "recommended": ["description", "areaServed"]},
+        "FAQPage": {"required": ["mainEntity"], "recommended": []},
+        "BreadcrumbList": {"required": ["itemListElement"], "recommended": []},
+        "WebSite": {"required": ["name", "url"], "recommended": ["potentialAction"]},
+        "Product": {"required": ["name"], "recommended": ["image", "description", "offers"]},
+        "Article": {"required": ["headline", "datePublished"], "recommended": ["author", "image"]},
+    }
+    
+    result = {"valid_schemas": [], "invalid_schemas": [], "errors": [], "warnings_list": []}
+    
+    for schema in schemas:
+        if "error" in schema:
+            result["errors"].append(f"JSON-LD inválido: {schema['error']}")
+            continue
+        
+        schema_type = schema.get("@type", "Unknown")
+        rules = SCHEMA_RULES.get(schema_type)
+        
+        if not rules:
+            result["warnings_list"].append(f"Tipo schema não mapeado: {schema_type}")
+            continue
+        
+        # Check required fields
+        missing_required = [f for f in rules["required"] if f not in schema]
+        if missing_required:
+            result["errors"].append(f"{schema_type}: campos obrigatórios faltando — {', '.join(missing_required)}")
+            result["invalid_schemas"].append(schema_type)
+        else:
+            result["valid_schemas"].append(schema_type)
+        
+        # Check recommended fields
+        missing_recommended = [f for f in rules["recommended"] if f not in schema]
+        if missing_recommended:
+            result["warnings_list"].append(f"{schema_type}: campos recomendados faltando — {', '.join(missing_recommended)}")
+    
+    return result
 ```
 
 ### 6. Screenshot & Reporting Helpers
@@ -1125,8 +1170,11 @@ class BrowserTestRunner:
         if title_len == 0:
             critical.append({"type": "title", "message": "Title tag ausente"})
             score -= 30
+        elif title_len < 30:
+            warnings.append({"priority": "P2", "type": "title", "message": f"Title com {title_len} chars (muito curto, mínimo recomendado 30)", "evidence": None})
+            score -= 3
         elif title_len > 60:
-            warnings.append({"priority": "P1", "type": "title", "message": f"Title com {title_len} chars (pode truncar no Google)", "evidence": None})
+            warnings.append({"priority": "P1", "type": "title", "message": f"Title com {title_len} chars (pode truncar no Google, máximo 60)", "evidence": None})
             score -= 5
         
         # Meta description
@@ -1134,9 +1182,21 @@ class BrowserTestRunner:
         if desc_len == 0:
             critical.append({"type": "meta_description", "message": "Meta description ausente"})
             score -= 20
-        elif desc_len > 160:
-            warnings.append({"priority": "P2", "type": "meta_description", "message": f"Meta description com {desc_len} chars (pode truncar)", "evidence": None})
+        elif desc_len > 0 and desc_len < 70:
+            warnings.append({"priority": "P2", "type": "meta_description", "message": f"Meta description com {desc_len} chars (muito curta, mínimo recomendado 70)", "evidence": None})
             score -= 3
+        elif desc_len > 160:
+            warnings.append({"priority": "P2", "type": "meta_description", "message": f"Meta description com {desc_len} chars (pode truncar, máximo 160)", "evidence": None})
+            score -= 3
+        
+        # Robots meta — detect noindex/nofollow
+        robots = seo_data.get("robots_meta", "index,follow")
+        if "noindex" in robots:
+            critical.append({"type": "indexation", "message": "Página com noindex — Google não vai indexar esta página"})
+            score -= 25
+        if "nofollow" in robots:
+            warnings.append({"priority": "P1", "type": "links", "message": "Página com nofollow — links internos não passam autoridade"})
+            score -= 10
         
         # H1
         if seo_data.get("h1_count", 0) != 1:
@@ -1156,10 +1216,15 @@ class BrowserTestRunner:
             warnings.append({"priority": "P2", "type": "schema", "message": "Nenhum dado estruturado (JSON-LD) encontrado", "evidence": None})
             score -= 10
         else:
-            for sd in seo_data["structured_data"]:
-                if "error" in sd:
-                    warnings.append({"priority": "P1", "type": "schema", "message": f"JSON-LD inválido: {sd['error']}", "evidence": None})
-                    score -= 5
+            schema_result = validate_structured_data(page, seo_data)
+            for err in schema_result["errors"]:
+                warnings.append({"priority": "P1", "type": "schema", "message": err, "evidence": None})
+                score -= 5
+            for warn in schema_result["warnings_list"]:
+                warnings.append({"priority": "P2", "type": "schema", "message": warn, "evidence": None})
+                score -= 2
+            if schema_result["invalid_schemas"]:
+                warnings.append({"priority": "P1", "type": "schema", "message": f"Schemas com erros: {', '.join(schema_result['invalid_schemas'])}", "evidence": None})
         
         # Images alt
         if seo_data.get("images_without_alt", 0) > 0:

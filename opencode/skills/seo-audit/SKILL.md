@@ -49,6 +49,64 @@ Keep total spend modest: one audit, one backlinks overview, at most one domain o
    - Blocked or noindexed pages: remove the block.
    It must be doable this week by a non-technical person, with copy-paste-ready mechanics included.
 7. When the site is healthy, propose a starting focus area: run one `research_keywords` call seeded from the site's actual topic, then pick one theme and 3 to 5 specific, low-difficulty keywords the site can realistically rank for, each with the page or post to make. This is a starting direction, not a keyword strategy; point the user at the `keyword-research` skill for the full workflow. Skip this step entirely when the site is down — the one thing is all that matters there.
+
+## Issue Classification
+
+After `get_audit_issues`, classify EVERY issue by:
+
+| Severity | Criterion | Action |
+|----------|-----------|--------|
+| CRITICAL | affects indexation or conversion | fix this week |
+| WARNING | affects performance or SEO | fix this month |
+| INFO | opportunistic improvement | schedule |
+
+Common CRITICAL issues:
+- `noindex-page` on service/commerce pages
+- `blocked-page` on important URLs
+- `missing-title` on any indexable page
+- `broken-page` (404/4XX) on pages with backlinks
+
+Common WARNING issues:
+- `duplicate-title` or `duplicate-meta-description`
+- `redirect-chain` (more than 1 hop)
+- `thin-content` on key pages
+- `images-missing-alt` on above-fold images
+
+## Link Analysis
+
+Check these issues from `get_audit_issues`:
+- `broken-internal-link`: links to 404/4XX pages
+- `redirect-link`: links to redirected pages
+- `orphan-page`: pages with no incoming internal links
+- `nofollow-link`: unnecessary nofollow on internal links
+
+For each link issue:
+1. Identify source URL
+2. Identify destination URL
+3. Classify impact (how many pages affected)
+4. Recommend action (301 redirect, update link, remove)
+
+## Indexability Check
+
+Check these issues:
+- `noindex-page`: pages with noindex (verify if intentional)
+- `blocked-by-robots-txt`: pages blocked by robots
+- `canonical-issue`: conflicting canonicals
+
+If service/production pages are noindex → CRITICAL (remove noindex immediately).
+
+## Structured Data
+
+Check these issues:
+- `schema-validation-error`: schema.org validation errors
+- `rich-results-error`: Google rich results errors
+
+For each error:
+1. Identify affected schema type
+2. Identify missing/invalid fields
+3. Impact: no rich results = reduced CTR
+4. Recommend fix
+
 8. Write the report using `template.html` in this skill directory (see Output format).
 9. Review before delivering: run an adversarial pass with a second agent or model if your environment has one, otherwise do a fresh self-review. Give the reviewer the verified facts and have it attack four things: claims beyond the facts, unglossed jargon, anything overwhelming for a beginner, and dramatic language. The reviewer may also flag true facts it was not given; check those against your evidence instead of "fixing" them.
 10. Deliver the report: if your environment can publish or preview HTML (for example as an artifact), do that; otherwise save the HTML file and tell the user to open it in their browser.
