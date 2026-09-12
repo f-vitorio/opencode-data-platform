@@ -1716,7 +1716,8 @@ Antes de finalizar:
 ⚠️ **Se qualquer seção estiver faltando, o relatório NÃO deve ser entregue.**
 
 - [ ] CAPA — nome, domínio, data, agência, pergunta de impacto
-- [ ] 01 — Onde Está o Dinheiro (PRIMEIRA seção após capa — tabela de vazamentos)
+- [ ] 01 — Onde Está o Dinheiro (PRIMEIRA seção após capa — tabela de vazamentos COM VALORES FINANCEIROS)
+- [ ] CUSTO DE OPORTUNIDADE — TODOS os relatórios DEVEM conter valores financeiros concretos (mensal + anual) do que o cliente está perdendo. Sem números, sem urgência. Obrigatório em toda auditoria.
 - [ ] 02 — Você Está Perdendo (tracking ausente — gatilho PERDA)
 - [ ] 03 — Concorrentes à Frente (comparação — gatilho COMPARAÇÃO)
 - [ ] 04 — Demanda que Existe (keywords — gatilho ESCASSEZ)
@@ -1771,6 +1772,7 @@ Antes de finalizar:
 - pitch tem emojis nos problemas e perdas?
 - pitch tem impacto financeiro (mensal + anual)?
 - pitch tem CTA no final?
+- **CUSTO DE OPORTUNIDADE está presente com valores financeiros concretos (R$) no relatório?**
 
 Se a resposta for NÃO para algum item relevante:
 
@@ -1877,12 +1879,50 @@ Anexo o relatório completo com todos os dados.
 Quer que eu faça uma auditoria da conta de Google Ads e te prove quanto está sendo desperdiçado?
 
 [SE SEM GOOGLE ADS]:
-Quer que eu faça uma auditoria completa e te prove quanto está sendo perdido?
+Quer que eu solicite um orçamento para reconstrução completa e te prove quanto isso pode gerar de retorno?
 
 Abraço,
 [FULANO]
-FVS7 Marketing Digital
+FVS7 Growth
 ```
+
+### ⛔ BLOQUEADOR DE DESVIO — REGRAS ABSOLUTAS DO PITCH
+
+O pitch é o primeiro contato comercial com o cliente. QUALQUER desvio do template pode perder a venda.
+
+**ESTRUTURA — NÃO MUDAR:**
+- O pitch TEM EXATAMENTE 9 blocos (saudação → contexto → problemas → ads → impacto → relatório → CTA → assinatura)
+- A ordem dos blocos é IMUTÁVEL
+- Não adicionar blocos extras (ex: "NOTAS INTERNAS", "RESUMO", "DADOS TÉCNICOS")
+- Não remover blocos existentes
+- Não reordenar blocos
+
+**CONTEÚDO — PROIBIÇÕES ABSOLUTAS:**
+
+| ❌ NUNCA FAZER | Por quê |
+|---|---|
+| Mencionar preço (R$) do serviço | O pitch é para gerar interesse, não para fechar venda |
+| Usar nome de pessoa (ex: "Dra. Joana") | O pitch é para a empresa, não para o indivíduo |
+| Adicionar seção "NOTAS INTERNAS" | Dados internos não vão para o cliente |
+| Adicionar seção "DADOS TÉCNICOS" | Cliente não quer saber de GTM, schema, etc. |
+| Adicionar seção "RESUMO DA AUDITORIA" | O relatório HTML já é o resumo |
+| Usar "FVS7 Marketing Digital" | Usar sempre "FVS7 Growth" |
+| Inventar dados não encontrados | Usar apenas dados do DATA_LEDGER |
+| Pular a seção de impacto financeiro | É o gatilho mais forte do pitch |
+| Incluir Google Ads sem ter dados da conta | Seção é CONDICIONAL — só se aplicável |
+
+**ASSINATURA — PADRÃO:**
+```
+Abraço,
+[FULANO]
+FVS7 Growth
+```
+
+NÃO usar:
+- "FVS7 Marketing Digital"
+- "Equipe FVS7"
+- "FVS7 Digital"
+- Qualquer outra variação
 
 ### 36.4. REGRAS DE PREENCHIMENTO
 
@@ -1945,16 +1985,28 @@ FVS7 Marketing Digital
 
 ### 36.9. CHECKLIST DE VALIDAÇÃO DO PITCH
 
-Antes de salvar o TXT:
+⛔ **BLOQUEIO DE ENTREGA:** Se QUALQUER item abaixo estiver como ❌, o pitch NÃO deve ser salvo. Corrigir primeiro.
 
-- [ ] Usa nome da empresa (não pessoa)
-- [ ] Dados reais do DATA_LEDGER (não inventados)
-- [ ] Não menciona preço
-- [ ] Seção Google Ads condicional (só se aplicável)
-- [ ] Emojis nos problemas (⚠️) e perdas (💸📉🚨)
-- [ ] Impacto financeiro presente (mensal + anual)
-- [ ] CTA claro no final
-- [ ] Template fiel à estrutura 36.3
+**ANTES DE SALVAR O TXT, VERIFICAR:**
+
+- [ ] Usa nome da empresa (não pessoa) — ❌ SE usar nome de pessoa
+- [ ] Dados reais do DATA_LEDGER (não inventados) — ❌ SE inventar dado
+- [ ] Não menciona preço — ❌ SE mencionar R$ de serviço
+- [ ] Seção Google Ads condicional (só se aplicável) — ❌ SE incluir sem dados da conta
+- [ ] Emojis nos problemas (⚠️) e perdas (💸📉🚨) — ❌ SE faltar emoji
+- [ ] Impacto financeiro presente (mensal + anual) — ❌ SE faltar R$ mensal ou anual
+- [ ] CTA de orçamento no final (não de auditoria) — ❌ SE faltar CTA ou usar CTA de auditoria
+- [ ] Template fiel à estrutura 36.3 — ❌ SE desviar da estrutura
+- [ ] Assinatura é "FVS7 Growth" — ❌ SE usar outra variação
+- [ ] Sem seções extras (NOTAS, RESUMO, DADOS TÉCNICOS) — ❌ SE adicionar bloco extra
+- [ ] 5 problemas do site listados com ⚠️ — ❌ SE faltar problema ou emoji
+- [ ] Strikethrough no texto "Google Ads está pagando por isso" se não tiver Google Ads — ❌ SE manter frase sem ter Ads
+
+**SE TODOS OS ITENS FOREM ✅:**
+→ Salvar o TXT em ~/Documents/Auditoria/{dominio}-pitch.txt
+
+**SE ALGUM ITEM FOR ❌:**
+→ NÃO salvar. Corrigir o pitch antes.
 
 ---
 
@@ -2233,6 +2285,24 @@ Cada entrada do DATA_LEDGER deve conter:
 
 # 10. REGRAS DO DATA_LEDGER
 
+**REGRA ABSOLUTA:** Todo dado financeiro (ticket médio, perda mensal, perda anual, ROI) DEVE ter FONTE E PESQUISA. Nunca inventar valores.
+
+## 10.0. DADOS FINANCEIROS
+
+Todo dado financeiro deve ser classificado como "real" quando obtido de pesquisa, ou "estimativa" quando baseado em dados de mercado.
+
+**NUNCA usar:**
+- Valores "conservadores" sem fonte
+- Estimativas sem pesquisa
+- Números inventados para "parecer bom"
+
+**SEMPRE usar:**
+- Fonte citada (ex: "DentMap Itaim Bibi, 2026")
+- Pesquisa de preços reais
+- Faixas de mercado com referência
+- Badge `data-badge-real` para dados reais
+- Badge `data-badge-estimate` para estimativas
+
 ## 10.1. TIPO: REAL
 
 Um dado é classificado como "real" SOMENTE quando:
@@ -2296,7 +2366,7 @@ O DATA_LEDGER deve ser embutido no HTML do relatório como JSON:
     "client": "Nome do Cliente",
     "domain": "dominio.com.br",
     "audit_date": "YYYY-MM-DD",
-    "auditor": "FVS7 Marketing Digital",
+    "auditor": "FVS7 Growth",
     "version": "4.0"
   },
   "ledger": [
@@ -2779,14 +2849,32 @@ Cada etapa deve:
 
 # 32. TICKET MÉDIO
 
-O ticket médio NUNCA deve ser inventado.
+**REGRA ABSOLUTA:** O ticket médio NUNCA deve ser inventado.
+
+Todo dado financeiro deve ter FONTE E PESQUISA.
 
 Quando não disponível diretamente do cliente:
 
-1. Usar faixas de mercado
-2. Criar cenários por serviço
-3. Calcular ticket médio ponderado
-4. Explicitar que é estimativa de mercado
+1. **Pesquisar preços reais** — usar Google, sites de diretório (DentMap, Trinstal, etc.), tabelas de mercado, ou contatar a clínica
+2. **Usar faixas de mercado** — com fonte citada (ex: "DentMap Itaim Bibi, 2026: R$ 3.000-8.000/unidade")
+3. **Criar cenários por serviço** — com valores mínimos e máximos documentados
+4. **Calcular ticket médio ponderado** — baseado no mix de serviços da clínica
+5. **Explicitar que é estimativa** — com badge `data-badge-estimate` e fonte
+
+**NUNCA usar valores "conservadores" ou "estimados" sem fonte.**
+
+Exemplo correto:
+```
+Ticket médio: R$ 5.000
+Fonte: DentMap Itaim Bibi (2026) — implantes R$ 3.000-8.000/unidade
+Tipo: real
+```
+
+Exemplo INCORRETO:
+```
+Ticket médio: R$ 2.000
+Fonte: estimativa conservadora
+```
 
 ---
 
@@ -3086,7 +3174,39 @@ NUNCA apresentar estimativa como dado real.
   - Concorrente D: landing pages específicas por serviço
 - Badge: "ELES JÁ TÊM O QUE VOCÊ NÃO TEM"
 
-## 03 — VELOCIDADE — CADA SEGUNDO É UM CLIENTE (GATILHO: PERDA IMEDIATA)
+## 03 — ANÁLISE DE PALAVRAS-CHAVE: O QUE O GOOGLE MOSTRA SEUS CONCORRENTES (GATILHO: OPORTUNIDADE PERDIDA)
+
+⚠️ **OBRIGATÓRIO:** Esta seção DEVE usar dados reais do Google Ads Keyword Planner. NUNCA inventar volumes de busca.
+
+**Fonte de dados:** Google Ads Keyword Planner (MCP) ou OpenSEO.
+
+**Formato de apresentação:**
+
+```
+ANÁLISE DE PALAVRAS-CHAVE
+
+| Palavra-chave | Buscas/Mês | Competição | A Clínica Aparece? | Concorrentes |
+|---------------|------------|------------|-------------------|--------------|
+| [keyword_1]   | [volume]   | [nivel]    | ❌ Não            | [conc]       |
+| [keyword_2]   | [volume]   | [nivel]    | ⚠️ Fraco          | [conc]       |
+
+DEMANDA NÃO CAPTURADA: [X] buscas/mês sem resposta
+CADA BUSCA = UM POTENCIAL CLIENTE SENDO REDIRECIONADO PARA CONCORRENTES
+```
+
+**Regras:**
+- Usar dados reais do Google Ads Keyword Planner quando disponíveis
+- Quando o Keyword Planner retornar null/0, marcar como "N/D — sem dados"
+- NUNCA inventar volumes de busca
+- Conectar cada keyword a um serviço específico da clínica
+- Mostrar concorrentes que ranqueiam para cada keyword
+- Calcular impacto financeiro: buscas × CTR potencial × taxa de conversão × ticket médio
+
+**Badge:** "DEMANDA DE MERCADO SENDO CAPTURADA POR OUTROS"
+
+---
+
+## 04 — VELOCIDADE — CADA SEGUNDO É UM CLIENTE (GATILHO: PERDA IMEDIATA)
 - Card: "Seu site demora X segundos para abrir"
 - Bullet points:
   - 53% dos usuários saem após 3 segundos
@@ -3096,7 +3216,7 @@ NUNCA apresentar estimativa como dado real.
 - Comparação: Seu site vs benchmark
 - Badge: "PERDA DIÁRIA COMPROVADA"
 
-## 04 — MOBILE — SEU SITE É INÚTIL NO CELULAR? (GATILHO: INUTILIDADE)
+## 05 — MOBILE — SEU SITE É INÚTIL NO CELULAR? (GATILHO: INUTILIDADE)
 - Card: "70% das buscas são no celular"
 - Bullet points:
   - Layout quebrado em telas pequenas
@@ -3209,7 +3329,88 @@ NUNCA apresentar estimativa como dado real.
   - Email: [email]
   - Site: [URL]
 - Capacidades: SEO + Google Ads + CRO + Tracking + Performance
-- Badge: "AGENDE UMA CONVERSA AGORA"
+- Badge: "SOLICITE UM ORÇAMENTO AGORA"
+
+---
+
+## 12 — DETALHES TÉCNICOS (NO FINAL — PARA QUEM QUISER SABER MAIS)
+
+⚠️ **REGRA:** Detalhes técnicos DEVEM estar no FINAL do relatório, após a seção de CTA. A maioria dos clientes não entende linguagem técnica. O corpo principal do relatório deve usar linguagem simples e focar em consequências financeiras.
+
+**O que incluir nesta seção:**
+- Análise de tracking detalhada (GTM, GA4, etc.)
+- Problemas de schema
+- og:image quebrado
+- LGPD
+- Acessibilidade
+- Performance técnica
+- SEO técnico detalhado
+
+**O que NÃO incluir no corpo principal:**
+- Nomes de containers GTM
+- Detalhes de schema markup
+- Especificações de Core Web Vitals
+- Configurações de cache
+- Detalhes de CORS
+
+**Formato:** Lista técnica compacta, sem explicação extensa. Apenas dados para quem quiser validar.
+
+---
+
+## 13 — MÉTODO FVS7 — 5 ETAPAS (REFERÊNCIA OBRIGATÓRIA)
+
+⚠️ **OBRIGATÓRIO:** Todo relatório DEVE referenciar o Método FVS7 em https://fvs7.com.br/metodo/
+
+**As 5 etapas do Método FVS7:**
+
+1. **Diagnóstico e Estratégia** — Entender o negócio, público, concorrentes, objetivos
+2. **Criação da Landing Page** — Copy persuasiva, design otimizado, velocidade, compliance
+3. **Configuração do Google Ads** — Estrutura, keywords, segmentação, anúncios, orçamento
+4. **Lançamento e Tracking** — Conversão via WhatsApp/formulário, GA4, verificação final
+5. **Otimização Contínua** — Análise semanal, ajustes, testes A/B, relatórios
+
+**Conectar cada problema a uma etapa do método:**
+
+| Problema | Etapa FVS7 | Solução |
+|----------|------------|---------|
+| Site lento | Etapa 2 | Landing page com Astro |
+| Sem tracking | Etapa 4 | GA4 + GTM + Conversion Tracking |
+| Conversão baixa | Etapa 2 + 5 | CRO integrado + Otimização contínua |
+| Google Ads sem resultado | Etapa 3 + 5 | Estrutura otimizada + Análise semanal |
+
+---
+
+## 14 — COMPARATIVO: SEU AMBIENTE vs. TECNOLOGIA FVS7 (GATILHO DE COMPARAÇÃO)
+
+⚠️ **OBRIGATÓRIO:** Todo relatório DEVE conter uma tabela comparativa entre o ambiente atual do cliente e a tecnologia FVS7 (Astro).
+
+**Fonte:** https://fvs7.com.br/por-que-astro/
+
+**Formato de apresentação:**
+
+```
+COMPARATIVO: SEU AMBIENTE vs. TECNOLOGIA FVS7
+
+| Aspecto | Situação Atual | Com FVS7 (Método + Astro) |
+|---------|---------------|---------------------------|
+| Velocidade | [dado real] | < 1 segundo (Astro) |
+| PageSpeed Mobile | [dado real] | 95+ |
+| CPC Google Ads | [dado real] | Até 50% menor (Quality Score alto) |
+| Conversão | [dado real] | 3x mais (CRO integrado) |
+| SEO Orgânico | [dado real] | Core Web Vitals excelentes |
+| Tracking | [dado real] | GA4 + Ads + Meta Pixel completos |
+| Mobile | [dado real] | Mobile-first perfeito |
+```
+
+**Dados do Astro (https://fvs7.com.br/por-que-astro/):**
+- PageSpeed Mobile: 95+ (média FVS7)
+- PageSpeed Desktop: 99+
+- Tempo de carregamento: < 1 segundo
+- Peso da página: < 100 KB (vs 2-5 MB WordPress)
+- Quality Score: 8-10 (vs 3-5 WordPress)
+- CPC: até 50% menor com Quality Score alto
+- Conversão: 3x maior com página rápida
+- Core Web Vitals: LCP < 0,5s, INP < 50ms, CLS < 0,01
 
 ---
 

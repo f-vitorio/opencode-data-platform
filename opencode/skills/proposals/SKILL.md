@@ -167,36 +167,87 @@ Indicar claramente o caminho para contratação.
 
 ---
 
-# 6. INVESTIMENTO
+# 6. INVESTIMENTO — REGRA RÍGIDA DE PRECIFICAÇÃO
 
-A Skill de Propostas não deve inventar preços.
+## ⚠️ PROIBIÇÕES ABSOLUTAS
 
-Quando houver uma Skill de Pricing disponível:
+1. **NUNCA inventar preços** — todo valor DEVE ter fonte e justificativa
+2. **NUNCA copiar preço de outro cliente** — cada projeto tem escopo diferente
+3. **NUNCA definir preço sem benchmark de mercado** — pesquisar antes de cotar
+4. **NUNCA apresentar preço sem justificativa** — mostrar fonte e lógica
 
-- consultar o Pricing;
-- utilizar benchmark de mercado;
-- considerar complexidade;
-- considerar escopo;
-- considerar responsabilidade;
-- considerar prazo;
-- considerar risco;
-- considerar personalização;
-- considerar recorrência;
-- considerar posicionamento.
+## FLUXO OBRIGATÓRIO ANTES DE DEFINIR PREÇO
 
-A antiga tabela interna de preços da agência NÃO deve ser tratada como fonte obrigatória de preço.
+### Passo 1 — Perguntar o escopo
+Antes de qualquer cálculo, perguntar ao usuário:
+- Quantas páginas serão desenvolvidas?
+- Quais funcionalidades estão incluídas?
+- Qual o prazo desejado?
+- Existem integrações especiais?
 
-O objetivo é evitar subprecificação causada por decisões emocionais.
+### Passo 2 — Pesquisar benchmark
+Fazer pesquisa web para encontrar:
+- Preços de agências similares (mesmo nicho, mesma região)
+- Faixas de mercado por tipo de serviço
+- Valores por hora de freelancer vs agência
 
-Quando houver dúvida sobre preço:
+### Passo 3 — Apresentar benchmark ao usuário
+Mostrar os dados encontrados:
+- Faixa mínima de mercado
+- Faixa máxima de mercado
+- Faixa recomendada para o escopo
 
-apresentar:
+### Passo 4 — Definir preço com justificativa
+Só então calcular o valor com:
+- Fonte do benchmark (URL ou nome da fonte)
+- Data da pesquisa
+- Justificativa do posicionamento (por que esse valor dentro da faixa)
+- Separação clara: implantação vs recorrência
 
-- benchmark/faixa de mercado;
-- preço recomendado;
-- justificativa;
-- riscos de cobrar abaixo;
-- alternativas de escopo.
+## FONTES DE BENCHMARK PERMITIDAS
+
+1. **TABELA PADRÃO OBRIGATÓRIO** — `~/.agency/knowledge/BENCHMARK-PREÇOS.md`
+   - Consultar ANTES de qualquer pesquisa web
+   - Usar como ponto de partida
+   - Atualizar a cada 6 meses (revisão semestral)
+
+2. **Pesquisa web complementar** — quando:
+   - Serviço não está na tabela
+   - Escopo foge do padrão
+   - Tabela está defasada (> 6 meses)
+   - Cliente exige referência específica
+
+3. **Referência de agências concorrentes** — apenas para validação
+
+4. **Dados do usuário** — custo/hora, margem desejada
+
+## FORMATO DE APRESENTAÇÃO DE PREÇO
+
+Ao apresentar investimento, SEMPRE incluir:
+
+```
+**Benchmark de mercado:**
+- Faixa encontrada: R$ X a R$ Y (fonte: [nome], [data])
+- Posicionamento: [mínimo/intermediário/máximo]
+- Justificativa: [por que esse valor]
+
+**Investimento:**
+- Implantação: R$ Z
+- Mensal (se aplicável): R$ W/mês
+```
+
+## REGRA CONTRA SUBPRECIFICAÇÃO
+
+Nunca recomendar preço abaixo do benchmark apenas porque:
+- o usuário está precisando de dinheiro;
+- o cliente reclamou;
+- o usuário está inseguro;
+- o usuário quer fechar rapidamente;
+- existe medo de perder o cliente.
+
+Se o preço pretendido estiver significativamente abaixo do benchmark, alertar:
+
+> "Esse valor parece estar abaixo da referência de mercado para este escopo. Antes de apresentar ao cliente, recomendo revisar o posicionamento ou reduzir o escopo."
 
 ---
 
