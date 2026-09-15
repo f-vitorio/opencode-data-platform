@@ -236,6 +236,25 @@ Ao apresentar investimento, SEMPRE incluir:
 - Mensal (se aplicável): R$ W/mês
 ```
 
+## REGRA DE EXIBIÇÃO DE PREÇO — PROIBIÇÕES
+
+1. **NUNCA mostrar totais de contratos longos** — o valor total assusta o cliente
+   - Errado: "Gestão 6 meses = R$ 15.000"
+   - Certo: "Gestão: R$ 1.500/mês (contrato mínimo 6 meses)"
+
+2. **Mostrar apenas valores mensais** quando houver recorrência
+
+3. **Quando houver desconto por pacote** — SEMPRE mostrar:
+   - Preço original riscado (ex: ~~R$ 3.500~~)
+   - Preço com desconto destacado
+   - Economia em destaque (ex: "R$ 1.710 de economia")
+   - Nota explicativa do motivo do desconto
+
+4. **Separar claramente** valores de:
+   - Projeto único (implantação)
+   - Mensalidade (gestão recorrente)
+   - Verba de mídia (se aplicável)
+
 ## REGRA CONTRA SUBPRECIFICAÇÃO
 
 Nunca recomendar preço abaixo do benchmark apenas porque:
@@ -345,19 +364,28 @@ Separar:
 
 Quando a proposta envolver Google Ads, diferenciar claramente:
 
-HONORÁRIOS DA AGÊNCIA
+### Honorários de Gestão (Receita da Agência)
+- Valor mensal pelo serviço de gestão e otimização
+- Separar do investimento em mídia
 
-e
+### Verba de Mídia (Investimento do Cliente)
+- Valor que o cliente deposita diretamente no Google Ads
+- **NÃO é receita da agência** — nunca incluir como parte do faturamento
+- Indicar sempre verba mínima recomendada
+- Nota: "A verba pode ser ajustada conforme resultados"
 
-VERBA DE MÍDIA.
+**Formato obrigatório:**
+```
+Gestão Google Ads: R$ X/mês (honorários da agência)
+Verba de mídia mínima: R$ Y/mês (investimento no Google Ads)
+```
 
-Exemplo:
-
-> Gestão Google Ads: R$ X/mês
->
-> Investimento recomendado em mídia: R$ Y/mês
-
-A verba de mídia não deve ser apresentada como receita da agência.
+**Regras adicionais:**
+- Separar honorários de mídia em linhas distintas
+- Nunca somar honários + mídia como "investimento total"
+- Incluir nota sobre verba mínima ser ajustável
+- Para gestão de tráfego: contrato mínimo de 6 meses
+- Destacar que gestão inclui: otimização, relatórios, ajustes semanais, testes A/B
 
 ---
 
@@ -376,6 +404,32 @@ O trabalho inicial necessário para colocar a estrutura em funcionamento.
 O trabalho recorrente de acompanhamento e otimização.
 
 Nunca esconder implantação dentro de uma mensalidade sem explicar a estrutura.
+
+### Contratos de Gestão de Tráfego
+
+- **Mínimo de 6 meses** para gestão de tráfego (Google Ads, Meta Ads, etc.)
+- **Landing Page pode ser projeto único** ou bundeada com gestão
+- Separar claramente: projeto único vs. recorrência
+- Indicar condições de pagamento para cada tipo
+
+---
+
+# 13. DADOS DA AGÊNCIA — OBRIGATÓRIO
+
+**ANTES de criar qualquer proposta, consultar:**
+
+`~/.agency/knowledge/09-estrategia-agencia/fvs7-dados-agencia.md`
+
+**NUNCA inventar dados da agência.** Sempre usar a fonte oficial.
+
+Dados obrigatórios:
+- Nome da agência
+- CNPJ
+- Telefone / WhatsApp
+- Website
+- E-mail de contato
+
+Esses dados devem aparecer no cabeçalho e no rodapé da proposta.
 
 ---
 
@@ -520,6 +574,16 @@ Evitar:
 
 Antes de entregar uma proposta, verificar:
 
+[ ] Dados da agência conferem com AGENCY-KNOWLEDGE.md?
+
+[ ] Preços conferem com base de preços da agência?
+
+[ ] Totais de contratos longos NÃO estão aparecendo?
+
+[ ] Verba de mídia está separada dos honorários?
+
+[ ] Desconto (se haver) está apresentando economia?
+
 [ ] O problema do cliente está claro?
 
 [ ] A oportunidade está clara?
@@ -533,8 +597,6 @@ Antes de entregar uma proposta, verificar:
 [ ] O que não está incluído está claro?
 
 [ ] Implantação e recorrência estão separadas?
-
-[ ] Verba de mídia e honorários estão separados?
 
 [ ] O preço foi baseado em referência adequada?
 
@@ -562,7 +624,7 @@ CLIENTE CERTO
 +
 PROBLEMA CERTO
 +
-SOLUÇÃO CERTA
+SOLUÇÃO CERTO
 +
 ESCOPO CERTO
 +
@@ -584,7 +646,61 @@ Nunca sacrificar margem apenas para aumentar a chance de fechamento.
 
 ---
 
-# 22. INTEGRAÇÃO COM BANCO DE DADOS — OBRIGATÓRIO
+# 22. TEMPLATE HTML/PDF — REGRAS TÉCNICAS
+
+Ao gerar propostas em HTML para conversão em PDF:
+
+### Layout Compatível com Chrome Headless
+
+1. **Usar `display: table` em vez de flexbox ou grid** — esses últimos quebram no Chrome headless
+2. **Margens adequadas** — usar `@page { margin: 15mm 12mm; }` (não `margin: 0`)
+3. **Page breaks** — adicionar `page-break-before: always` em seções longas
+4. **Tabelas** — usar tabelas HTML reais para layout de colunas (não divs com flex)
+5. **Evitar-position: fixed** — não funciona bem em PDF
+6. **Cores e bordas** — manter simples; gradients funcionam, mas testar
+
+### Estrutura Obrigatória do HTML
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Proposta - [Cliente]</title>
+  <style>
+    @page { size: A4; margin: 15mm 12mm; }
+    /* Reset e estilos básicos */
+    /* Usar display: table para layout de colunas */
+    /* Evitar flexbox e grid */
+  </style>
+</head>
+<body>
+  <!-- HEADER: dados da agência + dados do cliente -->
+  <!-- CONTEÚDO: seções numeradas -->
+  <!-- FOOTER: dados da agência + rodapé -->
+</body>
+</html>
+```
+
+### Geração do PDF
+
+```bash
+google-chrome --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="caminho/saida.pdf" \
+  --print-to-pdf-no-header "caminho/proposta.html"
+```
+
+### Regras de Design para PDF
+
+- Tipografia mínima: 10px
+- Cores escuras para texto (#1a1a2e ou similar)
+- Backgrounds claros para seções
+- Bordas e box-shadows podem não renderizar perfeitamente
+- Imagens devem estar no diretório local (não URLs externas)
+
+---
+
+# 23. INTEGRAÇÃO COM BANCO DE DADOS — OBRIGATÓRIO
 
 ## ⚠️ FLUXO OBRIGATÓRIO
 

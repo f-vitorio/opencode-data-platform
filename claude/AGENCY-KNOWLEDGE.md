@@ -58,6 +58,20 @@ Quando houver conflito entre fontes, preservar o conflito e indicar qual fonte �
 
 Quando a informação puder ter mudado, pesquisar e validar antes de tratá-la como atual.
 
+## Google Business Profile (GBP)
+
+### FVS7 Growth
+- **Location ID:** 06199638568512164363
+- **URL:** https://business.google.com/
+- **Status:** Ativo
+- **Uso:** Gestão de posts, reviews, serviços e informações do negócio
+
+### Regras de uso
+- Usar o Location ID acima para todas as operações via API ou browser
+- Não criar novo GBP para a FVS7 (já existe)
+- Priorizar posts 3x/semana com conteúdo relevante
+- Responder reviews em até 24h
+
 ## Agency CLI
 
 Comandos principais:

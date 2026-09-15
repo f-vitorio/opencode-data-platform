@@ -69,6 +69,30 @@ Conta
 → Conversão
 → Resultado comercial
 
+## BIDDING
+
+### REGRA OBRIGATÓRIA — BIDDING INICIAL
+
+**Toda campanha NOVA deve começar com MAXIMIZE_CLICKS.**
+
+Nunca iniciar com MAXIMIZE_CONVERSIONS ou TARGET_CPA em conta sem histórico de conversões.
+
+Quando a conta tiver pelo menos 30 conversões nos últimos 30 dias, considerar migração para MAXIMIZE_CONVERSIONS.
+
+**Checklist antes de definir bidding:**
+- [ ] Conta tem histórico de conversões? (se não → MAXIMIZE_CLICKS)
+- [ ] Quantas conversões nos últimos 30 dias? (se < 30 → MAXIMIZE_CLICKS)
+- [ ] Campanha é nova? (se sim → MAXIMIZE_CLICKS)
+- [ ] Já existe pelo menos 1 campanha com conversões consistentes? (se não → MAXIMIZE_CLICKS)
+
+**Hierarquia de decisão:**
+1. Conta sem histórico → MAXIMIZE_CLICKS
+2. Conta com < 30 conversões/mês → MAXIMIZE_CLICKS
+3. Conta com ≥ 30 conversões/mês → MAXIMIZE_CONVERSIONS
+4. Conta com ≥ 50 conversões/mês + ROAS estável → TARGET_CPA ou TARGET_ROAS
+
+Nunca pular etapas. Bidding otimizado depende de dados suficientes.
+
 ## PALAVRAS-CHAVE
 
 Avaliar:
@@ -83,6 +107,26 @@ Avaliar:
 - estágio do funil.
 
 Não recomendar keywords apenas porque possuem alto volume.
+
+### REGRA OBRIGATÓRIA — RELEVÂNCIA LP ↔ KEYWORD
+
+Antes de criar ou ativar qualquer keyword, validar:
+
+1. **LP de destino do grupo de anúncios** → qual URL final?
+2. **Conteúdo da LP** → quais especialidades/nichos a página cobre explicitamente?
+3. **Keyword candidata** → menciona especialidade específica?
+
+**Se keyword menciona especialidade (ex: cardiologia, dentista, veterinária, estética, dermatologia, psicologia, nutricionista, fisioterapia, oftalmologia, ortopedia, ginecologia, odontologia) MAS a LP é genérica ("clínicas", "consultório"):**
+
+→ PROIBIDO adicionar. Pausar/remover ou mover para campanha com LP daquela especialidade.
+
+**Checklist antes de ativar keywords:**
+- [ ] LP mapeada para cada ad group
+- [ ] Cada keyword validada contra heading/copy/CTA da LP
+- [ ] Keywords de especialidade só em campanhas com LP daquela especialidade
+- [ ] Volume ≥ 50/mês verificado (Keyword Planner)
+- [ ] Negativas de especialidades aplicadas na campanha genérica
+- [ ] Intenção de busca alinhada com o estágio do funil
 
 ## ANÚNCIOS
 
