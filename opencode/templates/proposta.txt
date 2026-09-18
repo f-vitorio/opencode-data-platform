@@ -1,0 +1,10 @@
+Olá {nome}!
+
+Segue a proposta conforme combinamos.
+
+{mensagem}
+
+Qualquer dúvida, estou à disposição!
+
+Abraço,
+Vitorio

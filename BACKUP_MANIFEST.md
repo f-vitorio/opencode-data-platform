@@ -1,6 +1,6 @@
 # Backup Manifest
 
-- **Data:** 2026-09-14 23:00:01
+- **Data:** 2026-09-17 23:00:01
 - **Hostname:** VJFE59F11X-B0411H
 - **User:** fvitorio
 

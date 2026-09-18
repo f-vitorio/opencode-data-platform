@@ -1,0 +1,10 @@
+Olá {nome}!
+
+Aqui é o Vitorio da FVS7 Growth.
+
+{mensagem}
+
+Fico no aguardo!
+
+Abraço,
+Vitorio

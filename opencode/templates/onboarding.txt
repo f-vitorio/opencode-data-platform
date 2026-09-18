@@ -1,0 +1,10 @@
+Olá {nome}!
+
+Meu nome é Vitorio, da FVS7 Growth.
+
+{mensagem}
+
+Se tiver alguma dúvida, é só me chamar!
+
+Abraço,
+Vitorio
