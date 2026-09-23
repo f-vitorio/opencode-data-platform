@@ -43,31 +43,7 @@ O contrato deve proteger:
 
 ---
 
-# 2. REGRA DE INÍCIO DO TRABALHO
-
-Por padrão, o contrato deve estabelecer explicitamente que:
-
-> O início da execução dos serviços fica condicionado ao pagamento da entrada/sinal acordado entre as partes.
-
-A Skill DEVE perguntar ao usuário:
-
-> Qual percentual ou valor da entrada você deseja estabelecer para este contrato?
-
-Não assumir automaticamente 50%.
-
-O usuário pode definir:
-
-- percentual;
-- valor fixo;
-- pagamento integral;
-- parcelamento;
-- outra condição comercial.
-
-Se a entrada não tiver sido definida, NÃO inventar.
-
-Informar que a condição precisa ser definida antes da versão final do contrato.
-
----
+## 2. REGRA DE INÍCIO DO TRABALHO - OBRIGATÓRIAEsta é a regra mais crítica do contrato. NÃO há exceções.O contrato DEVE estabelecer explicitamente:> O INÍCIO DA EXECUÇÃO DOS SERVICOS FICARÁ CONDICIONADO AO PAGAMENTO DA ENTRADA/SINAL ACORDADO ENTRE AS PARTES.> Somente apos o recebimento integral da entrada ou da primeira parcela (no caso de parcelamento sem entrada, aprovado pelo cliente) e a confirmação de recebimento é que o trabalho da Agencia terá início.> O trabalho da Agencia NÃO SERÁ INICIADO sob hipótese alguma antes desta condição ser satisfeita.A Skill DEVE perguntar ao usuário:> Qual o valor ou percentual da entrada/sinal para liberação do inicio dos trabalhos?O usuário DEVE informar:- valor fixo da entrada; OU- valor da primeira parcela (no caso de parcelamento); OU- confirmação de pagamento integral antecipadoNÃO assumir automaticamente nenhum valor.NÃO proceder com o contrato se a entrada não for definida.NÃO inventar condições de entrada.Se a entrada não tiver sido definida, O CONTRATO NÃO SERÁ GERADO.Apresentar erro: "Condição de início não definida. Contrato não gerado até que entrada/sinal seja acordada."Essa regra é irrestrita. Qualquer tentativa de contornar ou iniciar trabalhos antes do pagamento será registrada como violação das regras da skill e reportada ao gestor.---
 
 # 3. DADOS DA CONTRATADA
 
@@ -644,3 +620,99 @@ psql "$DATABASE_URL" -c "
   );
 "
 ```
+
+
+
+## 27. REGRAS RIGIDAS DO SISTEMA - OBRIGATÓRIAS
+
+As seguintes regras sao obrigatorias e serao rigorosamente aplicadas. Violacoes repetidas (3x ou mais) resultam em:
+
+1. Marcacao do contrato como "REVISAR" e retorno ao agente responsavel
+2. Registro de violacao no historico do agente
+3. Possivel suspensao de habilidades de contrato ate que as retificacoes sejam feitas
+
+### Regras Istreitas (Nao Serao Comprometidas):
+
+1. CONDICAO PRECEDENTE INVIOLAVEL:
+   - O inicio do trabalho NAO ocorrerá sem o recebimento da entrada/sinal ou primeira parcela.
+   - Esta eh uma condicao de fato, nao sugerencia.
+   - Contrato nao sera gerado se entrada/sinal nao for definida.
+   - Sistema bloqueara criacao de contrato sem esta informacao.
+
+2. FORO CORRETO OBRIGATORIO:
+   - O contrato deve sempre especificar o foro da comarca onde a agencia tem sede (Sao Paulo - SP).
+   - Nao sera aceito foro de outras comarcas sem motivo juridico especifico documentado.
+   - Para agencia FVS7 (SP), o foro padrao eh: Foro da Comarca de Sao Paulo - SP, com renuncia a qualquer outro.
+
+3. SEM GARANTIA DE RESULTADOS (OBRIGATORIA):
+   - A clausula de resultados NUNCA sera omitida ou suavizada.
+   - A primeira frase da clausula de resultados deve ser: "A Agencia Nao garante resultados economicos..."
+   - Esta clausula deve ser a primeira da secao de resultados.
+   - Sistema bloqueara contrato sem esta clausula explicitamente escrita.
+
+4. RESPONSABILIDADE DE HOSPEDAGEM/DOMINIO:
+   - Quando o cliente ja possuir dominio e/ou hospedagem, isso deve estar explicitamente descrito como "responsabilidade do cliente".
+   - A agencia nao se responsabiliza por problemas decorrentes de hospedagem ou dominio do cliente.
+   - Issoira registrada uma clausula: "Exonera a Agencia de quaisquer problemas decorrentes da hospedagem, que eh de responsabilidade exclusiva do Cliente".
+
+5. DADOS DA AGENCIA COMPLETOS:
+   - O contrato deve sempre conter: Razao Social, CNPJ (XX.XXX.XXX/XXXX-XX), Endereco, Telefone, E-mail, Customer ID Google Ads.
+   - Sistema verificara se estes dados estao presentes antes de considerar contrato valido.
+   - Sem esses dados, contrato nao sera gerado.
+
+6. PORTUGUES CORRETO OBRIGATORIO:
+   - Todos os textos do contrato serao revisados quanto a gramatica e ortografia antes de finalizados.
+   - O uso de portugues deteriorado ou com erros visiveis sera motivo de retorno para revisao.
+   - Sistema tera um check-basico de portugues (pesquisa de termos comuns).
+
+7. ASSINATURAS E VALIDADE:
+   - Contrato so sera considerado assinado apos ambas as partes assinarem e datarem.
+   - Versoes "rascunho" sao internas e nao vinculantes.
+   - Sistema nao permitira que contratos com status "CONFIRMADO" ou "ASSINADO" sejam salvos se nao cumprirem as regras minimas.
+
+8. PAGAMENTO EM PIX:
+   - A forma preferencial da agencia e PIX.
+   - O contrato deve mencionar a chave PIX: cnpj@fvs7.com.br
+   - Se outro metodo for usado, deve ser justificado e aprovado previamente.
+
+10. PARCELAMENTO RIGIDO:
+    - Se houver parcelamento, as condiciones (quantidade, valor, datas) devem ser explicitas e rigidas.
+    - Sistema calculara o valor da multa/mora automaticamente: 2% + 1% ao mes (Art. 406 CC).
+    - Nao sera aceito parcelamento "solto" sem valores e datas definidas.
+
+11. LGPD:
+    - Contrato deve conter clausula sobre protecao de dados (Lei 13.709/2018).
+    - Sem esta clausula, contrato nao sera considerado completo.
+
+---
+
+**IMPORTANTE**: Qualquer agente que viole estas 11 regrasrigidas tera seus contratos marcados como 'REVISAR' e sera responsabilizado por retificar propriamente o contrato na proxima ocorrencia. O sistema coletara estas violations para relatorio mensal de qualidade.
+
+
+## 2. REGRA DE INÍCIO DO TRABALHO - OBRIGATÓRIA
+
+Esta é a regra mais crítica do contrato. NÃO há exceções.
+
+O contrato DEVE estabelecer explicitamente:
+
+> O INÍCIO DA EXECUÇÃO DOS SERVICOS FICARÁ CONDICIONADO AO PAGAMENTO DA ENTRADA/SINAL ACORDADO ENTRE AS PARTES.
+> Somente apos o recebimento integral da entrada ou da primeira parcela (no caso de parcelamento sem entrada, aprovado pelo cliente) e a confirmação de recebimento é que o trabalho da Agencia terá início.
+> O trabalho da Agencia NÃO SERÁ INICIADO sob hipótese alguma antes desta condição ser satisfeita.
+
+A Skill DEVE perguntar ao usuário:
+
+> Qual o valor ou percentual da entrada/sinal para liberação do inicio dos trabalhos?
+
+O usuário DEVE informar:
+- valor fixo da entrada; OU
+- valor da primeira parcela (no caso de parcelamento); OU
+- confirmação de pagamento integral antecipado
+
+NÃO assumir automaticamente nenhum valor.
+NÃO proceder com o contrato se a entrada não for definida.
+NÃO inventar condições de entrada.
+
+Se a entrada não tiver sido definida, O CONTRATO NÃO SERÁ GERADO.
+Apresentar erro: "Condição de início não definida. Contrato não gerado até que entrada/sinal seja acordada."
+
+Essa regra é irrestrita. Qualquer tentativa de contornar ou iniciar trabalhos antes do pagamento será registrada como violação das regras da skill e reportada ao gestor.
