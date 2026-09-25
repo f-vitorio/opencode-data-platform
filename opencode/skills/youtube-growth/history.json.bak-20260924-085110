@@ -9,7 +9,7 @@
     "youtube_url": "https://www.youtube.com/watch?v=ds8O7QfE6EA",
     "uploaded_at": "2026-09-20T13:27:30.514628",
     "scheduled_at": null,
-    "published_at": "2026-09-20T13:37:41",
+    "published_at": "2026-09-20T13:37:42.065707",
     "status": "published",
     "privacy_status": "public",
     "niche": "clinicas"
@@ -25,7 +25,7 @@
     "uploaded_at": "2026-09-20T12:43:20.753776",
     "scheduled_at": null,
     "published_at": "2026-09-20T12:43:43.894419",
-    "status": "deleted",
+    "status": "published",
     "privacy_status": "public",
     "niche": "marketing"
   },
@@ -38,10 +38,10 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=bEuVI7QifvI",
     "uploaded_at": "2026-09-20T16:12:01.410128",
-    "scheduled_at": null,
-    "published_at": "2026-09-22T03:00:16",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-22T06:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "marketing"
   },
   "clinicas_erro_landing_page": {
@@ -53,10 +53,10 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=sqW6e5YExUg",
     "uploaded_at": "2026-09-20T16:13:45.436431",
-    "scheduled_at": null,
-    "published_at": "2026-09-22T11:00:40",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-22T14:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "clinicas"
   },
   "antes_depois_lp": {
@@ -68,10 +68,10 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=Sfw0g0FHBUQ",
     "uploaded_at": "2026-09-20T16:15:22.503966",
-    "scheduled_at": null,
-    "published_at": "2026-09-22T19:00:29",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-22T22:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "landing_pages"
   },
   "framework_lp": {
@@ -83,10 +83,10 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=nUxgS1vdmsE",
     "uploaded_at": "2026-09-20T16:17:04.888150",
-    "scheduled_at": null,
-    "published_at": "2026-09-23T03:00:14",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-23T06:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "marketing"
   },
   "depoimento_clinicas_resultado": {
@@ -100,7 +100,7 @@
     "uploaded_at": "2026-09-20T16:18:08.370506",
     "scheduled_at": "2026-09-23T14:00:00",
     "published_at": null,
-    "status": "deleted",
+    "status": "scheduled",
     "privacy_status": "private",
     "niche": "clinicas"
   },
@@ -113,10 +113,10 @@
     "hashtags": "#Advogado #MarketingJur\u00eddico #ClientesPremium #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=kif96EjtCN8",
     "uploaded_at": "2026-09-20T19:22:54.493272",
-    "scheduled_at": null,
-    "published_at": "2026-09-23T15:00:29",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-23T18:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "advogados"
   },
   "video_contadores": {
@@ -128,10 +128,10 @@
     "hashtags": "#Contador #Contabilidade #LeadsPJ #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=8VzhZhwvqFw",
     "uploaded_at": "2026-09-20T19:25:41.174242",
-    "scheduled_at": null,
-    "published_at": "2026-09-24T03:00:22",
-    "status": "published",
-    "privacy_status": "public",
+    "scheduled_at": "2026-09-24T06:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private",
     "niche": "contadores"
   },
   "video_tracking": {
@@ -143,9 +143,9 @@
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=Mp6LesigixA",
     "uploaded_at": "2026-09-20T19:28:33.796415",
-    "scheduled_at": "2026-09-25T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "tracking",
     "replaced_by": "KiDBeTL4p9g",
@@ -160,9 +160,9 @@
     "hashtags": "#Imobili\u00e1ria #GoogleMeuNeg\u00f3cio #Vendas #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=cAt1dH4Fsyg",
     "uploaded_at": "2026-09-20T19:31:14.966090",
-    "scheduled_at": "2026-09-26T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "imobiliarias",
     "replaced_by": "iGC3h_ISKaA",
@@ -194,9 +194,9 @@
     "hashtags": "#Est\u00e9tica #Beleza #Agendamento #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=XwoKf6_ZeqY",
     "uploaded_at": "2026-09-20T19:44:59.402827",
-    "scheduled_at": "2026-09-28T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "esteticistas",
     "replaced_by": "B0QaHuWQLOs",
@@ -211,9 +211,9 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=ux6pZyLwHhc",
     "uploaded_at": "2026-09-20T19:47:23.432255",
-    "scheduled_at": "2026-09-29T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "landing_pages",
     "replaced_by": "WVPyhmqFNkg",
@@ -228,9 +228,9 @@
     "hashtags": "#Fisioterapia #Pacientes #Cl\u00ednica #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=4F4Enr6jvkg",
     "uploaded_at": "2026-09-20T19:50:09.114016",
-    "scheduled_at": "2026-09-30T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "fisioterapeutas",
     "replaced_by": "8A8YNLEvoxE",
@@ -245,9 +245,9 @@
     "hashtags": "#Psicologia #Terapia #Pacientes #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=8MCgs3uPT6U",
     "uploaded_at": "2026-09-20T19:52:54.797248",
-    "scheduled_at": "2026-10-01T15:00:00",
+    "scheduled_at": null,
     "published_at": null,
-    "status": "scheduled",
+    "status": "uploaded",
     "privacy_status": "private",
     "niche": "psicologos",
     "replaced_by": "r-ZIHnejd7w",
@@ -282,14 +282,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=0uLgfmxaECM"
+    "published_at": null
   },
   "outubro_02_landing_page_segredo": {
     "video_id": "Fy1xYBekxqY",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_02_landing_page_segredo.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_02_landing_page_segredo.txt",
-    "title": "P\u00e1ginas que Convertem 6x: O Que Elas T\u00eam em Comum",
+    "title": "Landing Page: P\u00e1ginas que Convertem 6x Mais (Outubro)",
     "scheduled": "2026-10-01T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -297,8 +296,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-01T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=Fy1xYBekxqY"
+    "published_at": null
   },
   "outubro_03_trafego_pago_leads": {
     "video_id": "FsMNr3fISq4",
@@ -312,14 +310,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=FsMNr3fISq4"
+    "published_at": null
   },
   "outubro_04_clinicas_50_agendamentos": {
     "video_id": "Vn0N-V7f-3U",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_04_clinicas_50_agendamentos.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_04_clinicas_50_agendamentos.txt",
-    "title": "50 Agendamentos/M\u00eas: O M\u00e9todo que Enche a Agenda",
+    "title": "Cl\u00ednicas: Como Encher a Agenda com 50+ Agendamentos/M\u00eas",
     "scheduled": "2026-10-02T18:00:00",
     "status": "scheduled",
     "niche": "clinicas",
@@ -327,8 +324,7 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-02T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=Vn0N-V7f-3U"
+    "published_at": null
   },
   "outubro_05_marketing_juridico": {
     "video_id": "JTiHP2bf-q0",
@@ -342,14 +338,13 @@
     "hashtags": "#Advogado #MarketingJur\u00eddico #ClientesPremium #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=JTiHP2bf-q0"
+    "published_at": null
   },
   "outubro_06_contadores_3x_leads": {
     "video_id": "lzVs8fsibcs",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_06_contadores_3x_leads.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_06_contadores_3x_leads.txt",
-    "title": "3x Mais Leads PJ: Diagn\u00f3stico Gr\u00e1tis que Capta",
+    "title": "Contadores: 3x Leads PJ + Diagn\u00f3stico (Outubro)",
     "scheduled": "2026-10-03T18:00:00",
     "status": "scheduled",
     "niche": "contadores",
@@ -357,8 +352,7 @@
     "hashtags": "#Contador #Contabilidade #LeadsPJ #FVS7 #Shorts",
     "scheduled_at": "2026-10-03T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=lzVs8fsibcs"
+    "published_at": null
   },
   "outubro_07_google_ads_cpc_alto": {
     "video_id": "TcLHvAMqpZY",
@@ -372,14 +366,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=TcLHvAMqpZY"
+    "published_at": null
   },
   "outubro_08_lp_conversao_6x": {
     "video_id": "yYp_n4Xbes4",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_08_lp_conversao_6x.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_08_lp_conversao_6x.txt",
-    "title": "Convers\u00e3o 6x: O Que Mudamos na Landing Page",
+    "title": "Landing Page: Como Aumentamos Convers\u00e3o em 6x",
     "scheduled": "2026-10-04T18:00:00",
     "status": "scheduled",
     "niche": "tracking",
@@ -387,8 +380,7 @@
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "scheduled_at": "2026-10-04T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=yYp_n4Xbes4"
+    "published_at": null
   },
   "outubro_09_rastreamento_conversao": {
     "video_id": "E5Y1vZVinO4",
@@ -402,14 +394,13 @@
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=E5Y1vZVinO4"
+    "published_at": null
   },
   "outubro_10_clinicas_erro_perde": {
     "video_id": "hzh2kTGIwJA",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_10_clinicas_erro_perde.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_10_clinicas_erro_perde.txt",
-    "title": "Cl\u00ednicas Perdem Pacientes: Esse Erro \u00e9 Di\u00e1rio",
+    "title": "Cl\u00ednicas: Pacientes Perdidos Todo Dia (Erro Comum)",
     "scheduled": "2026-10-05T18:00:00",
     "status": "scheduled",
     "niche": "clinicas",
@@ -417,8 +408,7 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-05T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=hzh2kTGIwJA"
+    "published_at": null
   },
   "outubro_11_google_ads_reduzir_cpc": {
     "video_id": "KULpdQ9m6xE",
@@ -432,14 +422,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=KULpdQ9m6xE"
+    "published_at": null
   },
   "outubro_12_fisioterapia_agenda": {
     "video_id": "1AOpexUqNs0",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_12_fisioterapia_agenda.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_12_fisioterapia_agenda.txt",
-    "title": "Fisioterapeutas: Agenda Cheia em 30 Dias (M\u00e9todo)",
+    "title": "Fisioterapeutas: M\u00e9todo para Agenda em 30 Dias",
     "scheduled": "2026-10-06T18:00:00",
     "status": "scheduled",
     "niche": "fisioterapeutas",
@@ -447,8 +436,7 @@
     "hashtags": "#Fisioterapia #Pacientes #Cl\u00ednica #FVS7 #Shorts",
     "scheduled_at": "2026-10-06T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=1AOpexUqNs0"
+    "published_at": null
   },
   "outubro_13_lp_antes_depois": {
     "video_id": "UnCQad3U0QI",
@@ -462,14 +450,13 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=UnCQad3U0QI"
+    "published_at": null
   },
   "outubro_14_psicologia_capta\u00e7\u00e3o": {
     "video_id": "DIVc777Wuhg",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_14_psicologia_capta\u00e7\u00e3o.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_14_psicologia_capta\u00e7\u00e3o.txt",
-    "title": "Capta\u00e7\u00e3o \u00c9tica para Psic\u00f3logos: O Caminho Certo",
+    "title": "Psic\u00f3logos: Marketing \u00c9tico para Consult\u00f3rio",
     "scheduled": "2026-10-07T18:00:00",
     "status": "scheduled",
     "niche": "psicologos",
@@ -477,8 +464,7 @@
     "hashtags": "#Psicologia #Terapia #Pacientes #FVS7 #Shorts",
     "scheduled_at": "2026-10-07T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=DIVc777Wuhg"
+    "published_at": null
   },
   "outubro_15_google_ads_5_dicas_roi": {
     "video_id": "g-vckNe5r8o",
@@ -492,14 +478,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=g-vckNe5r8o"
+    "published_at": null
   },
   "outubro_16_lp_formulario_converte": {
     "video_id": "o2kDyCQRJLU",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_16_lp_formulario_converte.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_16_lp_formulario_converte.txt",
-    "title": "Formul\u00e1rio Perde Leads? 3 Princ\u00edpios que Convertem",
+    "title": "Landing Page: Formul\u00e1rios que Convertem - 3 Princ\u00edpios",
     "scheduled": "2026-10-08T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -507,8 +492,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-08T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=o2kDyCQRJLU"
+    "published_at": null
   },
   "outubro_17_trafego_pago_guia": {
     "video_id": "yLyVwASnjqg",
@@ -522,14 +506,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=yLyVwASnjqg"
+    "published_at": null
   },
   "outubro_18_imobiliaria_venda_locacao": {
     "video_id": "Ha32HDYWhYw",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_18_imobiliaria_venda_locacao.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_18_imobiliaria_venda_locacao.txt",
-    "title": "Imobili\u00e1rias: P\u00e1gina Pr\u00f3pria = Mais Vendas",
+    "title": "Imobili\u00e1rias: Vender e Alugar com P\u00e1gina Pr\u00f3pria",
     "scheduled": "2026-10-09T18:00:00",
     "status": "scheduled",
     "niche": "imobiliarias",
@@ -537,8 +520,7 @@
     "hashtags": "#Imobili\u00e1ria #GoogleMeuNeg\u00f3cio #Vendas #FVS7 #Shorts",
     "scheduled_at": "2026-10-09T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=Ha32HDYWhYw"
+    "published_at": null
   },
   "outubro_19_google_ads_copy_cpc": {
     "video_id": "sdHuAT7vDqc",
@@ -552,14 +534,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=sdHuAT7vDqc"
+    "published_at": null
   },
   "outubro_20_estetica_agenda_lotada": {
     "video_id": "TI-iFAZVk_E",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_20_estetica_agenda_lotada.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_20_estetica_agenda_lotada.txt",
-    "title": "50 Procedimentos/M\u00eas: Lotar a Agenda de Est\u00e9tica",
+    "title": "Esteticistas: 50+ Procedimentos/M\u00eas na Agenda",
     "scheduled": "2026-10-10T18:00:00",
     "status": "scheduled",
     "niche": "esteticistas",
@@ -567,8 +548,7 @@
     "hashtags": "#Est\u00e9tica #Beleza #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-10T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=TI-iFAZVk_E"
+    "published_at": null
   },
   "outubro_21_lp_3_erros_orcamento": {
     "video_id": "SNOZj1G6Lak",
@@ -582,14 +562,13 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=SNOZj1G6Lak"
+    "published_at": null
   },
   "outubro_22_negocios_locais_7_dias": {
     "video_id": "jgun_Cv8GFk",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_22_negocios_locais_7_dias.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_22_negocios_locais_7_dias.txt",
-    "title": "7 Dias para Clientes Locais: Otimize seu Google",
+    "title": "Neg\u00f3cio Local: Clientes Locais em 7 Dias (GMB)",
     "scheduled": "2026-10-11T18:00:00",
     "status": "scheduled",
     "niche": "negocios_locais",
@@ -597,8 +576,7 @@
     "hashtags": "#Neg\u00f3cioLocal #GoogleMeuNeg\u00f3cio #ClientesDaRua #FVS7 #Shorts",
     "scheduled_at": "2026-10-11T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=jgun_Cv8GFk"
+    "published_at": null
   },
   "outubro_23_google_ads_segmentacao": {
     "video_id": "QKGhztZj3e0",
@@ -606,11 +584,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_23_google_ads_segmentacao.txt",
     "title": "Google Ads: Segmenta\u00e7\u00e3o Avan\u00e7ada que Ningu\u00e9m Usa",
     "scheduled": "2026-10-12T06:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "marketing",
     "description": "Estrat\u00e9gia Google Ads para leads qualificados e CPA reduzido. Metodologia validada em 150+ projetos.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#GoogleAds #Tr\u00e1fegoPago #MarketingDigital #FVS7 #Shorts",
-    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=QKGhztZj3e0"
+    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts"
   },
   "outubro_24_clinicas_conversao_5x": {
     "video_id": "L59Hk3s6EqY",
@@ -618,11 +595,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_24_clinicas_conversao_5x.txt",
     "title": "Cl\u00ednicas: Landing Page que Aumenta Convers\u00e3o em 5x",
     "scheduled": "2026-10-12T18:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "clinicas",
     "description": "Marketing digital para cl\u00ednicas: Google Ads + LP por procedimento + agendamento automatizado.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#Cl\u00ednicas #MarketingM\u00e9dico #Agendamento #FVS7 #Shorts",
-    "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=L59Hk3s6EqY"
+    "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts"
   },
   "outubro_25_trafego_pago_500": {
     "video_id": "bUF6msnAPnE",
@@ -630,11 +606,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_25_trafego_pago_500.txt",
     "title": "Tr\u00e1fego Pago: Como Escalar de 0 a 500 Leads/M\u00eas",
     "scheduled": "2026-10-13T06:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "marketing",
     "description": "Estrat\u00e9gia Google Ads para leads qualificados e CPA reduzido. Metodologia validada em 150+ projetos.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#GoogleAds #Tr\u00e1fegoPago #MarketingDigital #FVS7 #Shorts",
-    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=bUF6msnAPnE"
+    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts"
   },
   "outubro_26_google_ads_keyword_research": {
     "video_id": "s_ykiN87VCQ",
@@ -642,11 +617,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_26_google_ads_keyword_research.txt",
     "title": "Google Ads: Pesquisa de Palavras-chave que Converte",
     "scheduled": "2026-10-14T06:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "marketing",
     "description": "Estrat\u00e9gia Google Ads para leads qualificados e CPA reduzido. Metodologia validada em 150+ projetos.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#GoogleAds #Tr\u00e1fegoPago #MarketingDigital #FVS7 #Shorts",
-    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=s_ykiN87VCQ"
+    "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts"
   },
   "outubro_27_contadores_3x_leads_pj": {
     "video_id": "2XpUDk3tgPA",
@@ -654,11 +628,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_27_contadores_3x_leads_pj.txt",
     "title": "Contadores: 3x Leads PJ - Estrat\u00e9gia Tribut\u00e1ria",
     "scheduled": "2026-10-14T18:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "contadores",
     "description": "Marketing cont\u00e1bil: diagn\u00f3stico gr\u00e1tis como isca + prova social = 3x leads PJ. Estrat\u00e9gia validada.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#Contabilidade #LeadsPJ #MarketingCont\u00e1bil #FVS7 #Shorts",
-    "hashtags": "#Contador #Contabilidade #LeadsPJ #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=2XpUDk3tgPA"
+    "hashtags": "#Contador #Contabilidade #LeadsPJ #FVS7 #Shorts"
   },
   "outubro_28_lp_headline_converte": {
     "video_id": "Ec_OMWPC8bI",
@@ -666,11 +639,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_28_lp_headline_converte.txt",
     "title": "Landing Page: Headlines que Vendem - Teste A/B Real",
     "scheduled": "2026-10-15T06:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "landing_pages",
     "description": "Otimiza\u00e7\u00e3o avan\u00e7ada de Landing Page: headline, prova social, CTA, velocidade. Testado e validado.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#LandingPage #CRO #Convers\u00e3o #FVS7 #Shorts",
-    "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=Ec_OMWPC8bI"
+    "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts"
   },
   "outubro_29_fisioterapia_pacientes_particulares": {
     "video_id": "08bT_cstHSI",
@@ -678,11 +650,10 @@
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_29_fisioterapia_pacientes_particulares.txt",
     "title": "Fisioterapeutas: Pacientes Particulares vs Conv\u00eanios",
     "scheduled": "2026-10-15T18:00:00",
-    "status": "deleted",
+    "status": "scheduled",
     "niche": "fisioterapeutas",
     "description": "Capta\u00e7\u00e3o pacientes particulares: p\u00e1gina por especialidade + ads por patologia. Agenda cheia.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico: https://fvs7.com.br/diagnostico-gratuito\n\n#Fisioterapia #PacientesParticulares #Cl\u00ednica #FVS7 #Shorts",
-    "hashtags": "#Fisioterapia #Pacientes #Cl\u00ednica #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=08bT_cstHSI"
+    "hashtags": "#Fisioterapia #Pacientes #Cl\u00ednica #FVS7 #Shorts"
   },
   "outubro_30_google_ads_vs_facebook": {
     "video_id": "UhEAIsiXEyc",
@@ -696,14 +667,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=UhEAIsiXEyc"
+    "published_at": null
   },
   "outubro_31_clinicas_depoimento_real": {
     "video_id": "l6aDZgqsmlU",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_31_clinicas_depoimento_real.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_31_clinicas_depoimento_real.txt",
-    "title": "De Agenda Vazia a Lotada: Case Real de Cl\u00ednica",
+    "title": "Cl\u00ednicas: De Vazia a Lotada - Depoimento (Outubro)",
     "scheduled": "2026-10-16T18:00:00",
     "status": "scheduled",
     "niche": "clinicas",
@@ -711,8 +681,7 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-16T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=l6aDZgqsmlU"
+    "published_at": null
   },
   "outubro_32_trafego_pago_funil_completo": {
     "video_id": "StigRgmGyO8",
@@ -726,14 +695,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=StigRgmGyO8"
+    "published_at": null
   },
   "outubro_33_google_ads_qualidade": {
     "video_id": "LwTUFYEL_pA",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_33_google_ads_qualidade.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_33_google_ads_qualidade.txt",
-    "title": "Quality Score 10/10: Pague Menos por Clique",
+    "title": "Google Ads: Quality Score 10/10 - Como Alcan\u00e7ar",
     "scheduled": "2026-10-17T18:00:00",
     "status": "scheduled",
     "niche": "marketing",
@@ -741,8 +709,7 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": "2026-10-17T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=LwTUFYEL_pA"
+    "published_at": null
   },
   "outubro_34_imobiliaria_leads_compradores": {
     "video_id": "TpFNCZBx04Y",
@@ -756,14 +723,13 @@
     "hashtags": "#Imobili\u00e1ria #GoogleMeuNeg\u00f3cio #Vendas #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=TpFNCZBx04Y"
+    "published_at": null
   },
   "outubro_35_lp_velocidade_conversao": {
     "video_id": "Fq81qncfSSM",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_35_lp_velocidade_conversao.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_35_lp_velocidade_conversao.txt",
-    "title": "LCP de 1 Segundo: P\u00e1ginas R\u00e1pidas Convertem Mais",
+    "title": "Landing Page: LCP at\u00e9 1s = Mais Convers\u00e3o",
     "scheduled": "2026-10-18T18:00:00",
     "status": "scheduled",
     "niche": "tracking",
@@ -771,8 +737,7 @@
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "scheduled_at": "2026-10-18T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=Fq81qncfSSM"
+    "published_at": null
   },
   "outubro_36_estetica_procedimentos": {
     "video_id": "E0vGMqpYlAs",
@@ -786,14 +751,13 @@
     "hashtags": "#Est\u00e9tica #Beleza #Agendamento #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=E0vGMqpYlAs"
+    "published_at": null
   },
   "outubro_37_google_ads_erros_iniciantes": {
     "video_id": "Yaezel11-6w",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_37_google_ads_erros_iniciantes.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_37_google_ads_erros_iniciantes.txt",
-    "title": "Or\u00e7amento Queima sem Resultado? Erros de Iniciante",
+    "title": "Google Ads: Erros de Iniciante que Queimam Budget",
     "scheduled": "2026-10-19T18:00:00",
     "status": "scheduled",
     "niche": "marketing",
@@ -801,8 +765,7 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": "2026-10-19T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=Yaezel11-6w"
+    "published_at": null
   },
   "outubro_38_psicologia_agenda_cheia": {
     "video_id": "wtUOw5eh5B8",
@@ -816,14 +779,13 @@
     "hashtags": "#Psicologia #Terapia #Pacientes #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=wtUOw5eh5B8"
+    "published_at": null
   },
   "outubro_39_lp_ab_test": {
     "video_id": "RCQ32O7sxag",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_39_lp_ab_test.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_39_lp_ab_test.txt",
-    "title": "A/B Test na LP: O Que Testar Primeiro",
+    "title": "Landing Page: A/B Test - O que Testar Primeiro",
     "scheduled": "2026-10-20T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -831,8 +793,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-20T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=RCQ32O7sxag"
+    "published_at": null
   },
   "outubro_40_google_ads_roas_5x": {
     "video_id": "I8wTjcmX9Co",
@@ -846,14 +807,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=I8wTjcmX9Co"
+    "published_at": null
   },
   "outubro_41_lp_cta_resiste": {
     "video_id": "OTkXCK4Dt6c",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_41_lp_cta_resiste.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_41_lp_cta_resiste.txt",
-    "title": "CTA some no Scroll? 3 Bot\u00f5es que Param o Dedo",
+    "title": "Landing Page: CTAs que Resistem ao Scroll",
     "scheduled": "2026-10-21T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -861,8 +821,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-21T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=OTkXCK4Dt6c"
+    "published_at": null
   },
   "outubro_42_trafego_pago_escala": {
     "video_id": "3mnaU3ghvYE",
@@ -876,14 +835,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=3mnaU3ghvYE"
+    "published_at": null
   },
   "outubro_43_clinicas_whatsapp": {
     "video_id": "KXjyh3uP4Io",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_43_clinicas_whatsapp.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_43_clinicas_whatsapp.txt",
-    "title": "Agendamento no WhatsApp: Automatize e Encha a Agenda",
+    "title": "Cl\u00ednicas: Agendamento via WhatsApp - Automa\u00e7\u00e3o Completa",
     "scheduled": "2026-10-22T18:00:00",
     "status": "scheduled",
     "niche": "clinicas",
@@ -891,8 +849,7 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-22T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=KXjyh3uP4Io"
+    "published_at": null
   },
   "outubro_44_google_ads_smart_bidding": {
     "video_id": "jrTE2IGXqt8",
@@ -906,14 +863,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=jrTE2IGXqt8"
+    "published_at": null
   },
   "outubro_45_marketing_juridico_etico": {
     "video_id": "zAGH2YF3Hhs",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_45_marketing_juridico_etico.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_45_marketing_juridico_etico.txt",
-    "title": "Advogados: Captar Clientes sem Quebrar a OAB",
+    "title": "Advogados: Marketing \u00c9tico - OAB Compliant",
     "scheduled": "2026-10-23T18:00:00",
     "status": "scheduled",
     "niche": "advogados",
@@ -921,8 +877,7 @@
     "hashtags": "#Advogado #MarketingJur\u00eddico #ClientesPremium #FVS7 #Shorts",
     "scheduled_at": "2026-10-23T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=zAGH2YF3Hhs"
+    "published_at": null
   },
   "outubro_46_lp_prova_social": {
     "video_id": "ksQVe-kLiP8",
@@ -936,14 +891,13 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=ksQVe-kLiP8"
+    "published_at": null
   },
   "outubro_47_contadores_diagnostico": {
     "video_id": "grL6Czd_io0",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_47_contadores_diagnostico.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_47_contadores_diagnostico.txt",
-    "title": "Diagn\u00f3stico Gr\u00e1tis: Capte 3x Mais Leads PJ",
+    "title": "Contadores: Diagn\u00f3stico Gr\u00e1tis como Isca de Leads",
     "scheduled": "2026-10-24T18:00:00",
     "status": "scheduled",
     "niche": "contadores",
@@ -951,8 +905,7 @@
     "hashtags": "#Contador #Contabilidade #LeadsPJ #FVS7 #Shorts",
     "scheduled_at": "2026-10-24T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=grL6Czd_io0"
+    "published_at": null
   },
   "outubro_48_google_ads_relatorio_conversao": {
     "video_id": "oBDqOPI65Wk",
@@ -966,14 +919,13 @@
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=oBDqOPI65Wk"
+    "published_at": null
   },
   "outubro_49_fisioterapia_resultados_30_dias": {
     "video_id": "JBDtsLWsFyw",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_49_fisioterapia_resultados_30_dias.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_49_fisioterapia_resultados_30_dias.txt",
-    "title": "Fisioterapia: Resultados Reais em 30 Dias (Case)",
+    "title": "Fisioterapeutas: Resultados Reais em 30 Dias",
     "scheduled": "2026-10-25T18:00:00",
     "status": "scheduled",
     "niche": "fisioterapeutas",
@@ -981,8 +933,7 @@
     "hashtags": "#Fisioterapia #Pacientes #Cl\u00ednica #FVS7 #Shorts",
     "scheduled_at": "2026-10-25T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=JBDtsLWsFyw"
+    "published_at": null
   },
   "outubro_50_psicologia_sem_etica": {
     "video_id": "ATxhsxkkcxk",
@@ -996,14 +947,13 @@
     "hashtags": "#Psicologia #Terapia #Pacientes #FVS7 #Shorts",
     "scheduled_at": null,
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=ATxhsxkkcxk"
+    "published_at": null
   },
   "outubro_51_lp_mobile_first": {
     "video_id": "qmdEBzBMSsQ",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_51_lp_mobile_first.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_51_lp_mobile_first.txt",
-    "title": "95% do Tr\u00e1fego \u00e9 Celular: Sua LP Est\u00e1 Pronta?",
+    "title": "Landing Page: Mobile First - 95% do Tr\u00e1fego \u00e9 Celular",
     "scheduled": "2026-10-26T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -1011,8 +961,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-26T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=qmdEBzBMSsQ"
+    "published_at": null
   },
   "outubro_52_google_ads_previsao": {
     "video_id": "6WqLTiOseOI",
@@ -1026,14 +975,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=6WqLTiOseOI"
+    "privacy_status": "private"
   },
   "outubro_53_imobiliaria_lancamentos": {
     "video_id": "AH8DQhw7Pnw",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_53_imobiliaria_lancamentos.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_53_imobiliaria_lancamentos.txt",
-    "title": "Na Planta Sem Comprador? Falta Isso na Sua P\u00e1gina",
+    "title": "Imobili\u00e1rias: Lan\u00e7amentos - Como Vender na Planta",
     "scheduled": "2026-10-27T18:00:00",
     "status": "scheduled",
     "niche": "imobiliarias",
@@ -1041,8 +989,7 @@
     "hashtags": "#Imobili\u00e1ria #GoogleMeuNeg\u00f3cio #Vendas #FVS7 #Shorts",
     "scheduled_at": "2026-10-27T21:00:00",
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=AH8DQhw7Pnw"
+    "privacy_status": "private"
   },
   "outubro_54_google_ads_black_friday": {
     "video_id": "NO7TjtjNZ7o",
@@ -1056,14 +1003,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=NO7TjtjNZ7o"
+    "privacy_status": "private"
   },
   "outubro_55_lp_oferta_irresistivel": {
     "video_id": "FXNPSdZy14U",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_55_lp_oferta_irresistivel.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_55_lp_oferta_irresistivel.txt",
-    "title": "Oferta Irresist\u00edvel: 3 Elementos que Vendem Sozinhos",
+    "title": "Landing Page: Como Criar Ofertas Irresist\u00edveis",
     "scheduled": "2026-10-28T18:00:00",
     "status": "scheduled",
     "niche": "landing_pages",
@@ -1071,8 +1017,7 @@
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
     "scheduled_at": "2026-10-28T21:00:00",
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=FXNPSdZy14U"
+    "privacy_status": "private"
   },
   "outubro_56_trafego_escala_agressiva": {
     "video_id": "17RGwG0rzvc",
@@ -1086,14 +1031,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=17RGwG0rzvc"
+    "privacy_status": "private"
   },
   "outubro_57_estetica_black_friday": {
     "video_id": "pwXnJ6eRipc",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_57_estetica_black_friday.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_57_estetica_black_friday.txt",
-    "title": "Black Friday na Est\u00e9tica: Lotar a Agenda em 1 Campanha",
+    "title": "Esteticistas: Black Friday - Como Lotar a Agenda",
     "scheduled": "2026-10-29T18:00:00",
     "status": "scheduled",
     "niche": "esteticistas",
@@ -1101,8 +1045,7 @@
     "hashtags": "#Est\u00e9tica #Beleza #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-29T21:00:00",
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=pwXnJ6eRipc"
+    "privacy_status": "private"
   },
   "outubro_58_google_ads_copy_alta_conversao": {
     "video_id": "pigLoWDe0gg",
@@ -1116,14 +1059,13 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": null,
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=pigLoWDe0gg"
+    "privacy_status": "private"
   },
   "outubro_59_clinicas_promocao_outubro": {
     "video_id": "4VCwI9frZxU",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_59_clinicas_promocao_outubro.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_59_clinicas_promocao_outubro.txt",
-    "title": "Promo\u00e7\u00e3o Certa Enche a Agenda: Case de Cl\u00ednica",
+    "title": "Cl\u00ednicas: Promo\u00e7\u00e3o de Outubro - Case de Sucesso",
     "scheduled": "2026-10-30T18:00:00",
     "status": "scheduled",
     "niche": "clinicas",
@@ -1131,14 +1073,13 @@
     "hashtags": "#GoogleAds #Cl\u00ednica #Est\u00e9tica #Agendamento #FVS7 #Shorts",
     "scheduled_at": "2026-10-30T21:00:00",
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=4VCwI9frZxU"
+    "privacy_status": "private"
   },
   "outubro_60_google_ads_resultados_outubro": {
     "video_id": "o4DC6Qc2qrY",
     "video_file": "/home/fvitorio/Videos/video-maker/outubro_60_google_ads_resultados_outubro.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/outubro_60_google_ads_resultados_outubro.txt",
-    "title": "Resultados Reais de Outubro: Ads que Paga a Conta",
+    "title": "Google Ads: Resultados Reais de Outubro - Case Study",
     "scheduled": "2026-10-31T06:00:00",
     "status": "scheduled",
     "niche": "marketing",
@@ -1146,8 +1087,7 @@
     "hashtags": "#Tr\u00e1fegoPago #GoogleAds #Leads #FVS7 #Shorts",
     "scheduled_at": "2026-10-31T21:00:00",
     "privacy_status": "private",
-    "published_at": null,
-    "youtube_url": "https://www.youtube.com/watch?v=o4DC6Qc2qrY"
+    "published_at": null
   },
   "outubro_61_negocios_locais_planejamento_novembro": {
     "video_id": "5jQgvn_bZNE",
@@ -1161,8 +1101,7 @@
     "hashtags": "#Neg\u00f3cioLocal #GoogleMeuNeg\u00f3cio #ClientesDaRua #FVS7 #Shorts",
     "scheduled_at": null,
     "published_at": null,
-    "privacy_status": "private",
-    "youtube_url": "https://www.youtube.com/watch?v=5jQgvn_bZNE"
+    "privacy_status": "private"
   },
   "esteticistas": {
     "video_id": "deeDrwxpI3c",
@@ -1174,18 +1113,10 @@
     "youtube_url": "https://www.youtube.com/watch?v=deeDrwxpI3c",
     "uploaded_at": "2026-09-22T14:28:37.484263",
     "scheduled_at": null,
-    "published_at": "2026-09-22T14:38:04",
+    "published_at": "2026-09-22T14:38:05.009708",
     "status": "published",
     "privacy_status": "public",
-    "niche": "esteticistas",
-    "pending_checks": [
-      {
-        "date": "2026-09-26",
-        "action": "recheck_views",
-        "note": "Se views==0 -> re-up com t\u00edtulo vencedor (n\u00famero+dor+especificidade). Se >0, manter e avaliar reten\u00e7\u00e3o gate >60% antes de escalar/reativar guardados.",
-        "video_id": "deeDrwxpI3c"
-      }
-    ]
+    "niche": "esteticistas"
   },
   "teste_hook_contadores": {
     "video_id": "TE3kdBr_H2I",
@@ -1196,16 +1127,16 @@
     "hashtags": "#GoogleAds #Contabilidade #MarketingDigital #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=TE3kdBr_H2I",
     "uploaded_at": "2026-09-23T17:30:26.188562",
-    "scheduled_at": null,
-    "published_at": "2026-09-23T20:00:21",
-    "status": "published",
-    "privacy_status": "public"
+    "scheduled_at": "2026-09-23T23:00:00",
+    "published_at": null,
+    "status": "scheduled",
+    "privacy_status": "private"
   },
   "hook_video_tracking": {
     "video_id": "KiDBeTL4p9g",
     "video_file": "/home/fvitorio/Videos/video-maker/hook_video_tracking.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/hook_video_tracking.txt",
-    "title": "CPL Oculto: Cada Lead Sai Mais Caro que Parece",
+    "title": "Tracking: Quanto Cada Lead Custa + CPL Real",
     "description": "Tracking: Quanto Cada Lead Custa + CPL Real\n\nVoc\u00ea n\u00e3o sabe quanto custa cada lead do Google Ads?\n\nGA4 + GTM + WhatsApp tracking = CPL real e decis\u00f5es baseadas em dados\n\nEvento, Convers\u00e3o, Pixel: estrat\u00e9gias que funcionam.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages rapidas (LCP 1s) otimizadas para conversao\n\u2705 Tracking completo: WhatsApp, formularios e GA4\n\u2705 Otimizacao semanal com base em dados reais\n\n\ud83d\udcca +150 projetos | 4.9/5 avaliacao | 100% GTmetrix\n\n\ud83d\udd25 Seu anuncio gera o clique. Sua pagina gera o resultado.\n\n\ud83d\udc49 Diagnostico Gratis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=tracking\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=tracking/atendimento/\n\n#GoogleAds #MarketingDigital #TrafegoPago #LandingPage #Tracking #FVS7 #Shorts",
     "hashtags": "#GA4 #GoogleTagManager #Tracking #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=KiDBeTL4p9g",
@@ -1230,14 +1161,14 @@
     "privacy_status": "private"
   },
   "hook_video_auditoria_gratis": {
-    "video_id": "Z7Mz2n8vchk",
-    "video_file": "/home/fvitorio/Videos/video-maker/rehook-done/rehook_auditoria_gratis.mp4",
-    "metadata_file": "/home/fvitorio/Videos/video-maker/rehook-done/rehook_auditoria_gratis.txt",
-    "title": "95% das LPs Erram Isso: 6x Mais Convers\u00f5es",
-    "description": "Landing Page: 95% Ignoram \u2192 Converte 6x\n\nSua landing page recebe cliques mas n\u00e3o converte?\n\nHeadline espec\u00edfica + prova social + CTA \u00fanico = 6x convers\u00e3o\n\nConvers\u00e3o, Taxa De Convers\u00e3o, Lead: estrat\u00e9gias que funcionam.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages rapidas (LCP 1s) otimizadas para conversao\n\u2705 Tracking completo: WhatsApp, formularios e GA4\n\u2705 Otimizacao semanal com base em dados reais\n\n\ud83d\udcca +150 projetos | 4.9/5 avaliacao | 100% GTmetrix\n\n\ud83d\udd25 Seu anuncio gera o clique. Sua pagina gera o resultado.\n\n\ud83d\udc49 Diagnostico Gratis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=Z7Mz2n8vchk&utm_content=marketing\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=Z7Mz2n8vchk&utm_content=marketing/atendimento/\n\n#GoogleAds #MarketingDigital #TrafegoPago #LandingPage #Landing_Pages #FVS7 #Shorts",
+    "video_id": "nEXalGxclK0",
+    "video_file": "/home/fvitorio/Videos/video-maker/hook_video_auditoria_gratis.mp4",
+    "metadata_file": "/home/fvitorio/Videos/video-maker/hook_video_auditoria_gratis.txt",
+    "title": "Landing Page: 95% Ignoram \u2192 Converte 6x",
+    "description": "Landing Page: 95% Ignoram \u2192 Converte 6x\n\nSua landing page recebe cliques mas n\u00e3o converte?\n\nHeadline espec\u00edfica + prova social + CTA \u00fanico = 6x convers\u00e3o\n\nConvers\u00e3o, Taxa De Convers\u00e3o, Lead: estrat\u00e9gias que funcionam.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages rapidas (LCP 1s) otimizadas para conversao\n\u2705 Tracking completo: WhatsApp, formularios e GA4\n\u2705 Otimizacao semanal com base em dados reais\n\n\ud83d\udcca +150 projetos | 4.9/5 avaliacao | 100% GTmetrix\n\n\ud83d\udd25 Seu anuncio gera o clique. Sua pagina gera o resultado.\n\n\ud83d\udc49 Diagnostico Gratis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=marketing\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=marketing/atendimento/\n\n#GoogleAds #MarketingDigital #TrafegoPago #LandingPage #Landing_Pages #FVS7 #Shorts",
     "hashtags": "#CRO #Convers\u00e3o #LandingPage #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=Z7Mz2n8vchk",
-    "uploaded_at": "2026-09-24T09:36:43.319941",
+    "youtube_url": "https://www.youtube.com/watch?v=nEXalGxclK0",
+    "uploaded_at": "2026-09-23T18:17:06.396297",
     "scheduled_at": "2026-09-25T21:00:00",
     "published_at": null,
     "status": "scheduled",
@@ -1261,7 +1192,7 @@
     "video_id": "WVPyhmqFNkg",
     "video_file": "/home/fvitorio/Videos/video-maker/hook_video_velocidade.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/hook_video_velocidade.txt",
-    "title": "53% dos Cliques Morrem em P\u00e1ginas Lentas",
+    "title": "Velocidade: P\u00e1gina Lenta Perde 53% dos Cliques",
     "description": "Velocidade: P\u00e1gina Lenta Perde 53% dos Cliques\n\nP\u00e1gina lenta perde 53% dos cliques. LCP at\u00e9 1s = mais convers\u00e3o no Ads.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP 1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 avalia\u00e7\u00e3o | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=landing_pages\n\n#Performance #LandingPage #GoogleAds #FVS7 #Shorts",
     "hashtags": "#GoogleAds #MarketingDigital #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=WVPyhmqFNkg",
@@ -1289,7 +1220,7 @@
     "video_id": "r-ZIHnejd7w",
     "video_file": "/home/fvitorio/Videos/video-maker/hook_video_psicologos.mp4",
     "metadata_file": "/home/fvitorio/Videos/video-maker/hook_video_psicologos.txt",
-    "title": "Psic\u00f3logos: 1 Ajuste = Agenda Cheia (\u00c9tico)",
+    "title": "Psic\u00f3logos: Capta\u00e7\u00e3o \u00c9tica com 1 Ajuste",
     "description": "Psic\u00f3logos: Capta\u00e7\u00e3o \u00c9tica com 1 Ajuste\n\nPoucos pacientes? Capta\u00e7\u00e3o \u00e9tica com 1 ajuste no Google Ads.\n\n\u2705 Ads especialistas | \u2705 LP r\u00e1pida (LCP 1s) | \u2705 Tracking completo | \u2705 Otimiza\u00e7\u00e3o semanal\n\n\ud83d\udcca +150 projetos | 4.9/5 avalia\u00e7\u00e3o | 100% GTmetrix\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=psicologos\n\n#Psicologia #GoogleAds #MarketingDigital #FVS7 #Shorts",
     "hashtags": "#GoogleAds #MarketingDigital #FVS7 #Shorts",
     "youtube_url": "https://www.youtube.com/watch?v=r-ZIHnejd7w",
@@ -1300,125 +1231,17 @@
     "privacy_status": "private"
   },
   "hook_video_negocios_locais": {
-    "video_id": "xclcaUY3-W0",
-    "video_file": "/home/fvitorio/Videos/video-maker/rehook-done/rehook_negocios_locais.mp4",
-    "metadata_file": "/home/fvitorio/Videos/video-maker/rehook-done/rehook_negocios_locais.txt",
-    "title": "5 Estrelas no Google = Clientes na Porta",
-    "description": "Neg\u00f3cio Local: Avalia\u00e7\u00e3o 5 Estrelas \u2192 Clientes Rua\n\nSeu neg\u00f3cio local n\u00e3o atrai clientes da regi\u00e3o?\n\nGoogle Meu Neg\u00f3cio otimizado + an\u00fancios locais = clientes da rua\n\nLocal, Com\u00e9rcio, Loja: estrat\u00e9gias que funcionam.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages rapidas (LCP 1s) otimizadas para conversao\n\u2705 Tracking completo: WhatsApp, formularios e GA4\n\u2705 Otimizacao semanal com base em dados reais\n\n\ud83d\udcca +150 projetos | 4.9/5 avaliacao | 100% GTmetrix\n\n\ud83d\udd25 Seu anuncio gera o clique. Sua pagina gera o resultado.\n\n\ud83d\udc49 Diagnostico Gratis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=xclcaUY3-W0&utm_content=marketing\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=xclcaUY3-W0&utm_content=marketing/atendimento/\n\n#GoogleAds #MarketingDigital #TrafegoPago #LandingPage #Negocios_Locais #FVS7 #Shorts",
+    "video_id": "m_2Cqp8PqiA",
+    "video_file": "/home/fvitorio/Videos/video-maker/hook_video_negocios_locais.mp4",
+    "metadata_file": "/home/fvitorio/Videos/video-maker/hook_video_negocios_locais.txt",
+    "title": "Neg\u00f3cio Local: Avalia\u00e7\u00e3o 5 Estrelas \u2192 Clientes Rua",
+    "description": "Neg\u00f3cio Local: Avalia\u00e7\u00e3o 5 Estrelas \u2192 Clientes Rua\n\nSeu neg\u00f3cio local n\u00e3o atrai clientes da regi\u00e3o?\n\nGoogle Meu Neg\u00f3cio otimizado + an\u00fancios locais = clientes da rua\n\nLocal, Com\u00e9rcio, Loja: estrat\u00e9gias que funcionam.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages rapidas (LCP 1s) otimizadas para conversao\n\u2705 Tracking completo: WhatsApp, formularios e GA4\n\u2705 Otimizacao semanal com base em dados reais\n\n\ud83d\udcca +150 projetos | 4.9/5 avaliacao | 100% GTmetrix\n\n\ud83d\udd25 Seu anuncio gera o clique. Sua pagina gera o resultado.\n\n\ud83d\udc49 Diagnostico Gratis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=negocios_locais\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_content=negocios_locais/atendimento/\n\n#GoogleAds #MarketingDigital #TrafegoPago #LandingPage #Negocios_Locais #FVS7 #Shorts",
     "hashtags": "#Neg\u00f3cioLocal #GoogleMeuNeg\u00f3cio #ClientesDaRua #FVS7 #Shorts",
-    "youtube_url": "https://www.youtube.com/watch?v=xclcaUY3-W0",
-    "uploaded_at": "2026-09-24T09:37:04.210931",
+    "youtube_url": "https://www.youtube.com/watch?v=m_2Cqp8PqiA",
+    "uploaded_at": "2026-09-23T18:19:43.488796",
     "scheduled_at": "2026-09-28T21:00:00",
     "published_at": null,
     "status": "scheduled",
     "privacy_status": "private"
-  },
-  "quer_resultados_reais_com_google_ads_e_landing_pages": {
-    "video_id": "R3xonKBmeyA",
-    "title": "Quer resultados reais com Google Ads e Landing Pages?",
-    "youtube_url": "https://www.youtube.com/watch?v=R3xonKBmeyA",
-    "published_at": "2026-09-21T20:39:30",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "trafego_pago_como_gerar_leads_qualificados": {
-    "video_id": "qaaQREjuTkA",
-    "title": "Tr\u00e1fego Pago: Como Gerar Leads Qualificados",
-    "youtube_url": "https://www.youtube.com/watch?v=qaaQREjuTkA",
-    "published_at": "2026-09-20T20:34:25",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "como_transformar_cliques_em_clientes_com_google_ads": {
-    "video_id": "N7AyjhEd_qE",
-    "title": "Como Transformar Cliques em Clientes com Google Ads",
-    "youtube_url": "https://www.youtube.com/watch?v=N7AyjhEd_qE",
-    "published_at": "2026-09-20T19:21:21",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "google_ads_landing_page_a_formula_para_mais_vendas": {
-    "video_id": "Knjw_BwI2EM",
-    "title": "Google Ads + Landing Page: A F\u00f3rmula para Mais Vendas",
-    "youtube_url": "https://www.youtube.com/watch?v=Knjw_BwI2EM",
-    "published_at": "2026-09-16T20:46:32",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "clinicas_converta_mais_agendamentos": {
-    "video_id": "nQMPd9RKalo",
-    "title": "Cl\u00ednicas: Converta Mais Agendamentos",
-    "youtube_url": "https://www.youtube.com/watch?v=nQMPd9RKalo",
-    "published_at": "2026-09-06T14:47:45",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "desperdicio_no_google_ads_como_economizar_r_5_000_mes": {
-    "video_id": "tH_jbKIOi8g",
-    "title": "Desperd\u00edcio no Google Ads: Como Economizar R$5.000/m\u00eas",
-    "youtube_url": "https://www.youtube.com/watch?v=tH_jbKIOi8g",
-    "published_at": "2026-02-09T06:45:07",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "cliques_sem_vendas_3_erros_que_custam_caro_no_google_ads": {
-    "video_id": "3XhjuXiDCHA",
-    "title": "Cliques sem Vendas? 3 Erros que Custam Caro no Google Ads",
-    "youtube_url": "https://www.youtube.com/watch?v=3XhjuXiDCHA",
-    "published_at": "2026-02-07T06:00:05",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "maquinas_de_conversao_como_transformar_clicks_em_clientes": {
-    "video_id": "K0mF3SuFd0U",
-    "title": "M\u00e1quinas de Convers\u00e3o: Como Transformar Clicks em Clientes",
-    "youtube_url": "https://www.youtube.com/watch?v=K0mF3SuFd0U",
-    "published_at": "2026-02-05T11:07:25",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "google_ads_crm_por_que_voce_perde_40_dos_leads": {
-    "video_id": "hCLuPr4u0Io",
-    "title": "Google Ads + CRM: Por que Voc\u00ea PERDE 40% dos Leads",
-    "youtube_url": "https://www.youtube.com/watch?v=hCLuPr4u0Io",
-    "published_at": "2026-02-05T10:42:45",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "sua_lp_nao_vende_este_erro_queima_seu_orcamento": {
-    "video_id": "YF_fkkCHp5M",
-    "title": "Sua LP N\u00e3o Vende? ESTE ERRO Queima Seu Or\u00e7amento",
-    "youtube_url": "https://www.youtube.com/watch?v=YF_fkkCHp5M",
-    "published_at": "2026-02-04T20:46:21",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "google_ads_sem_conversao_o_erro_esta_no_seu_site": {
-    "video_id": "EDC8Um-TV58",
-    "title": "Google Ads Sem Convers\u00e3o? O ERRO Est\u00e1 no Seu Site",
-    "youtube_url": "https://www.youtube.com/watch?v=EDC8Um-TV58",
-    "published_at": "2026-02-03T15:29:45",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
-  },
-  "landing_page_que_vende_o_segredo_que_95_ignoram": {
-    "video_id": "nHlM5tiQ1RA",
-    "title": "Landing Page que VENDE: O Segredo que 95% Ignoram",
-    "youtube_url": "https://www.youtube.com/watch?v=nHlM5tiQ1RA",
-    "published_at": "2026-02-03T15:27:59",
-    "status": "published",
-    "privacy_status": "public",
-    "source": "backfill-20260924"
   }
 }

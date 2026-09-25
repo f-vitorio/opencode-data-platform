@@ -9,138 +9,90 @@ import sys
 import os
 
 EMAIL_TO = "vicentbox71@gmail.com"
-EMAIL_SUBJECT = "Próximos passos — Landing Page Vicent Box MGA"
+EMAIL_SUBJECT = "VicentBOX — acesso à hospedagem, fotos e reviews para publicar o site"
 EMAIL_BODY = """Olá Fernando,
 
 Tudo bem?
 
-Meu nome é Vitorio, sou responsável pela criação da sua Landing Page.
+Aqui é o Vitorio, da FVS7 Growth.
 
-Para começarmos com o pé direito, preciso de algumas informações sobre o seu trabalho. Isso vai me ajudar a criar uma página que realmente conecta com o seu público e traz resultados.
-
----
-
-## Sobre o seu negócio
-
-1. Qual é o nome completo do estúdio? "Fernando Serrano Vicentin" é o nome pessoal ou da empresa?
-
-2. Há quanto tempo você atua com treinamento funcional e Pilates?
-
-3. Qual é a localização exata do estúdio (endereço com bairro e cidade)?
-
-4. Você atende presencialmente, online ou ambos?
+O site da VicentBOX está pronto e na fase final de validação. Para publicar no ar e deixar a página com a cara real do seu studio, preciso de 3 coisas sua parte:
 
 ---
 
-## Público-alvo
+## 1) Acesso à hospedagem (Hostinger)
 
-5. Quem é seu cliente ideal? (idade, gênero, objetivo principal)
+Para subir o site, preciso de acesso ao painel/File Manager da Hostinger onde o domínio vicentbox.com.br está hospedado.
 
-6. Você foca mais em:
-   - Pessoas saudáveis que querem manter a forma?
-   - Pessoas com doenças crônicas (hipertensão, diabetes)?
-   - Pessoas com desvios posturais?
-   - Todos os anteriores?
+Você pode me enviar:
 
-7. Como os clientes chegam até você? (indicação, redes sociais, Google, etc.)
+- Hospedagem: host, usuário FTP e senha FTP
+  (ou, se preferir, login do hPanel)
 
-8. Qual é o principal problema que seus clientes trazem quando chegam até você?
+Caso não queira compartilhar uma senha pessoal:
 
----
+- Crie um usuário FTP temporário no hPanel
+  (hPanel > Arquivos > Conta FTP)
+- Ou me envie um convite de acesso do hPanel para o meu e-mail
 
-## Serviços e ofertas
-
-9. Como funcionam as aulas? (individual, dupla, grupo, horários)
-
-10. Você tem planos ou pacotes? Como funciona a cobrança?
-
-11. Existe avaliação inicial antes de começar?
-
-12. Você emite nota fiscal?
+**Importante:** não envie a senha da sua conta principal do e-mail ou do banco. Se for criar um acesso dedicado, pode limitar as permissões ao diretório do site.
 
 ---
 
-## Diferenciais
+## 2) Fotos reais do studio
 
-13. O que você diferencia de outros profissionais da região?
+Hoje o site está com imagens ilustrativas (banco de imagens). Fotos reais do seu espaço aumentam muito a confiança e a taxa de conversão.
 
-14. Você tem certificação ou especialização em doenças crônicas?
+Ideal enviar de 8 a 12 fotos:
 
-15. Trabalha com convênios, planos de saúde ou parcerias com médicos/fisioterapeutas?
+- Fachada / entrada do studio
+- Ambiente de treino (equipamentos, espaço)
+- Sessão em andamento (com autorização dos alunos, se possível)
+- Detalhes que mostrem o cuidado (estacionamento, vestiário, recepção)
 
----
+Formato: JPG ou PNG, horizontal, o mais nítida possível (mínimo ~1200px de largura).
 
-## Objetivos da Landing Page
-
-16. Qual é o principal objetivo? (captura de leads, agendamento de aula experimental, venda de planos)
-
-17. Qual ação você quer que o visitante realize? (formulário, ligação, WhatsApp, agendamento)
-
-18. Você já tem alguma oferta para colocar na página? (aula experimental, avaliação, desconto)
-
-19. O que faz o cliente escolher você e não outro profissional?
+Pode mandar por aqui mesmo ou me encaminhar um link (Google Fotos / Drive).
 
 ---
 
-## Contato e materiais
+## 3) Prints das avaliações no WhatsApp
 
-20. Qual número de WhatsApp para contato?
+Para publicar depoimentos reais no site, me envie capturas de tela das avaliações que seus alunos deixam no WhatsApp.
 
-21. Qual horário de atendimento?
+Cada print deve mostrar:
 
-22. Você tem fotos, vídeos, logotipo ou identidade visual?
+- Nome (ou como o aluno se identifica)
+- O texto do elogio
+- A data, se possível
 
-23. Quais são os links das suas redes sociais? (Instagram, Facebook, TikTok, YouTube, etc.)
-
-24. Você tem Google Business Profile (Google Meu Negócio)? Se sim, qual é o link?
-
----
-
-## Prazos
-
-25. Qual é o prazo ideal para ter a Landing Page no ar?
-
-26. Quem tomará as decisões finais sobre conteúdo e design?
+Se tiver também prints de comentários no Instagram ou Facebook, também ajuda.
 
 ---
 
-## Acesso à hospedagem
+## 2 confirmações rápidas
 
-Para publicar a Landing Page, preciso de acesso à hospedagem do site vicentboxmga.com.br.
+Para manter o conteúdo 100% correto antes de publicar:
 
-Por favor, me informe:
+1. **Domínio:** o endereço oficial do site é vicentbox.com.br, certo? (no contrato/onboarding anterior aparecia também vicentboxmga.com.br — só confirmar qual usamos)
 
-27. Qual é o provedor de hospedagem? (Hostinger, GoDaddy, Locaweb, UOL Host, etc.)
-
-28. Você tem acesso ao painel de controle? Se sim, qual e-mail está cadastrado?
-
-29. Caso não tenha acesso, pode solicitar ao provedor que crie um usuário temporário com as seguintes permissões:
-   - Painel de hospedagem
-   - Gerenciador de arquivos (File Manager)
-   - DNS (se necessário apontar domínio)
-   - Banco de dados (se aplicável)
-
-30. O domínio está no mesmo provedor da hospedagem?
-
-31. Existe algo no site atual que precisamos preservar?
-
-**Importante:** Não compartilhe senhas pessoais. Se possível, crie um usuário temporário com acesso limitado.
+2. **19 anos de mercado:** você mencionou "19 anos de atuação" no onboarding. Posso usar essa informação na página Sobre?
 
 ---
 
-Aguardo suas respostas para darmos continuidade.
+Com o acesso da hospedagem eu publico o site; com fotos e reviews eu troco as imagens ilustrativas e publico os depoimentos reais.
 
-Qualquer dúvida, estou à disposição.
+Qualquer dúvida, me chama no WhatsApp (44) 99921-8147 ou responde por aqui.
 
 Abraço,
 
-Vitorio"""
+Vitorio
+FVS7 Growth"""
 
 
 def copy_to_clipboard(text: str) -> bool:
     """Copia texto para a área de transferência."""
     try:
-        # Tentar xclip
         process = subprocess.Popen(
             ["xclip", "-selection", "clipboard"],
             stdin=subprocess.PIPE
@@ -149,9 +101,8 @@ def copy_to_clipboard(text: str) -> bool:
         return True
     except FileNotFoundError:
         pass
-    
+
     try:
-        # Tentar xsel
         process = subprocess.Popen(
             ["xsel", "--clipboard", "--input"],
             stdin=subprocess.PIPE
@@ -160,7 +111,7 @@ def copy_to_clipboard(text: str) -> bool:
         return True
     except FileNotFoundError:
         pass
-    
+
     return False
 
 
@@ -173,27 +124,22 @@ def open_gmail():
 def main():
     print("📧 Preparando draft para Fernando Serrano Vicentin...")
     print()
-    
-    # Copiar corpo do email para área de transferência
+
     if copy_to_clipboard(EMAIL_BODY):
         print("✅ Corpo do email copiado para a área de transferência!")
     else:
         print("⚠️  Não foi possível copiar para a área de transferência.")
-        print("   O conteúdo está salvo em: ~/Documents/Onboarding/email-onboarding.md")
-    
-    # Abrir Gmail
+
     print("🌐 Abrindo Gmail...")
     open_gmail()
-    
+
     print()
-    print("📋 Instruções:")
-    print("   1. Clique em 'Escrever'")
-    print(f"   2. Para: {EMAIL_TO}")
-    print(f"   3. Assunto: {EMAIL_SUBJECT}")
-    print("   4. Cole o corpo do email (Ctrl+V)")
-    print("   5. Salve como draft (Ctrl+D ou feche a janela)")
+    print("📋 Como finalizar o draft:")
+    print(f"   1. Gmail abriu janela 'Nova mensagem' para {EMAIL_TO}")
+    print(f"   2. Assunto: {EMAIL_SUBJECT}")
+    print("   3. Corpo já preenchido (se vazio, cole com Ctrl+V — está no clipboard)")
+    print("   4. Feche a janela de composição (Gmail salva automaticamente em Rascunhos)")
     print()
-    print("✅ Draft será salvo automaticamente no Gmail!")
 
 
 if __name__ == "__main__":

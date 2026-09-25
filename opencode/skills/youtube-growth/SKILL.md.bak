@@ -208,25 +208,10 @@ Para cada vídeo registra:
 - uploaded_at
 - scheduled_at
 - published_at
-- status (`uploaded` | `scheduled` | `published` | `deleted` — `deleted` = o video_id não existe mais no canal)
+- status
 - topic (opcional)
 - keywords (opcional)
 - duration (opcional)
 - thumbnail (opcional)
 
 O YouTube continua sendo a fonte de verdade sobre o estado atual. O banco local serve para histórico, análise e correlação.
-
-## CHECK 6H/24H (pós-publicação)
-
-Após cada publicação, rodar para monitorar views/likes/comentários/retenção:
-
-```bash
-python3 ~/.config/opencode/skills/youtube-growth/check_24h.py
-python3 ~/.config/opencode/skills/youtube-growth/check_24h.py --window 6
-```
-
-- Janelas padrão: 6h e 24h (últimas 48h de `published_at` BRT).
-- Gate de retenção: `averageViewPercentage > 60%` = PASS.
-- FAIL → analisar curva no Studio antes de escalar / reativar guardados.
-- Pendências manuais: `PENDENTES.md` (mesmo diretório).
-

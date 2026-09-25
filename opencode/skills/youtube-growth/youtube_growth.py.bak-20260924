@@ -1148,8 +1148,7 @@ def main():
             print(f"Title: {entry['title']}")
             print(f"Video ID: {entry['video_id']}")
             print(f"Scheduled for: {time_str}")
-            video_url = entry.get('youtube_url') or 'https://www.youtube.com/watch?v=' + str(entry.get('video_id', ''))
-            print(f"URL: {video_url}")
+            print(f"URL: {entry['youtube_url']}")
             print("-" * 80)
         return 0
     

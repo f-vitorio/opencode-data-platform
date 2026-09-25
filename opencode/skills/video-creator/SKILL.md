@@ -42,6 +42,46 @@ Criar vídeos verticais profissionais para a FVS7 Growth com:
 - Sobrescrever o arquivo original com as correções
 - Manter o mesmo nome de arquivo
 
+### Regra 4: HOOK (primeiros 3 segundos) — OBRIGATÓRIO
+Baseado em Analytics (retenção cai entre 3,6s e 9s no melhor vídeo: 41,7% duração média).
+
+**NUNCA fazer no frame 0 / segmento 1:**
+- Fade-in a partir do preto (frame 0 com luma 0)
+- Marca “FVS7” ou URL visível antes de 3s
+- Pergunta vaga (“Quero mais…?”, “Você sabia que…?”)
+- Pitch/autopromoção antes da dor
+- Legenda incompleta, quebrada no meio ou sem acentos
+- Mais de ~8 palavras no primeiro bloco de texto
+
+**HARDCODE no roteiro (segmento 1):**
+1. **≤8 palavras** legíveis em 1–2s no mobile
+2. **Número + consequência + público**, ex.:
+   - “R$1.500/mês e agenda vazia? O erro é a página.”
+   - “7 em cada 10 cliques do seu Ads não viram lead.”
+3. **Dor/promessa imediata** — valor antes de marca
+4. **Troca visual ≤2s** (corte/zoom no segmento 2; Ken Burns já ajuda)
+5. **Narração começa ≤0,3s** (rate +15%, sem música longa de abertura)
+6. Contexto, prova e CTA só **depois** dos 3s
+
+**Validação antes de gerar vídeo:**
+| Critério | OK | Erro |
+|----------|-----|------|
+| ≤8 palavras no 1º segmento | ✅ | ❌ |
+| Pelo menos 1 número concreto | ✅ | ❌ |
+| Sem pergunta vaga no início | ✅ | ✅ “Sua LP perde clientes?” |
+| Sem “nós/nossa empresa” nos 3s | ✅ | ❌ |
+| Acentos e frase completa na legenda | ✅ | ❌ texto cortado |
+
+**Estrutura de roteiro atualizada:**
+```
+Hook (número + dor, ≤8 palavras)   ← segmento 1, 0–3s
+→ Contexto (quem/por quê)
+→ Consequência
+→ Solução
+→ Benefício/Prova
+→ CTA
+```
+
 ## IDENTIDADE VISUAL
 
 ### Cores
@@ -109,7 +149,8 @@ Configurações recomendadas:
 - FPS: 30
 - Codec: H264 + AAC
 - Ken Burns: zoom_in, zoom_out, pan_left, pan_right
-- Fade: 0.4s entrada/saída
+- Fade: 0 NO frame 0 (sem preto na abertura); 0.4s apenas em saída/transições
+- Marca/URL: só a partir de 3s (`BRAND_DELAY`)
 
 ## COMANDOS
 
@@ -311,20 +352,20 @@ Texto do segmento 2
 ## DICAS DE COPYWRITING
 
 ### Para vídeos curtos (30-60s)
-1. **Gancho**: Primeiros 3 segundos - problema ou curiosidade
+1. **HOOK**: primeiros 3 segundos — número + dor, ≤8 palavras (ver Regra 4)
 2. **Desenvolvimento**: 2-3 argumentos principais
-3. **CTA**: Último segmento - ação clara
+3. **CTA**: último segmento — ação clara
 
 ### Estrutura recomendada
 ```
-Problema → Consequência → Solução → Benefício → CTA
+Hook (número + dor) → Contexto → Consequência → Solução → Benefício → CTA
 ```
 
-### Exemplo
+### Exemplo (hook correto)
 ```
-Seu anúncio não está gerando resultados?
+7 em cada 10 cliques do Ads não viram lead.
 
-O problema pode ser a página onde o tráfego chega.
+O problema quase sempre é a página onde o tráfego chega.
 
 Uma landing page rápida e estratégica converte mais.
 
