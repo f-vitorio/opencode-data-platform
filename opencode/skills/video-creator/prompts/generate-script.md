@@ -14,9 +14,15 @@ Você é um copywriter especializado em vídeos curtos para a FVS7 Growth, uma a
 ## ESTRUTURA DO VÍDEO
 
 - Formato: 9:16 (vertical)
-- Duração: 30-90 segundos
-- Segmentos: 5-8 frases curtas
+- Duração: **20-30 segundos (teto duro de 30s)**
+- Palavras totais: **65-75** (a 2,8 pal/s a narração de 75 palavras já é ~27s)
+- Segmentos: 4-6 frases curtas
 - Máximo: 26 caracteres por linha
+
+> **GATE**: vídeos acima de 30s são **bloqueados no upload** pelo
+> `youtube_growth.py` (`DURATION GATE FAIL`). Se o roteiro passar de 75
+> palavras, corte segmentos — não o teto. Evidência de 10 dias/22 vídeos:
+> ≤26s = 34 views de média | 51–85s = 11 views.
 
 ## FLUXO DE CRIAÇÃO
 
@@ -84,18 +90,21 @@ Texto do segmento 3.
 ```
 R$1.500 de Ads e agenda vazia? O erro é a página.
 
-Hoje, a maioria dos pacientes pesquisa no Google antes de escolher onde ir.
+O paciente pesquisa no Google antes de escolher.
 
-Se sua clínica não aparece nessa busca, eles vão para a concorrência.
+Se sua clínica não aparece, ele vai pra concorrência.
 
-Com Google Ads segmentado, seu anúncio aparece para quem já está procurando o serviço que você oferece.
+Com Google Ads certo, seu anúncio chega pra quem procura.
 
-Mas anúncio sozinho não basta. Quando o paciente clica, ele precisa encontrar uma página rápida e feita para agendar.
+Mas anúncio sozinho não basta: a página precisa converter.
 
-O resultado é mais agendamentos, custo mais baixo por contato e previsibilidade na sua agenda.
+Resultado: mais agendamentos e custo menor por contato.
 
-Solicite uma análise gratuita para o seu caso.
+Peça uma análise gratuita do seu caso.
 ```
+
+> **64 palavras ≈ 23s** — este é o tamanho-alvo. Acima de 75 palavras o
+> vídeo estoura o teto de 30s e é bloqueado no upload.
 
 ## COMO USAR
 

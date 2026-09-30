@@ -74,7 +74,7 @@ Se tiver também prints de comentários no Instagram ou Facebook, também ajuda.
 
 Para manter o conteúdo 100% correto antes de publicar:
 
-1. **Domínio:** o endereço oficial do site é vicentbox.com.br, certo? (no contrato/onboarding anterior aparecia também vicentboxmga.com.br — só confirmar qual usamos)
+1. **Domínio:** o endereço oficial do site é vicentbox.com.br, certo?
 
 2. **19 anos de mercado:** você mencionou "19 anos de atuação" no onboarding. Posso usar essa informação na página Sobre?
 

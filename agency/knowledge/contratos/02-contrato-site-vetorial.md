@@ -16,7 +16,7 @@
 - **Telefone**: (55) 44 9921-8147
 - **E-mail**: vicentbox71@gmail.com
 - **Segmento**: Treinamento funcional - fortalecimento, emagrecimento e saude. Doencas cronicas. Multi-metodologia.
-- **Website**: https://vicentboxmga.com.br/
+- **Website**: https://vicentbox.com.br/
 
 ## Informacoes do Contrato
 - **ID no CRM**: 2
@@ -38,7 +38,7 @@
 ### Incluso (Obrigatorio)
 - Cricao de site ate 5 paginas principais
 - Layout responsivo (mobile-first)
-- Dominio pessoal do cliente (cliente ja possui: vicentboxmga.com.br)
+- Dominio pessoal do cliente (cliente ja possui: vicentbox.com.br)
 - Configuracao basica de SEO (metatags, headings, velocidade de pagina)
 - Formulario de contato basico
 - Entrega de arquivos fontes (HTML, CSS, JS, fontes)
@@ -47,7 +47,7 @@
 
 ### Nao Incluso (Proibido atribuir agencia)
 - Servicos de hospedagem (cliente ja possui e exclusiva responsabilidade do cliente)
-- Registro de dominio (cliente ja possui: vicentboxmga.com.br)
+- Registro de dominio (cliente ja possui: vicentbox.com.br)
 - Criacao de conteudo textico profissional
 - Estrategias de marketing digital
 - Configuracao de Google Ads ou outras plataformas pagas

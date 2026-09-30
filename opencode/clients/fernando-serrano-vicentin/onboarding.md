@@ -3,7 +3,7 @@
 **Cliente:** FERNANDO SERRANO VICENTIN  
 **CNPJ:** 51.502.942/0001-09  
 **E-mail:** vicentbox71@gmail.com  
-**Site:** https://vicentboxmga.com.br/  
+**Site:** https://vicentbox.com.br/  
 **Serviço:** Landing Page  
 **Data:** 15/09/2026  
 
@@ -168,7 +168,7 @@ Para publicar a Landing Page no ar, precisamos de acesso à hospedagem do site. 
     - Acesso ao DNS (se for necessário apontar domínio)
     - Acesso ao banco de dados (se aplicável)
 
-57. O domínio https://vicentboxmga.com.br/ está no mesmo provedor da hospedagem?
+57. O domínio https://vicentbox.com.br/ está no mesmo provedor da hospedagem?
 
 58. Existe outro site ou página neste domínio que precisamos preservar?
 

@@ -21,6 +21,49 @@ Este skill NÃO cria vídeos, roteiros, títulos ou descrições. Ele consome o 
 - Estratégia de crescimento
 - Histórico local de publicações
 
+## REGRA INVIOLÁVEL DE SEO (TÍTULO E DESCRIÇÃO)
+
+**Todo título e toda descrição COMEÇAM com a palavra-chave correta, por extenso.
+Nenhuma abreviação é aceita. Esta regra não sofre exceção.**
+
+1. **Título** começa com a keyword principal (banco da `video-creator`) ou o termo do nicho
+   (Clínicas, Psicólogos, Contadores, Google Ads, Landing Page, Tráfego Pago...).
+2. **Primeira linha da descrição** começa com a mesma keyword.
+3. **Nenhuma abreviação** em título ou descrição:
+
+   | Abreviação proibida | Escrever por extenso |
+   |---|---|
+   | LP, LPs | landing page, landing pages |
+   | MKT | marketing |
+   | GA | Google Ads / Google Analytics |
+   | CONV | conversão |
+   | CAP | captação |
+   | PÁG | página |
+   | CLI | cliente |
+
+4. A regra vale para **upload, agendamento e atualização de metadados**: se falhar, a skill
+   **bloqueia** e não toca na API. Nunca publique contornando o bloqueio.
+
+Exemplos:
+
+| Errado | Correto |
+|---|---|
+| `95% das LPs Erram Isso: 6x Mais Conversões` | `Landing Page: 95% Erram Isso, Perdem 6x Conversões` |
+| `Sua LP não vende?` | `Landing Page não vende?` |
+| `MKT: 3 Erros que Queimam Orçamento` | `Marketing Digital: 3 Erros que Queimam Orçamento` |
+
+Auditoria (READ/ANALYZE — não modifica nada; `0` = PASS, `1` = FAIL):
+
+```bash
+python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py seo-audit --title "Título" --description "Primeira linha"
+python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py seo-audit ~/Videos/video-maker/arquivo.txt
+python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py seo-audit <video_id_ou_nome>
+python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py seo-audit --history   # audita todo o histórico local
+```
+
+O mesmo bloqueio roda automaticamente dentro de `upload`, `schedule` e `update_metadata`.
+Se o `.txt` da video-creator estiver fora do padrão, corrija o `.txt` antes de publicar.
+
 ## ARQUITETURA
 
 ```text
@@ -146,6 +189,8 @@ publishing:
 
 seo:
   audit_before_publish: true
+  keyword_first: true          # título e 1ª linha da descrição começam com a keyword
+  forbid_abbreviations: true   # LP → landing page, MKT → marketing, GA → Google Ads
   auto_optimize: false
 
 analytics:

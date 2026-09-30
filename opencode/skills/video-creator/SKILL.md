@@ -195,7 +195,7 @@ python make_video.py \
 ### Exemplo de Saída
 ```
 Vídeo:  ~/Videos/video-maker/clinicas_v7.mp4
-Duração:  79.3s
+Duração:  ≤30s ✓ (teto do gate de upload — ver GATE DE DURAÇÃO)
 
 TÍTULO SEO:
   Landing Page para Clínicas: Converta Mais Agendamentos
@@ -221,21 +221,26 @@ DESCRIÇÃO salva em: ~/Videos/video-maker/clinicas_v7.txt
 4. **Keyword de alta intenção** → "Google Ads", "Landing Page", "Leads"
 
 ### Regras para Títulos
+
+**REGRA INVIOLÁVEL**: o título SEMPRE começa com a palavra-chave principal por extenso (banco de keywords ou termo do nicho). NUNCA abrevie — `LP/LPs` → `landing page/landing pages`, `MKT` → `marketing`, `GA` → `Google Ads`. A `youtube-growth` bloqueia a publicação se isso falhar.
+
 | Regra | Correto | Errado |
 |-------|---------|--------|
 | Máximo 50 caracteres | "Contadores: 3x Mais Leads PJ" | "Como os Contadores Podem Atrair Mais Clientes Usando Google Ads" |
 | Nicho primeiro | "Psicólogos: Agenda Cheia" | "Dicas de Marketing para Psicólogos" |
+| Keyword por extenso no início | "Landing Page: 95% Erram Isso" | "95% das LPs Erram Isso" |
 | Número específico | "50 Agendamentos/Mês" | "Muitos Agendamentos" |
-| Sem perguntas no início | "Sua LP Perde Clientes?" ❌ | "Auditoria Grátis: Sua LP Perde Clientes?" ✅ |
+| Sem perguntas no início | "Auditoria Grátis: Sua Landing Page Perde Clientes?" ✅ | "Sua Landing Page Perde Clientes?" ❌ |
 | Palavras de impacto | "Queimando dinheiro", "3x mais" | "Melhorar resultados" |
 
 ### Regras para Descrições
-1. **Primeira linha** = Título + keyword do nicho (YouTube lê os primeiros 150 chars)
+1. **Primeira linha** = Título + keyword do nicho, **por extenso e sem abreviação** (YouTube lê os primeiros 150 chars)
 2. **Segunda linha** = Gancho de curiosidade ou dor
 3. **Timestamps** = Opcional mas recomendado para vídeos >30s
 4. **CTA claro** = Link com UTM para diagnóstico grátis
 5. **Hashtags** = Máximo 5, incluir #Shorts sempre
 6. **SEM newlines problemáticos** = YouTube API rejeita descrições com \n duplicados
+7. **SEM abreviações** em nenhuma parte da descrição (`LP` → `landing page`, `MKT` → `marketing`)
 
 ### UTMs para Rastreamento GA4
 **OBRIGATÓRIO**: Todo link na descrição DEVE conter UTMs para rastreamento no GA4.
@@ -306,6 +311,7 @@ Framework de 3 etapas:
 - ❌ Sem nicho: "Como Ganhar Mais Clientes"
 - ❌ Muito longo: "Aprenda Como Fazer Google Ads Para Sua Empresa E Atrair Mais Clientes"
 - ❌ Descrição com \n\n\n (YouTube rejeita)
+- ❌ Abreviação (regra inviolável): "95% das **LPs** Erram Isso" → "Landing Page: 95% Erram Isso..."
 
 ### Exemplo de Descrição Correta (SEO)
 ```
@@ -331,6 +337,19 @@ SEO para contâbeis: como aparecer no Google.
 
 ## ESTRUTURA DO ROTEIRO
 
+### GATE DE DURAÇÃO — 30s (teto duro)
+Todo vídeo novo produzido aqui precisa sair em **≤30 segundos**. O
+`youtube_growth.py` (skill `youtube-growth`) **bloqueia o upload e o
+agendamento** com `DURATION GATE FAIL` acima disso — override só com `--force`
+e exceção documentada.
+
+- **Orçamento de palavras: 65–75 no roteiro inteiro** (narração `pt-BR-AntonioNeural`
+  a +15% ≈ 2,8 pal/s → 75 palavras ≈ 27s, sem margem para transições)
+- **Segmentos: 4–6** (não 5–8)
+- Roteiro acima de 75 palavras = corte segmentos, nunca suba o teto
+- **Por que**: em 10 dias/22 vídeos, ≤26s renderizou **34 views** de média e
+  51–85s renderizou **11** — o teto de 30s não é estética, é o dado
+
 ### Formato simples
 ```
 Texto do segmento 1.
@@ -351,7 +370,7 @@ Texto do segmento 2
 
 ## DICAS DE COPYWRITING
 
-### Para vídeos curtos (30-60s)
+### Para vídeos curtos (≤30s — teto do gate de upload)
 1. **HOOK**: primeiros 3 segundos — número + dor, ≤8 palavras (ver Regra 4)
 2. **Desenvolvimento**: 2-3 argumentos principais
 3. **CTA**: último segmento — ação clara
@@ -524,6 +543,8 @@ Otimizar títulos e descrições com palavras-chave de alto volume e intenção 
 
 **OBRIGATÓRIO**: Colocar a keyword principal nos **primeiros 3 caracteres** do título.
 
+**E SEM ABREVIAÇÕES** (regra inviolável): a keyword vai por extenso — `landing page`, nunca `LP/LPs`; `marketing`, nunca `MKT`; `Google Ads`, nunca `GA`. Vale para título e para a primeira linha da descrição. A skill `youtube-growth` bloqueia upload/agendamento se falhar.
+
 | Posição | Prioridade | Exemplo |
 |---------|------------|---------|
 | Início (0-3 chars) | ⭐⭐⭐ | **Google Ads** + ... |
@@ -624,6 +645,7 @@ Antes de publicar, verificar:
 | Critério | OK | Erro |
 |----------|-----|------|
 | Keyword nos primeiros 3 chars | ✅ | ❌ |
+| Keyword por extenso, sem abreviação (LP → landing page) | ✅ | ❌ |
 | Máximo 50 caracteres | ✅ | ❌ |
 | Número específico (quando possível) | ✅ | ❌ |
 | Sem perguntas no início | ✅ | ❌ |
@@ -634,10 +656,12 @@ Antes de publicar, verificar:
 | Critério | OK | Erro |
 |----------|-----|------|
 | Primeira linha = título | ✅ | ❌ |
+| Primeira linha começa com keyword por extenso | ✅ | ❌ |
 | 2-3 keywords semânticas | ✅ | ❌ |
 | Link com UTM | ✅ | ❌ |
 | Máximo 5 hashtags | ✅ | ❌ |
 | Sem \n duplicados | ✅ | ❌ |
+| Sem abreviações em nenhuma parte | ✅ | ❌ |
 
 ## COMMON ISSUES
 

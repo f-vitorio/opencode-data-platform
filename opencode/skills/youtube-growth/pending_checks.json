@@ -1,0 +1,52 @@
+[
+  {
+    "id": "deeDrwxpI3c-20260929-recheck_views",
+    "video_id": "deeDrwxpI3c",
+    "stem": "esteticistas",
+    "due": "2026-09-29",
+    "created": "2026-09-24",
+    "type": "recheck_views",
+    "status": "done",
+    "gate": "views",
+    "threshold": 5,
+    "note": "Publicado 22/09. 1 view em 7 dias. Se views <= threshold -> Acao 4 (re-up com angulo novo). O original permanece publicado.",
+    "closed": "2026-09-29",
+    "outcome": "v=1 (limite 5) -> abaixo. DECISAO: Acao 4 (re-up) CANCELADA. Ambos os assets <=30s (esteticistas.mp4, test_esteticista.mp4) tem o MESMO hook queimado \"Quero mais clientes para seu estudio de estetica?\", identico ao exemplo de hook INVALIDO da skill video-creator. Trocar titulo/desc nao mexe nos 3s iniciais. Teste do nicho fica com os 3 estetica ja agendados (outubro_20/36/57) + B0QaHuWQLOs."
+  },
+  {
+    "id": "XwoKf6_ZeqY-20260930-recheck_views",
+    "video_id": "XwoKf6_ZeqY",
+    "stem": "video_esteticistas",
+    "due": "2026-09-30",
+    "created": "2026-09-29",
+    "type": "recheck_views",
+    "status": "open",
+    "gate": "views",
+    "threshold": 5,
+    "note": "Publicado 28/09 com 0 views. Re-checar 48h apos publicacao. Se ainda 0: checar restricao/zero-impressao no Studio (Analytics > Alcance) ANTES de re-up; nao repetir upload as cegas."
+  },
+  {
+    "id": "xclcaUY3-W0-20260930-recheck_views",
+    "video_id": "xclcaUY3-W0",
+    "stem": "hook_video_negocios_locais",
+    "due": "2026-09-30",
+    "created": "2026-09-29",
+    "type": "recheck_views",
+    "status": "open",
+    "gate": "views",
+    "threshold": 5,
+    "note": "Re-hook publicado 28/09, 2 views em 24h. Mesma janela de re-checagem do XwoKf6_ZeqY."
+  },
+  {
+    "id": "retention-gate-20261003-recheck_retention",
+    "video_id": null,
+    "stem": null,
+    "due": "2026-10-03",
+    "created": "2026-09-26",
+    "type": "recheck_retention",
+    "status": "open",
+    "gate": "retention",
+    "threshold": 60.0,
+    "note": "Decisao do gestor (26/09): escala para 2/dia mantida apesar de retencao 47,8%. Reavaliar em 03/10; se nao subir para >=60%, pausar a leva das 12:00."
+  }
+]

@@ -9,10 +9,13 @@ import sys
 import json
 import re
 import argparse
+import unicodedata
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 import urllib.parse
+import subprocess
+import shutil
 
 # Google API imports
 try:
@@ -36,6 +39,71 @@ HISTORY_FILE = Path("/home/fvitorio/.config/opencode/skills/youtube-growth/histo
 
 # Delimiter used in video-creator metadata files (63 ═ characters)
 DELIMITER = "═" * 63
+
+# ── Gate de duração para Shorts (produções novas) ───────────────────────────
+# Evidência (10 dias / 22 vídeos): ≤26s = 34,2 views em média | 51–85s = 10,9.
+# Vale para NOVOS uploads/agendamentos. Vídeos já publicados não são afetados.
+MAX_SHORT_DURATION_S = 30.0
+FFPROBE = shutil.which("ffprobe")
+
+
+def probe_duration_seconds(video_path: Path) -> Optional[float]:
+    """Duração em segundos via ffprobe. None se ffprobe indisponível/falhar."""
+    if not FFPROBE:
+        return None
+    try:
+        out = subprocess.run(
+            [FFPROBE, "-v", "error", "-show_entries", "format=duration",
+             "-of", "csv=p=0", str(video_path)],
+            capture_output=True, text=True, timeout=30,
+        ).stdout.strip()
+        return float(out) if out else None
+    except Exception:
+        return None
+
+
+# ── REGRA INVIOLÁVEL DE SEO ────────────────────────────────────────────────
+# Título e primeira linha da descrição SEMPRE começam com a palavra-chave
+# principal por extenso. Nenhuma abreviação é aceita. Falha = bloqueio.
+SEO_KEYWORD_BANK = Path(
+    "/home/fvitorio/.config/opencode/skills/video-creator/keywords/banco_keywords.json"
+)
+
+CORE_SEO_KEYWORDS = [
+    "landing page", "landing pages", "google ads", "tráfego pago",
+    "marketing digital", "marketing", "captação de clientes", "conversão",
+    "taxa de conversão", "lead", "leads", "google analytics", "ga4",
+    "criativos", "segmentação", "copy", "funil",
+]
+
+# Termos de nicho também valem no início do título (padrão validado: nicho-primeiro)
+NICHE_START_KEYWORDS = [
+    "clínica", "clínicas", "advogado", "advogados", "advocacia",
+    "contador", "contadores", "fisioterapia", "fisioterapeuta", "fisioterapeutas",
+    "psicologia", "psicólogo", "psicólogos", "imobiliária", "imobiliárias",
+    "estética", "esteticista", "esteticistas", "negócio local", "negócios locais",
+    "marketing local", "google meu negócio", "agendamento", "marketing jurídico",
+    "marketing médico", "marketing contábil", "tracking", "rastreamento",
+    "google tag manager", "analytics", "mensuração",
+]
+
+# (regex, abreviação, forma correta)
+ABBREVIATIONS_FORBIDDEN = [
+    (r"\blps?\b", "LP/LPs", "landing page / landing pages"),
+    (r"\bmkt\b", "MKT", "marketing"),
+    (r"\bga\b", "GA", "Google Ads ou Google Analytics"),
+    (r"\bconv\b", "CONV", "conversão"),
+    (r"\bcap\.?\b", "CAP", "captação"),
+    (r"\bcli\.?\b", "CLI", "cliente"),
+    (r"\bpág\.?\b", "PÁG", "página"),
+]
+
+
+def _norm_text(text: str) -> str:
+    """Lowercase + remove acentos preservando o comprimento do texto."""
+    value = unicodedata.normalize("NFKD", text or "")
+    value = "".join(c for c in value if not unicodedata.combining(c))
+    return value.lower().strip()
 
 # YouTube API scopes
 SCOPES = [
@@ -291,7 +359,80 @@ class YouTubeGrowthManager:
             'description': description,
             'hashtags': hashtags
         }
-    
+
+    def seo_keyword_list(self) -> List[str]:
+        """Keyword bank (video-creator) + keywords centrais + termos de nicho."""
+        keywords = list(CORE_SEO_KEYWORDS) + list(NICHE_START_KEYWORDS)
+        try:
+            bank = json.loads(SEO_KEYWORD_BANK.read_text(encoding='utf-8'))
+            for niche in bank.values():
+                for item in niche.get('keywords_principais', []):
+                    keyword = (item.get('keyword') or '').strip()
+                    if keyword:
+                        keywords.append(keyword)
+        except Exception as e:
+            print(f"[YouTube] Warning: keyword bank not loaded ({e}), using core list only")
+        return sorted({_norm_text(k) for k in keywords if k}, key=len, reverse=True)
+
+    @staticmethod
+    def _suggest_keyword_start(text: str, keywords: List[str]) -> str:
+        """Monta sugestão movendo a keyword encontrada para o início do texto."""
+        normalized = _norm_text(text)
+        for keyword in keywords:
+            position = normalized.find(keyword)
+            if position >= 0:
+                rest = (text[:position] + text[position + len(keyword):])
+                rest = re.sub(r"\s+", " ", rest).strip(" :–-→|")
+                original = text[position:position + len(keyword)]
+                return f"{original}: {rest}" if rest else original
+        return "Landing Page: ..."
+
+    def seo_audit(self, title: str, description: str = "") -> List[str]:
+        """
+        REGRA INVIOLÁVEL de SEO:
+        1. Título começa com a palavra-chave principal por extenso.
+        2. Primeira linha da descrição idem.
+        3. Nenhuma abreviação em título ou descrição.
+        Retorna lista de erros (vazia = aprovado).
+        """
+        errors: List[str] = []
+        keywords = self.seo_keyword_list()
+        title_text = (title or "").strip()
+
+        if not title_text:
+            errors.append("Título vazio")
+            return errors
+
+        def check_start(text: str, label: str) -> None:
+            first_line = text.strip().split("\n")[0].strip()
+            if not first_line:
+                errors.append(f"{label} vazio")
+                return
+            normalized = _norm_text(first_line)
+            if not any(normalized.startswith(k) for k in keywords):
+                errors.append(
+                    f"{label} não começa com a palavra-chave por extenso: \"{first_line}\" "
+                    f"→ sugestão: \"{self._suggest_keyword_start(first_line, keywords)}\""
+                )
+
+        def check_abbreviations(text: str, label: str) -> None:
+            for pattern, abbr, correct in ABBREVIATIONS_FORBIDDEN:
+                match = re.search(pattern, text, flags=re.IGNORECASE)
+                if match:
+                    errors.append(
+                        f"{label} contém a abreviação \"{match.group(0)}\" ({abbr}) "
+                        f"→ escreva \"{correct}\""
+                    )
+
+        check_start(title_text, "Título")
+        check_abbreviations(title_text, "Título")
+
+        if description:
+            check_start(description, "Descrição (primeira linha)")
+            check_abbreviations(description, "Descrição")
+
+        return errors
+
     def is_video_already_uploaded(self, video_path: Path) -> bool:
         """Check if a video has already been uploaded based on history"""
         video_stem = video_path.stem
@@ -314,7 +455,8 @@ class YouTubeGrowthManager:
         return False
     
     def upload_video(self, video_path: Path, metadata_path: Path, 
-                     scheduled_time: Optional[datetime] = None) -> Dict:
+                     scheduled_time: Optional[datetime] = None,
+                     force_duration: bool = False) -> Dict:
         """
         Upload a video to YouTube
         
@@ -322,6 +464,7 @@ class YouTubeGrowthManager:
             video_path: Path to the .mp4 video file
             metadata_path: Path to the .txt metadata file
             scheduled_time: Optional datetime for scheduling the upload
+            force_duration: Sobrepõe o gate de duração ≤30s (exceção documentada)
             
         Returns:
             Dictionary with upload results
@@ -347,7 +490,41 @@ class YouTubeGrowthManager:
         
         if not metadata['title']:
             raise Exception("No title found in metadata file")
-        
+
+        # REGRA INVIOLÁVEL: valida SEO antes de qualquer envio
+        seo_errors = self.seo_audit(metadata['title'], metadata['description'])
+        if seo_errors:
+            details = "\n".join(f"  - {e}" for e in seo_errors)
+            raise Exception(
+                "[YouTube] SEO audit FAIL — publicação bloqueada (regra inviolável):\n"
+                f"{details}\n"
+                "  Action: corrija a seção TÍTULO/DESCRIÇÃO no arquivo .txt e rode "
+                "`python3 youtube_growth.py seo-audit <arquivo.txt>` antes de repetir."
+            )
+        print("[YouTube] SEO audit PASS (keyword no início, sem abreviações)")
+
+        # GATE DE DURAÇÃO — Shorts novos precisam de <= MAX_SHORT_DURATION_S
+        duration = probe_duration_seconds(video_path)
+        if duration is None:
+            print("[YouTube] Aviso: ffprobe indisponível — duration gate ignorado "
+                  f"({video_path.name})")
+        elif duration > MAX_SHORT_DURATION_S:
+            msg = (
+                f"[YouTube] DURATION GATE FAIL — publicação bloqueada: "
+                f"{video_path.name} tem {duration:.1f}s (máx. {MAX_SHORT_DURATION_S:.0f}s)\n"
+                f"  Evidência: vídeos <=26s renderizam 34 views em média; "
+                f"51-85s renderizam 11 (10 dias / 22 vídeos).\n"
+                f"  Action: re-renderize o vídeo em <=30s com a video-creator, "
+                f"ou use --force se esta for uma exceção documentada."
+            )
+            if not force_duration:
+                raise Exception(msg)
+            print(msg)
+            print("[YouTube] --force recebido — seguindo apesar do gate.")
+        else:
+            print(f"[YouTube] Duration gate PASS ({duration:.1f}s <= "
+                  f"{MAX_SHORT_DURATION_S:.0f}s)")
+
         # Detect niche and add UTM to description
         niche = self.detect_niche_from_title(metadata['title'])
         description_with_utm = self.add_utm_to_description(
@@ -652,6 +829,17 @@ class YouTubeGrowthManager:
                 print(f"[YouTube] Error getting video info: {video_info['error']}")
                 return False
 
+            seo_errors = self.seo_audit(
+                video_info['title'], video_info.get('description') or ''
+            )
+            if seo_errors:
+                print(f"[SEO] BLOQUEADO: vídeo {video_id} não passa na auditoria de SEO.")
+                for err in seo_errors:
+                    print(f"[SEO]   - {err}")
+                print(f"[SEO] Corrija antes de agendar: "
+                      f"python3 youtube_growth.py seo-audit {video_id}")
+                return False
+
             # Update the video to scheduled (private until publishAt)
             update_body = {
                 'id': video_id,
@@ -710,6 +898,14 @@ class YouTubeGrowthManager:
         """
         if not self.youtube_service:
             self.authenticate()
+
+        # REGRA INVIOLÁVEL: valida SEO antes de atualizar metadados
+        seo_errors = self.seo_audit(title, description)
+        if seo_errors:
+            print(f"[YouTube] SEO audit FAIL — atualização bloqueada (regra inviolável):")
+            for error in seo_errors:
+                print(f"  - {error}")
+            return False
 
         try:
             video_info = self.get_video_status(video_id)
@@ -970,12 +1166,18 @@ def main():
     upload_parser = subparsers.add_parser('upload', help='Upload a video to YouTube')
     upload_parser.add_argument('video_name', nargs='?', help='Name of video file (without extension)')
     upload_parser.add_argument('--file', '-f', help='Path to video file')
+    upload_parser.add_argument('--force', action='store_true',
+                               help=f'Publica mesmo com duração > {MAX_SHORT_DURATION_S:.0f}s '
+                                    f'(exceção documentada ao duration gate)')
     
     # Schedule command
     schedule_parser = subparsers.add_parser('schedule', help='Schedule a video for future publication')
     schedule_parser.add_argument('video_name', nargs='?', help='Name of video file (without extension)')
     schedule_parser.add_argument('--file', '-f', help='Path to video file')
     schedule_parser.add_argument('--when', '-w', required=True, help='When to publish (natural language)')
+    schedule_parser.add_argument('--force', action='store_true',
+                                 help=f'Agenda mesmo com duração > {MAX_SHORT_DURATION_S:.0f}s '
+                                      f'(exceção documentada ao duration gate)')
     
     # List schedule command
     subparsers.add_parser('schedule-list', help='List scheduled videos')
@@ -1000,6 +1202,18 @@ def main():
     # Analytics command
     analytics_parser = subparsers.add_parser('analytics', help='Show channel analytics')
     analytics_parser.add_argument('--days', '-d', type=int, default=30, help='Number of days to analyze')
+
+    # SEO audit command (read-only)
+    seo_parser = subparsers.add_parser(
+        'seo-audit',
+        help='Validate title/description against the inviolable SEO rules (read-only)'
+    )
+    seo_parser.add_argument('target', nargs='?',
+                            help='metadata .txt path, video name or video_id')
+    seo_parser.add_argument('--title', help='Title to validate directly')
+    seo_parser.add_argument('--description', default='', help='Description to validate directly')
+    seo_parser.add_argument('--history', action='store_true',
+                            help='Audit every video recorded in the local history')
     
     # Args for all commands
     parser.add_argument('--yes', '-y', action='store_true', help='Assume yes to prompts')
@@ -1053,7 +1267,8 @@ def main():
                 return 0
         
         try:
-            result = manager.upload_video(video_path, metadata_path)
+            result = manager.upload_video(video_path, metadata_path,
+                                          force_duration=getattr(args, 'force', False))
             print(f"\n[YouTube] Upload successful!")
             print(f"  Video ID: {result['video_id']}")
             print(f"  URL: {result['youtube_url']}")
@@ -1124,7 +1339,8 @@ def main():
                 return 0
         
         try:
-            result = manager.upload_video(video_path, metadata_path, scheduled_time)
+            result = manager.upload_video(video_path, metadata_path, scheduled_time,
+                                          force_duration=getattr(args, 'force', False))
             print(f"\n[YouTube] Scheduling successful!")
             print(f"  Video ID: {result['video_id']}")
             print(f"  URL: {result['youtube_url']}")
@@ -1219,6 +1435,69 @@ def main():
         print("  - Traffic sources")
         return 0
     
+    elif args.command == 'seo-audit':
+        # READ/ANALYZE: nunca modifica metadados
+        if args.history:
+            failures = 0
+            deleted = 0
+            live = {k: v for k, v in manager.history.items()
+                    if isinstance(v, dict) and v.get('status') != 'deleted'}
+            deleted = len(manager.history) - len(live)
+            print(f"[YouTube] SEO audit — local history ({len(live)} vídeos ativos"
+                  f"{f', {deleted} deletados ignorados' if deleted else ''})")
+            for stem, entry in live.items():
+                errors = manager.seo_audit(entry.get('title', ''), entry.get('description', ''))
+                if errors:
+                    failures += 1
+                print(f"  [{'FAIL' if errors else 'PASS'}] {stem} — {entry.get('title', '')}")
+                for error in errors:
+                    print(f"           - {error}")
+            print(f"[YouTube] {failures}/{len(live)} vídeo(s) fora do padrão")
+            return 1 if failures else 0
+
+        if args.title is not None:
+            errors = manager.seo_audit(args.title, args.description)
+        elif args.target:
+            path = Path(args.target).expanduser()
+            entry = None
+            metadata = None
+
+            if path.suffix == '.txt' and path.exists():
+                metadata = manager.parse_metadata_file(path)
+            elif args.target in manager.history:
+                entry = manager.history[args.target]
+            else:
+                for value in manager.history.values():
+                    if value.get('video_id') == args.target:
+                        entry = value
+                        break
+                if entry is None:
+                    pairs = manager.find_video_files(args.target)
+                    if pairs:
+                        metadata = manager.parse_metadata_file(pairs[0][1])
+
+            if metadata:
+                errors = manager.seo_audit(metadata['title'], metadata['description'])
+            elif entry:
+                errors = manager.seo_audit(entry.get('title', ''), entry.get('description', ''))
+            else:
+                print(f"[YouTube] Target not found: {args.target}")
+                print("  Use um caminho .txt, um nome de vídeo, um video_id ou --history")
+                return 1
+        else:
+            print("[YouTube] seo-audit: informe --title/--description, um arquivo .txt, "
+                  "um nome de vídeo, um video_id ou --history")
+            return 1
+
+        if errors:
+            print("[YouTube] SEO audit FAIL (regra inviolável):")
+            for error in errors:
+                print(f"  - {error}")
+            return 1
+
+        print("[YouTube] SEO audit PASS — keyword no início, sem abreviações")
+        return 0
+
     else:
         parser.print_help()
         return 1
