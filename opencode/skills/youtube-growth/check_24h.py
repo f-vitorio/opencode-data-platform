@@ -151,6 +151,45 @@ def recent_public_videos(manager, now_utc, hours=RECENT_H):
     return out
 
 
+def report_pending_comments(manager):
+    """
+    Comentário com CTA + link rastreável: vídeos públicos sem comentário.
+    Somente leitura — para aplicar: python3 youtube_growth.py comment <target> --yes
+    """
+    candidates = [(stem, e) for stem, e in manager.history.items()
+                  if isinstance(e, dict)
+                  and e.get('video_id')
+                  and e.get('status') == 'published'
+                  and not e.get('comment_id')]
+    if not candidates:
+        print("\n[Comentários] Todos os vídeos publicados já têm comentário com CTA.")
+        return []
+
+    ids = [e['video_id'] for _, e in candidates]
+    public = set()
+    for i in range(0, len(ids), 50):
+        resp = manager.youtube_service.videos().list(
+            part="status", id=",".join(ids[i:i + 50])).execute()
+        for v in resp.get("items", []):
+            if v.get("status", {}).get("privacyStatus") == "public":
+                public.add(v["id"])
+
+    pending = [(stem, e) for stem, e in candidates if e['video_id'] in public]
+    skipped = len(candidates) - len(pending)
+    if not pending:
+        print(f"\n[Comentários] 0 pendente(s) — "
+              f"{skipped} ainda não público(s)/sem vídeo.")
+        return []
+
+    print(f"\n=== COMENTÁRIOS PENDENTES — {len(pending)} vídeo(s) público(s) "
+          f"sem CTA ===")
+    for stem, e in sorted(pending, key=lambda x: x[1].get('uploaded_at') or ''):
+        print(f"  {stem}  {e['video_id']}  {str(e.get('title', ''))[:55]}")
+    print("  Aplicar: python3 youtube_growth.py comment <video> --yes "
+          "(fixar no Studio é manual)")
+    return pending
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--window', type=int, choices=[6, 24], action='append',
@@ -169,6 +208,7 @@ def main():
     print_due_pending_checks(g, now)
 
     videos = recent_public_videos(g, now_utc)
+    report_pending_comments(g)
     if not videos:
         print(f'Nenhum vídeo público nas últimas {RECENT_H}h.')
         return 0

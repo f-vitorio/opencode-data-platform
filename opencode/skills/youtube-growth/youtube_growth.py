@@ -9,8 +9,9 @@ import sys
 import json
 import re
 import argparse
+import hashlib
 import unicodedata
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 import urllib.parse
@@ -45,6 +46,44 @@ DELIMITER = "═" * 63
 # Vale para NOVOS uploads/agendamentos. Vídeos já publicados não são afetados.
 MAX_SHORT_DURATION_S = 30.0
 FFPROBE = shutil.which("ffprobe")
+
+# ── TikTok (pacote semi-manual) ─────────────────────────────────────────────
+# A publicação é manual: esta skill só prepara a legenda pronta e registra
+# o estado local. O limite de legenda do TikTok é 2200 caracteres.
+TIKTOK_CAPTION_LIMIT = 2200
+TIKTOK_DIR = VIDEO_MAKER_DIR
+TIKTOK_HOST_FOLDER = "tiktok-shorts"  # pasta pública no Cloudinary
+
+# ── Links de conversão e UTMs por plataforma ────────────────────────────────
+# TikTok NÃO formata URL em legenda nem em comentário: o texto aparece, mas não
+# é clicável. O único link clicável orgânico é o da bio (conta Business ou
+# pessoal com 1000+ seguidores). Por isso a legenda manda para a bio e traz
+# também uma URL curta para quem copiar/colar — essa sim é rastreável.
+LANDING_URL = "https://fvs7.com.br/diagnostico-gratuito"
+
+TIKTOK_BIO_URL = (
+    f"{LANDING_URL}?utm_source=tiktok&utm_medium=social"
+    "&utm_campaign=perfil&utm_content=bio"
+)
+
+# Regex pega a URL com ou sem esquema e com ou sem query já montada.
+_FVS7_LANDING_RE = re.compile(
+    r'(?<![\w.-])(?:(?:https?://)?(?:www\.)?)?'
+    r'fvs7\.com\.br/diagnostico-gratuito(?:\?[^\s]*)?'
+)
+
+
+def tiktok_utm_url(slug: str) -> str:
+    """URL de conversão com UTM da plataforma TikTok (por vídeo)."""
+    clean = re.sub(r'[^a-z0-9_]+', '_', _norm_text(slug)).strip('_') or 'tiktok'
+    return (f"{LANDING_URL}?utm_source=tiktok&utm_medium=shorts"
+            f"&utm_campaign=tiktok&utm_content={clean}")
+
+
+def youtube_utm_url(video_id: str, niche: str) -> str:
+    """URL de conversão com UTM da plataforma YouTube (por vídeo)."""
+    return (f"{LANDING_URL}?utm_source=youtube&utm_medium=shorts"
+            f"&utm_campaign={video_id}&utm_content={niche or 'marketing'}")
 
 
 def probe_duration_seconds(video_path: Path) -> Optional[float]:
@@ -190,13 +229,18 @@ class YouTubeGrowthManager:
         Returns:
             URL with UTM parameters
         """
-        base_url = "https://fvs7.com.br/diagnostico-gratuito"
+        base_url = LANDING_URL
         utm_params = f"utm_source=youtube&utm_medium=shorts&utm_campaign={video_id}&utm_content={niche}"
         return f"{base_url}?{utm_params}"
     
     def add_utm_to_description(self, description: str, video_id: str, niche: str = "marketing") -> str:
         """
-        Add UTM link to video description if not already present
+        Normaliza o link de conversão da descrição para a UTM do vídeo.
+        
+        Sempre reescreve a URL de diagnóstico (com ou sem query, com ou sem
+        esquema) para a versão canônica com o video_id real — assim um .txt
+        gravado com utm_campaign={stem} pelo video-creator é promovido para o
+        utm_campaign={video_id} no upload, e um .txt sem UTM ganha uma.
         
         Args:
             description: Original description
@@ -208,22 +252,12 @@ class YouTubeGrowthManager:
         """
         utm_url = self.generate_utm_url(video_id, niche)
         
-        # Check if UTM already exists
-        if "utm_source=youtube" in description:
-            return description
+        # Sempre reescreve (idempotente: mesma URL de entrada = mesma de saída)
+        if _FVS7_LANDING_RE.search(description):
+            return _FVS7_LANDING_RE.sub(utm_url, description)
         
-        # Check if there's a link to replace
-        if "fvs7.com.br/diagnostico-gratuito" in description:
-            # Replace existing link with UTM version
-            import re
-            pattern = r'https?://fvs7\.com\.br/diagnostico-gratuito(?:\?[^\s]*)?'
-            replacement = utm_url
-            description = re.sub(pattern, replacement, description)
-        else:
-            # Add UTM link at the end
-            description = f"{description}\n\n👉 Diagnóstico Grátis: {utm_url}"
-        
-        return description
+        # Sem link de conversão: anexa o rastreável no fim
+        return f"{description}\n\n👉 Diagnóstico Grátis: {utm_url}"
     
     def detect_niche_from_title(self, title: str) -> str:
         """
@@ -785,15 +819,21 @@ class YouTubeGrowthManager:
             ).execute()
             
             # Update history
+            stem = None
             for video_stem, entry in self.history.items():
                 if entry.get('video_id') == video_id:
                     entry['status'] = 'published'
                     entry['published_at'] = datetime.now().isoformat()
                     entry['privacy_status'] = 'public'
+                    stem = video_stem
                     break
             
             self.save_history()
             print(f"[YouTube] Video {video_id} published immediately")
+
+            # Comentário com CTA: só faz sentido quando o vídeo está público
+            if stem and not self.history[stem].get('comment_id'):
+                self.comment_video(stem)
             return True
             
         except Exception as e:
@@ -960,7 +1000,7 @@ class YouTubeGrowthManager:
             traceback.print_exc()
             return False
 
-    def add_comment(self, video_id: str, text: str) -> bool:
+    def add_comment(self, video_id: str, text: str) -> Optional[str]:
         """
         Add a comment to a YouTube video.
 
@@ -969,7 +1009,7 @@ class YouTubeGrowthManager:
             text: Comment text (max 1000 chars)
 
         Returns:
-            True on success, False otherwise
+            comment_id on success, None otherwise
         """
         if not self.youtube_service:
             self.authenticate()
@@ -990,17 +1030,740 @@ class YouTubeGrowthManager:
                 }
             }
 
-            self.youtube_service.commentThreads().insert(
+            response = self.youtube_service.commentThreads().insert(
                 part="snippet",
                 body=comment_body
             ).execute()
 
             print(f"[YouTube] Comment added to {video_id}")
-            return True
+            return response.get('id')
 
         except Exception as e:
             print(f"[YouTube] Error adding comment to {video_id}: {e}")
+            return None
+
+    def build_pinned_comment(self, title: str, video_id: str,
+                             niche: str = "marketing") -> str:
+        """
+        Texto do comentário com CTA + link rastreável (template da video-creator).
+
+        A API do YouTube não fixa (pin) comentários — fixe manualmente no Studio.
+        """
+        url = self.generate_utm_url(video_id, niche)
+        blocks = [
+            f"🎯 {title} — o que está travando o seu resultado?",
+            f"👉 Diagnóstico grátis em 15 minutos: {url}",
+            "📊 +150 projetos entregues | 4.9/5 avaliação dos clientes",
+            "Qual desses pontos mais se parece com a sua situação? Comenta aqui 👇",
+        ]
+        text = blocks[0]
+        for block in blocks[1:]:
+            candidate = f"{text}\n{block}"
+            if len(candidate) > 997:
+                break
+            text = candidate
+        return text
+
+    def comment_video(self, target: str) -> Optional[str]:
+        """
+        Adiciona o comentário com CTA num vídeo já publicado.
+
+        target: stem do vídeo, video_id ou caminho .txt.
+        Idempotente: se já existe comentário registrado, não duplica.
+        Retorna o comment_id ou None.
+        """
+        if not self.youtube_service:
+            self.authenticate()
+
+        stem, entry = None, None
+        if target in self.history and isinstance(self.history[target], dict):
+            stem, entry = target, self.history[target]
+        else:
+            found = self._find_entry(target)
+            if not found:
+                print(f"[YouTube] Comentário: vídeo não encontrado para '{target}'")
+                return None
+            stem, entry = found
+
+        video_id = entry.get('video_id')
+        if not video_id:
+            print(f"[YouTube] Comentário: '{stem}' não tem video_id")
+            return None
+        if entry.get('comment_id'):
+            print(f"[YouTube] Comentário já existe em {video_id} "
+                  f"({entry['comment_id']}) — nada a fazer")
+            return entry['comment_id']
+
+        niche = self.detect_niche_from_title(entry.get('title') or '')
+        text = self.build_pinned_comment(entry.get('title') or '', video_id, niche)
+        comment_id = self.add_comment(video_id, text)
+        if comment_id:
+            entry['comment_id'] = comment_id
+            entry['commented_at'] = datetime.now().isoformat(timespec='seconds')
+            self.save_history()
+            print(f"[YouTube] Comentário registrado em {video_id}: {comment_id}")
+            print("  A API não fixa comentário — fixe no YouTube Studio se quiser")
+        return comment_id
+
+    # ── TikTok (pacote semi-manual) ────────────────────────────────────────
+
+    # Qualquer URL do domínio sai da legenda: TikTok não formata como link.
+    _FVS7_ANY_URL_RE = re.compile(
+        r'(?<![\w.-])(?:(?:https?://)?(?:www\.)?)?fvs7\.com\.br(?:/[^\s]*)?'
+    )
+    # Linhas que só serviam de suporte ao link e ficam órfãs depois da remoção.
+    _ORPHAN_CTA_LINE_RE = re.compile(
+        r'^\s*(?:👉|📞|🌐|🔗|💥|🔥|⬇|📍|🎯)?\s*'
+        r'(?:diagn[oó]stico(?:\s+gr[aá]tis)?(?:\s+em\s+\d+\s+minutos?)?'
+        r'|acesse(?:\s+agora)?|fale\s+conosco|saiba\s+mais|agende'
+        r'|link(?:\s+na\s+bio)?)\s*:?\s*$',
+        re.IGNORECASE,
+    )
+
+    def build_tiktok_caption(self, metadata: Dict[str, str],
+                             slug: str = "") -> str:
+        """
+        Monta a legenda do TikTok.
+
+        - keyword na 1ª linha (regra inviolável de SEO)
+        - fonte da descrição: history.json quando existe (descrição já
+          reescrita/otimizada), senão o .txt cru da video-creator
+        - TODA URL sai do corpo (TikTok não clica em legenda/comentário) e vira
+          um CTA duplo: "link na bio" (único clique real) + URL com UTM
+          rastreável para quem copiar/colar
+        - hashtags no fim, corte em TIKTOK_CAPTION_LIMIT preservando o início
+        """
+        slug = (slug or '').strip()
+        hashtags = (metadata.get('hashtags') or '').strip()
+
+        # 1) fonte da descrição: histórico (preferido) > .txt
+        description = (metadata.get('description') or '').strip()
+        entry = self.history.get(slug) if slug else None
+        if isinstance(entry, dict) and (entry.get('description') or '').strip():
+            description = entry['description'].strip()
+
+        # 2) remove a linha de hashtags solta da descrição (já vem em hashtags)
+        body_lines = [
+            line for line in description.split('\n')
+            if not re.fullmatch(r'\s*#\S+(?:\s+#\S+)*\s*', line)
+        ]
+        body = '\n'.join(body_lines).strip()
+
+        # 3) remove URLs do domínio e as linhas que sobram vazias sem sentido
+        body = self._FVS7_ANY_URL_RE.sub('', body)
+        body = '\n'.join(
+            line for line in body.split('\n')
+            if not self._ORPHAN_CTA_LINE_RE.match(line)
+        )
+        body = re.sub(r'[ \t]+\n', '\n', body)
+        body = re.sub(r'\n{3,}', '\n\n', body).strip()
+        body = re.sub(r'\s+:$', '', body).strip()
+        if not body:
+            body = (metadata.get('title') or '').strip()
+
+        # 4) CTA duplo — bio clicável + URL para copiar/colar (com UTM)
+        copy_url = tiktok_utm_url(slug)
+        cta = (
+            "🔗 Diagnóstico grátis — link na bio\n"
+            f"🌐 Copie e cole: {copy_url}"
+        )
+
+        def join(parts: List[str]) -> str:
+            return '\n\n'.join(p for p in parts if p)
+
+        caption = join([body, cta, hashtags])
+        if len(caption) > TIKTOK_CAPTION_LIMIT:
+            # reserva CTA + hashtags: o corte só pode comer o miolo do texto
+            reserved = len(cta) + len(hashtags) + 4
+            body = body[:max(0, TIKTOK_CAPTION_LIMIT - reserved)].rstrip()
+            caption = join([body, cta, hashtags])
+        return caption
+
+    @staticmethod
+    def _copy_to_clipboard(text: str) -> bool:
+        """Copia texto para a área de transferência (best-effort)."""
+        candidates = []
+        if shutil.which('wl-copy'):
+            candidates.append(['wl-copy'])
+        if shutil.which('xclip'):
+            candidates.append(['xclip', '-selection', 'clipboard'])
+        if shutil.which('xsel'):
+            candidates.append(['xsel', '--clipboard', '--input'])
+        if shutil.which('xclip') is None and shutil.which('wl-copy') is None \
+                and shutil.which('xsel') is None and sys.platform == 'darwin':
+            candidates.append(['pbcopy'])
+        for cmd in candidates:
+            try:
+                subprocess.run(cmd, input=text.encode('utf-8'), check=True,
+                               capture_output=True, timeout=10)
+                return True
+            except Exception:
+                continue
+        return False
+
+    def tiktok_package(self, video_path: Path, metadata_path: Path) -> Dict:
+        """
+        Gera o pacote de publicação manual no TikTok.
+
+        READ + arquivo local: não publica nada. A regra inviolável de SEO roda
+        antes de gerar qualquer arquivo — falhou, não existe pacote.
+        """
+        metadata = self.parse_metadata_file(metadata_path)
+        caption = self.build_tiktok_caption(metadata, slug=video_path.stem)
+
+        seo_errors = self.seo_audit(metadata['title'], caption)
+        if seo_errors:
+            print("[YouTube] TikTok package BLOCKED (regra inviolável de SEO):")
+            for error in seo_errors:
+                print(f"  - {error}")
+            print("  Action: corrija o .txt da video-creator e rode de novo")
+            raise Exception("SEO audit falhou — pacote não gerado")
+
+        caption_path = TIKTOK_DIR / f"{video_path.stem}.tiktok.txt"
+        caption_path.write_text(caption + "\n", encoding='utf-8')
+
+        copied = self._copy_to_clipboard(caption)
+
+        duration = probe_duration_seconds(video_path)
+        now = datetime.now().isoformat(timespec='seconds')
+
+        entry = self.history.setdefault(video_path.stem, {})
+        entry.setdefault('title', metadata['title'])
+        entry.setdefault('description', metadata['description'])
+        entry.setdefault('hashtags', metadata['hashtags'])
+        entry.setdefault('video_file', str(video_path))
+        entry.setdefault('metadata_file', str(metadata_path))
+        if duration:
+            entry.setdefault('duration', duration)
+        # Preserva o que já existe (idempotência): um pacote manual não pode
+        # apagar um agendamento/publicação ativo no Buffer.
+        existing = entry.get('tiktok') if isinstance(entry.get('tiktok'), dict) else {}
+        tiktok_state = {**existing}
+        if tiktok_state.get('status') not in ('scheduled', 'published'):
+            tiktok_state['status'] = 'prepared'
+        tiktok_state.update({
+            'caption_file': str(caption_path),
+            'caption_chars': len(caption),
+            'copy_url': tiktok_utm_url(video_path.stem),
+            'bio_url': TIKTOK_BIO_URL,
+            'video_file': str(video_path),
+            'prepared_at': now,
+        })
+        entry['tiktok'] = tiktok_state
+        self.save_history()
+
+        print("[YouTube] TikTok package prepared (publicação manual)")
+        print(f"  Vídeo: {video_path}")
+        print(f"  Legenda: {caption_path} ({len(caption)}/{TIKTOK_CAPTION_LIMIT} chars)")
+        print(f"  1ª linha: {caption.splitlines()[0] if caption else ''}")
+        print(f"  Link clicável do TikTok (bio, 1 só): {TIKTOK_BIO_URL}")
+        print(f"  URL de cópia da legenda (rastreável): {tiktok_utm_url(video_path.stem)}")
+        print(f"  Área de transferência: {'copiada' if copied else 'indisponível (copie do arquivo)'}")
+        print("  Próximo passo: abra o TikTok, cole a legenda e selecione o vídeo")
+        return {'caption_file': str(caption_path), 'caption': caption,
+                'bio_url': TIKTOK_BIO_URL,
+                'copy_url': tiktok_utm_url(video_path.stem),
+                'copied': copied, 'duration': duration}
+
+    def _find_entry(self, target: str) -> Optional[Tuple[str, Dict]]:
+        """Localiza a entrada do histórico por nome, video_id ou caminho .txt."""
+        if target in self.history and isinstance(self.history[target], dict):
+            return target, self.history[target]
+
+        path = Path(target).expanduser()
+        if path.suffix in ('.txt', '.mp4') and path.exists():
+            stem = path.stem.replace('.tiktok', '')
+            if stem in self.history and isinstance(self.history[stem], dict):
+                return stem, self.history[stem]
+
+        pairs = self.find_video_files(Path(target).stem)
+        if pairs:
+            stem = pairs[0][0].stem
+            if stem in self.history and isinstance(self.history[stem], dict):
+                return stem, self.history[stem]
+
+        for key, value in self.history.items():
+            if isinstance(value, dict) and value.get('video_id') == target:
+                return key, value
+        return None
+
+    def _find_tiktok_entry(self, target: str) -> Optional[Tuple[str, Dict]]:
+        """Localiza a entrada do histórico (alias usado pelos comandos TikTok)."""
+        return self._find_entry(target)
+
+    def tiktok_mark_published(self, target: str) -> bool:
+        """Registra que o vídeo foi publicado manualmente no TikTok."""
+        found = self._find_tiktok_entry(target)
+        if not found:
+            print(f"[YouTube] TikTok: entrada não encontrada para '{target}'")
             return False
+        stem, entry = found
+        tiktok = entry.setdefault('tiktok', {})
+        tiktok['status'] = 'published'
+        tiktok['published_at'] = datetime.now().isoformat(timespec='seconds')
+        self.save_history()
+        print(f"[YouTube] TikTok: '{stem}' marcado como publicado")
+        print("  Confirme a publicação no seu perfil do TikTok")
+        return True
+
+    def tiktok_list(self) -> List[Dict]:
+        """Lista o estado dos pacotes TikTok registrados localmente."""
+        items = []
+        for stem, entry in self.history.items():
+            if not isinstance(entry, dict):
+                continue
+            tiktok = entry.get('tiktok')
+            if not isinstance(tiktok, dict):
+                continue
+            items.append({
+                'stem': stem,
+                'title': entry.get('title', ''),
+                'status': tiktok.get('status', 'unknown'),
+                'caption_file': tiktok.get('caption_file', ''),
+                'prepared_at': tiktok.get('prepared_at', ''),
+                'scheduled_at': tiktok.get('scheduled_at', ''),
+                'published_at': tiktok.get('published_at', ''),
+                'buffer_post_id': tiktok.get('buffer_post_id', ''),
+            })
+        items.sort(key=lambda item: item.get('prepared_at') or '')
+        return items
+
+    def tiktok_caption_sync(self, execute: bool = False) -> Dict:
+        """
+        Reescreve a legenda dos posts JÁ agendados no Buffer usando o
+        history.json (fonte mais nova, com a descrição reescrita pela Ação 5).
+
+        O Buffer guarda o texto no momento do agendamento, então os posts
+        criados antes da mudança continuam com a legenda antiga (sem CTA de bio).
+        `editPost` atualiza só o texto — horário e vídeo ficam intactos.
+
+        Dry-run por padrão: execute=False só lista. execute=True aplica.
+        """
+        results = {'updated': [], 'same': [], 'skipped': [], 'missing': []}
+        if not any(isinstance(e, dict) and isinstance(e.get('tiktok'), dict)
+                   and e['tiktok'].get('buffer_post_id')
+                   for e in self.history.values()):
+            return results
+
+        remote = {n['id']: n for n in self.buffer_scheduled_posts()}
+
+        for stem, entry in sorted(self.history.items()):
+            if not isinstance(entry, dict):
+                continue
+            tiktok = entry.get('tiktok')
+            if not isinstance(tiktok, dict):
+                continue
+            post_id = tiktok.get('buffer_post_id')
+            if tiktok.get('status') != 'scheduled' or not post_id:
+                continue
+            if post_id not in remote:
+                results['missing'].append((stem, post_id))
+                continue
+
+            metadata = {
+                'title': entry.get('title', ''),
+                'description': entry.get('description', ''),
+                'hashtags': entry.get('hashtags', ''),
+            }
+            if not metadata['title'] or not metadata['description']:
+                results['skipped'].append((stem, 'sem title/description no history'))
+                continue
+
+            caption = self.build_tiktok_caption(metadata, slug=stem)
+            seo_errors = self.seo_audit(metadata['title'], caption)
+            if seo_errors:
+                results['skipped'].append((stem, f'bloqueado por SEO: {seo_errors[0]}'))
+                continue
+
+            current = remote[post_id].get('text') or ''
+            if current.strip() == caption.strip():
+                results['same'].append(stem)
+                continue
+
+            if not execute:
+                results['updated'].append((stem, post_id))
+                continue
+            try:
+                video_url = (tiktok.get('video_url')
+                             or (remote[post_id].get('assets') or [{}])[0].get('source'))
+                if not video_url:
+                    raise Exception("sem video_url no history nem asset no Buffer")
+                self.buffer_edit_post_text(post_id, caption, video_url)
+                tiktok['caption_chars'] = len(caption)
+                tiktok['caption_synced_at'] = datetime.now().isoformat(timespec='seconds')
+                results['updated'].append((stem, post_id))
+                print(f"[YouTube] Buffer: legenda atualizada ({stem}) "
+                      f"{len(current)} → {len(caption)} chars")
+            except Exception as e:
+                results['skipped'].append((stem, f'erro Buffer: {str(e)[:120]}'))
+
+        if execute:
+            self.save_history()
+        return results
+
+    # ── Buffer + Cloudinary (agendamento automático no TikTok) ─────────────
+
+    @staticmethod
+    def _load_credential(filename: str) -> Dict:
+        path = CREDENTIALS_DIR / filename
+        if not path.exists():
+            raise Exception(
+                f"Credencial ausente: {path}\n"
+                f"  Action: crie o arquivo JSON com as credenciais"
+            )
+        return json.loads(path.read_text(encoding='utf-8'))
+
+    def cloudinary_upload_video(self, video_path: Path) -> str:
+        """Sobe o vídeo para o Cloudinary e devolve a URL pública (HTTPS)."""
+        try:
+            import requests
+        except ImportError:
+            raise Exception("requests não instalado (pip install requests)")
+
+        cfg = self._load_credential('cloudinary.json')
+        params = {
+            'timestamp': int(datetime.now().timestamp()),
+            'folder': TIKTOK_HOST_FOLDER,
+            'public_id': video_path.stem,
+            'overwrite': 'true',
+        }
+        to_sign = '&'.join(f'{k}={params[k]}' for k in sorted(params)) + cfg['api_secret']
+        params['signature'] = hashlib.sha1(to_sign.encode('utf-8')).hexdigest()
+        params['api_key'] = cfg['api_key']
+
+        print(f"[YouTube] Cloudinary upload: {video_path.name}")
+        with open(video_path, 'rb') as handle:
+            response = requests.post(
+                f"https://api.cloudinary.com/v1_1/{cfg['cloud_name']}/video/upload",
+                data=params, files={'file': handle}, timeout=600,
+            )
+        if response.status_code != 200:
+            raise Exception(f"Cloudinary upload falhou ({response.status_code}): "
+                            f"{response.text[:300]}")
+        url = response.json().get('secure_url')
+        if not url:
+            raise Exception("Cloudinary não devolveu secure_url")
+
+        head = requests.head(url, timeout=30)
+        if head.status_code != 200:
+            raise Exception(f"URL do Cloudinary não é pública: {url} ({head.status_code})")
+        print(f"[YouTube] Vídeo público: {url}")
+        return url
+
+    def buffer_create_tiktok_post(self, caption: str, video_url: str,
+                                  due_at: datetime) -> Dict:
+        """Cria o post agendado no canal TikTok do Buffer (publicação automática)."""
+        try:
+            import requests
+        except ImportError:
+            raise Exception("requests não instalado (pip install requests)")
+
+        buf = self._load_credential('buffer.json')
+        headers = {'Content-Type': 'application/json',
+                   'Authorization': f"Bearer {buf['token']}"}
+        due_utc = due_at.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
+        variables = {'input': {
+            'text': caption,
+            'channelId': buf['tiktok_channel_id'],
+            'schedulingType': 'automatic',
+            'mode': 'customScheduled',
+            'dueAt': due_utc,
+            'assets': [{'video': {'url': video_url,
+                                  'metadata': {'thumbnailOffset': 2000}}}],
+        }}
+        query = '''
+        mutation Create($input: CreatePostInput!) {
+          createPost(input: $input) {
+            ... on PostActionSuccess { post { id status shareMode schedulingType dueAt } }
+            ... on MutationError { message }
+            ... on InvalidInputError { message }
+            ... on LimitReachedError { message }
+            ... on UnauthorizedError { message }
+          }
+        }'''
+        response = requests.post('https://api.buffer.com', headers=headers,
+                                 json={'query': query, 'variables': variables},
+                                 timeout=60)
+        data = response.json()
+        if data.get('errors'):
+            raise Exception(f"Buffer API: {data['errors'][0].get('message')}")
+        result = data.get('data', {}).get('createPost') or {}
+        post = result.get('post')
+        if not post:
+            raise Exception(f"Buffer não criou o post: {json.dumps(result, ensure_ascii=False)}")
+        print(f"[YouTube] Buffer: post {post['id']} status={post['status']} "
+              f"scheduling={post.get('schedulingType')}")
+        return post
+
+    def buffer_delete_post(self, post_id: str) -> bool:
+        """Remove um post do Buffer (agendado ou rascunho)."""
+        try:
+            import requests
+        except ImportError:
+            raise Exception("requests não instalado (pip install requests)")
+
+        buf = self._load_credential('buffer.json')
+        headers = {'Content-Type': 'application/json',
+                   'Authorization': f"Bearer {buf['token']}"}
+        query = '''
+        mutation Del($id: PostId!) {
+          deletePost(input: {id: $id}) {
+            __typename
+            ... on MutationError { message }
+            ... on VoidMutationError { message }
+          }
+        }'''
+        response = requests.post('https://api.buffer.com', headers=headers,
+                                 json={'query': query, 'variables': {'id': post_id}},
+                                 timeout=60)
+        data = response.json()
+        if data.get('errors'):
+            raise Exception(f"Buffer API: {data['errors'][0].get('message')}")
+        typename = (data.get('data', {}).get('deletePost') or {}).get('__typename')
+        if typename != 'DeletePostSuccess':
+            raise Exception(f"Buffer não apagou o post {post_id}: {data}")
+        return True
+
+    def buffer_edit_post_text(self, post_id: str, text: str,
+                              video_url: Optional[str] = None) -> bool:
+        """
+        Atualiza o texto de um post já agendado no Buffer (editPost).
+
+        O Buffer REVALIDA o post inteiro no edit: sem `assets` ele responde
+        "TikTok posts require at least one image or video". Então o vídeo é
+        reenviado junto (mesma URL que já estava no post).
+        """
+        try:
+            import requests
+        except ImportError:
+            raise Exception("requests não instalado (pip install requests)")
+
+        buf = self._load_credential('buffer.json')
+        headers = {'Content-Type': 'application/json',
+                   'Authorization': f"Bearer {buf['token']}"}
+        variables: Dict = {'input': {'id': post_id, 'text': text}}
+        if video_url:
+            variables['input']['assets'] = [
+                {'video': {'url': video_url,
+                           'metadata': {'thumbnailOffset': 2000}}}
+            ]
+        query = '''
+        mutation Edit($input: EditPostInput!) {
+          editPost(input: $input) {
+            ... on PostActionSuccess { post { id status text dueAt } }
+            ... on MutationError { message }
+            ... on InvalidInputError { message }
+            ... on UnauthorizedError { message }
+          }
+        }'''
+        response = requests.post('https://api.buffer.com', headers=headers,
+                                 json={'query': query, 'variables': variables},
+                                 timeout=60)
+        data = response.json()
+        if data.get('errors'):
+            raise Exception(f"Buffer API: {data['errors'][0].get('message')}")
+        result = data.get('data', {}).get('editPost') or {}
+        if not result.get('post'):
+            raise Exception(f"Buffer não editou o post {post_id}: "
+                            f"{json.dumps(result, ensure_ascii=False)}")
+        return True
+
+    def tiktok_buffer(self, video_path: Path, metadata_path: Path,
+                      scheduled_time: datetime, force: bool = False) -> Dict:
+        """
+        Agenda publicação automática no TikTok via Buffer (PUBLISH).
+
+        Ordem: regra de SEO → upload no Cloudinary → createPost no Buffer →
+        registro no histórico. Qualquer falha = nada agendado.
+        """
+        metadata = self.parse_metadata_file(metadata_path)
+        caption = self.build_tiktok_caption(metadata, slug=video_path.stem)
+
+        seo_errors = self.seo_audit(metadata['title'], caption)
+        if seo_errors:
+            print("[YouTube] TikTok/Buffer BLOCKED (regra inviolável de SEO):")
+            for error in seo_errors:
+                print(f"  - {error}")
+            print("  Action: corrija o .txt da video-creator e rode de novo")
+            raise Exception("SEO audit falhou — nada enviado ao Buffer")
+
+        stem = video_path.stem
+        entry = self.history.get(stem) if isinstance(self.history.get(stem), dict) else {}
+        existing = entry.get('tiktok') if isinstance(entry.get('tiktok'), dict) else {}
+        if not force and existing.get('status') == 'scheduled' \
+                and existing.get('buffer_post_id'):
+            raise Exception(
+                f"'{stem}' já está agendado no Buffer (post {existing['buffer_post_id']}, "
+                f"{existing.get('scheduled_at')}). Use tiktok-buffer-cancel antes ou --force"
+            )
+
+        from zoneinfo import ZoneInfo
+        local_tz = ZoneInfo('America/Sao_Paulo')
+        if scheduled_time.tzinfo is None:
+            scheduled_time = scheduled_time.replace(tzinfo=local_tz)
+        if scheduled_time <= datetime.now(local_tz):
+            raise Exception(f"Horário no passado: {scheduled_time}")
+
+        duration = probe_duration_seconds(video_path)
+        video_url = self.cloudinary_upload_video(video_path)
+        post = self.buffer_create_tiktok_post(caption, video_url, scheduled_time)
+
+        entry = self.history.setdefault(stem, {})
+        entry.setdefault('title', metadata['title'])
+        entry.setdefault('description', metadata['description'])
+        entry.setdefault('hashtags', metadata['hashtags'])
+        entry.setdefault('video_file', str(video_path))
+        entry.setdefault('metadata_file', str(metadata_path))
+        if duration:
+            entry.setdefault('duration', duration)
+        entry['tiktok'] = {
+            **{k: v for k, v in existing.items() if k != 'buffer_post_id'},
+            'status': 'scheduled',
+            'buffer_post_id': post['id'],
+            'video_url': video_url,
+            'caption_chars': len(caption),
+            'copy_url': tiktok_utm_url(stem),
+            'bio_url': TIKTOK_BIO_URL,
+            'scheduled_at': scheduled_time.isoformat(timespec='seconds'),
+            'buffer_due_at': post.get('dueAt', ''),
+            'updated_at': datetime.now().isoformat(timespec='seconds'),
+        }
+        self.save_history()
+
+        print("[YouTube] TikTok agendado no Buffer (publicação automática)")
+        print(f"  Vídeo: {video_path}")
+        print(f"  Post Buffer: {post['id']} ({post.get('schedulingType')})")
+        print(f"  Publica em: {scheduled_time.strftime('%A, %d/%m/%Y %H:%M')} "
+              f"America/Sao_Paulo")
+        print("  Confirme no Buffer antes do horário — o TikTok pode pedir "
+              "aprovação no app se a conta não publicar direto")
+        return {'post_id': post['id'], 'video_url': video_url,
+                'scheduled_at': scheduled_time.isoformat()}
+
+    def tiktok_buffer_cancel(self, target: str, force: bool = False) -> bool:
+        """Cancela o agendamento do Buffer e volta o status para 'prepared'."""
+        found = self._find_tiktok_entry(target)
+        if not found:
+            print(f"[YouTube] TikTok: entrada não encontrada para '{target}'")
+            return False
+        stem, entry = found
+        tiktok = entry.get('tiktok') or {}
+        post_id = tiktok.get('buffer_post_id')
+        if not post_id:
+            print(f"[YouTube] TikTok: '{stem}' não tem agendamento no Buffer")
+            return False
+
+        self.buffer_delete_post(post_id)
+        tiktok['status'] = 'prepared'
+        tiktok['cancelled_post_id'] = post_id
+        if tiktok.get('scheduled_at'):
+            tiktok['cancelled_scheduled_at'] = tiktok.pop('scheduled_at')
+        tiktok.pop('buffer_post_id', None)
+        tiktok.pop('buffer_due_at', None)
+        tiktok['updated_at'] = datetime.now().isoformat(timespec='seconds')
+        entry['tiktok'] = tiktok
+        self.save_history()
+        print(f"[YouTube] TikTok: agendamento {post_id} cancelado ('{stem}' → prepared)")
+        return True
+
+    def buffer_scheduled_posts(self) -> List[Dict]:
+        """Posts com status 'scheduled' no canal TikTok do Buffer."""
+        try:
+            import requests
+        except ImportError:
+            raise Exception("requests não instalado (pip install requests)")
+        buf = self._load_credential('buffer.json')
+        headers = {'Content-Type': 'application/json',
+                   'Authorization': f"Bearer {buf['token']}"}
+        query = '''
+        { posts(input:{organizationId: "%s"}) {
+            edges { node { id status dueAt channelId text assets { mimeType type source thumbnail } } } } }''' % buf['organization_id']
+        response = requests.post('https://api.buffer.com', headers=headers,
+                                 json={'query': query}, timeout=60)
+        data = response.json()
+        if data.get('errors'):
+            raise Exception(f"Buffer API: {data['errors'][0].get('message')}")
+        nodes = [e['node'] for e in data['data']['posts']['edges']]
+        return [n for n in nodes
+                if n.get('channelId') == buf['tiktok_channel_id']
+                and n.get('status') == 'scheduled']
+
+    def tiktok_buffer_fill(self, limit: Optional[int] = None,
+                           hour: int = 19) -> Dict:
+        """
+        Reabastece a fila do TikTok até o limite de posts agendados do plano.
+
+        Regra de elegibilidade: publicado OU programado no YouTube + .mp4/.txt
+        locais + sem agendamento/publicação TikTok ativo. Ordem: publicados
+        primeiro (uploaded_at), depois os programados (scheduled_at do YouTube).
+        Slots diários às `hour` (BRT), depois do último post já agendado.
+        """
+        from zoneinfo import ZoneInfo
+        local_tz = ZoneInfo('America/Sao_Paulo')
+        now = datetime.now(local_tz)
+
+        published, programmed = [], []
+        for stem, entry in self.history.items():
+            if not isinstance(entry, dict) or entry.get('status') not in ('published', 'scheduled'):
+                continue
+            video = VIDEO_MAKER_DIR / f"{stem}.mp4"
+            meta = VIDEO_MAKER_DIR / f"{stem}.txt"
+            if not video.exists() or not meta.exists():
+                continue
+            tiktok = entry.get('tiktok') if isinstance(entry.get('tiktok'), dict) else {}
+            if tiktok.get('status') in ('scheduled', 'published'):
+                continue
+            if entry.get('status') == 'published':
+                published.append((entry.get('uploaded_at') or '9999', stem))
+            else:
+                programmed.append((entry.get('scheduled_at') or '9999', stem))
+        eligible = [stem for _, stem in sorted(published)]
+        eligible += [stem for _, stem in sorted(programmed)]
+
+        scheduled = sorted(self.buffer_scheduled_posts(),
+                           key=lambda n: n.get('dueAt') or '')
+        buf_cfg = self._load_credential('buffer.json')
+        cap = int(buf_cfg.get('scheduled_cap', 10))
+        free = cap - len(scheduled)
+        if limit is not None:
+            free = min(free, limit)
+
+        print(f"[YouTube] Fila TikTok: {len(scheduled)}/{cap} agendados | "
+              f"{len(eligible)} elegíveis ({len(published)} publicados + "
+              f"{len(programmed)} programados no YouTube) | {max(0, free)} vaga(s)")
+
+        if free <= 0:
+            print("  Nada a fazer — rode de novo quando posts forem publicados")
+            return {'scheduled': 0, 'eligible': len(eligible), 'queue': len(scheduled)}
+
+        # primeiro slot: hoje às `hour` se ainda futuro, senão amanhã;
+        # se já existe fila, continua depois do último agendamento
+        if scheduled:
+            last = datetime.fromisoformat(
+                scheduled[-1]['dueAt'].replace('Z', '+00:00')).astimezone(local_tz)
+            first = last.replace(hour=hour, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        else:
+            first = now.replace(hour=hour, minute=0, second=0, microsecond=0)
+            if first <= now:
+                first += timedelta(days=1)
+
+        done, failed = [], []
+        for index, stem in enumerate(eligible[:free]):
+            when = first + timedelta(days=index)
+            print(f"\n=== {stem} → {when.strftime('%d/%m %H:%M')} ===", flush=True)
+            try:
+                self.tiktok_buffer(VIDEO_MAKER_DIR / f"{stem}.mp4",
+                                   VIDEO_MAKER_DIR / f"{stem}.txt", when)
+                done.append(stem)
+            except Exception as e:
+                print(f"  ERRO: {e}", flush=True)
+                failed.append((stem, str(e)[:200]))
+
+        print(f"\n[YouTube] Fill: {len(done)} agendado(s) | {len(failed)} falha(s)")
+        for stem, error in failed:
+            print(f"  [ERRO] {stem} — {error}")
+        return {'scheduled': len(done), 'failed': failed,
+                'eligible': len(eligible), 'queue': len(scheduled) + len(done)}
 
 def natural_language_to_datetime(text: str) -> Optional[datetime]:
     """
@@ -1203,6 +1966,13 @@ def main():
     analytics_parser = subparsers.add_parser('analytics', help='Show channel analytics')
     analytics_parser.add_argument('--days', '-d', type=int, default=30, help='Number of days to analyze')
 
+    # Comentário com CTA + link rastreável (WRITE público — exige --yes)
+    comment_parser = subparsers.add_parser(
+        'comment',
+        help='Add the CTA comment (with tracked link) to a published video'
+    )
+    comment_parser.add_argument('target', help='Video name, .txt path or video_id')
+
     # SEO audit command (read-only)
     seo_parser = subparsers.add_parser(
         'seo-audit',
@@ -1214,6 +1984,56 @@ def main():
     seo_parser.add_argument('--description', default='', help='Description to validate directly')
     seo_parser.add_argument('--history', action='store_true',
                             help='Audit every video recorded in the local history')
+
+    # TikTok (pacote semi-manual — publicação feita por você no app/site)
+    tiktok_pkg_parser = subparsers.add_parser(
+        'tiktok-package',
+        help='Generate a ready-to-paste TikTok caption package (SEO-gated, local only)'
+    )
+    tiktok_pkg_parser.add_argument('video_name', nargs='?',
+                                   help='Name of video file (without extension)')
+    tiktok_pkg_parser.add_argument('--file', '-f', help='Path to video file')
+
+    subparsers.add_parser('tiktok-list', help='List TikTok packages and their status')
+
+    tiktok_pub_parser = subparsers.add_parser(
+        'tiktok-published',
+        help='Mark a TikTok package as manually published'
+    )
+    tiktok_pub_parser.add_argument('target', help='Video name, .txt path or video_id')
+
+    tiktok_buf_parser = subparsers.add_parser(
+        'tiktok-buffer',
+        help='Schedule automatic TikTok publishing via Buffer (SEO-gated, PUBLISH)'
+    )
+    tiktok_buf_parser.add_argument('video_name', nargs='?',
+                                   help='Name of video file (without extension)')
+    tiktok_buf_parser.add_argument('--file', '-f', help='Path to video file')
+    tiktok_buf_parser.add_argument('--when', '-w', required=True,
+                                   help='When to publish (natural language)')
+    tiktok_buf_parser.add_argument('--force', action='store_true',
+                                   help='Reagenda mesmo já existindo agendamento ativo')
+
+    tiktok_buf_cancel = subparsers.add_parser(
+        'tiktok-buffer-cancel',
+        help='Cancel a scheduled TikTok post in Buffer'
+    )
+    tiktok_buf_cancel.add_argument('target', help='Video name or video_id')
+
+    tiktok_fill_parser = subparsers.add_parser(
+        'tiktok-buffer-fill',
+        help='Top up the TikTok queue in Buffer with eligible videos (PUBLISH)'
+    )
+    tiktok_fill_parser.add_argument('--limit', '-l', type=int,
+                                    help='Max videos to schedule in this run')
+    tiktok_fill_parser.add_argument('--hour', type=int, default=19,
+                                    help='Publishing hour in America/Sao_Paulo (default 19)')
+
+    subparsers.add_parser(
+        'tiktok-caption-sync',
+        help='Re-saves the caption of posts already scheduled in Buffer '
+             'from history.json (READ by default, WRITE with --yes)'
+    )
     
     # Args for all commands
     parser.add_argument('--yes', '-y', action='store_true', help='Assume yes to prompts')
@@ -1399,6 +2219,20 @@ def main():
             print(f"[YouTube] Failed to publish video {args.video_id} immediately")
             return 1
 
+    elif args.command == 'comment':
+        # WRITE público: comentário visível no vídeo
+        if not args.yes:
+            response = input(
+                f"Adicionar comentário com link em '{args.target}'? (y/N): ")
+            if response.lower() not in ['y', 'yes']:
+                print("[YouTube] Comentário cancelado")
+                return 0
+        comment_id = manager.comment_video(args.target)
+        if comment_id:
+            print(f"[YouTube] Comentário criado: {comment_id}")
+            return 0
+        return 1
+
     elif args.command == 'schedule-existing':
         scheduled_time = natural_language_to_datetime(args.when)
         if not scheduled_time:
@@ -1496,6 +2330,188 @@ def main():
             return 1
 
         print("[YouTube] SEO audit PASS — keyword no início, sem abreviações")
+        return 0
+
+    elif args.command == 'tiktok-package':
+        if args.video_name:
+            pairs = manager.find_video_files(args.video_name)
+        elif args.file:
+            video_path = Path(args.file)
+            metadata_path = video_path.with_suffix('.txt')
+            if video_path.exists() and metadata_path.exists():
+                pairs = [(video_path, metadata_path)]
+            else:
+                print("[YouTube] Error: Video or metadata file not found")
+                print(f"  Video: {video_path}")
+                print(f"  Metadata: {metadata_path}")
+                return 1
+        else:
+            pairs = manager.find_video_files()
+
+        if not pairs:
+            print("[YouTube] No video files found")
+            return 1
+
+        if len(pairs) > 1 and not args.video_name and not args.file:
+            print("[YouTube] Multiple video files found:")
+            for i, (video_path, metadata_path) in enumerate(pairs):
+                print(f"  {i+1}. {video_path.name}")
+            print("Specify which video using the name or --file")
+            return 1
+
+        video_path, metadata_path = pairs[0]
+        try:
+            manager.tiktok_package(video_path, metadata_path)
+            return 0
+        except Exception as e:
+            print(f"[YouTube] TikTok package failed: {e}")
+            return 1
+
+    elif args.command == 'tiktok-list':
+        items = manager.tiktok_list()
+        if not items:
+            print("[YouTube] Nenhum pacote TikTok registrado")
+            return 0
+        print("[YouTube] Pacotes TikTok:")
+        print("-" * 80)
+        for item in items:
+            print(f"Título: {item['title']}")
+            print(f"Status: {item['status']}")
+            if item['caption_file']:
+                print(f"Legenda: {item['caption_file']}")
+            if item['buffer_post_id']:
+                print(f"Post Buffer: {item['buffer_post_id']}")
+            if item['scheduled_at']:
+                print(f"Agendado: {item['scheduled_at']}")
+            if item['prepared_at']:
+                print(f"Preparado: {item['prepared_at']}")
+            if item['published_at']:
+                print(f"Publicado: {item['published_at']}")
+            print("-" * 80)
+        prepared = sum(1 for i in items if i['status'] == 'prepared')
+        scheduled = sum(1 for i in items if i['status'] == 'scheduled')
+        published = sum(1 for i in items if i['status'] == 'published')
+        print(f"[YouTube] {prepared} pendentes | {scheduled} agendados | "
+              f"{published} publicados")
+        return 0
+
+    elif args.command == 'tiktok-published':
+        if manager.tiktok_mark_published(args.target):
+            return 0
+        return 1
+
+    elif args.command == 'tiktok-buffer':
+        if args.video_name:
+            pairs = manager.find_video_files(args.video_name)
+        elif args.file:
+            video_path = Path(args.file)
+            metadata_path = video_path.with_suffix('.txt')
+            if video_path.exists() and metadata_path.exists():
+                pairs = [(video_path, metadata_path)]
+            else:
+                print("[YouTube] Error: Video or metadata file not found")
+                return 1
+        else:
+            pairs = manager.find_video_files()
+
+        if not pairs:
+            print("[YouTube] No video files found")
+            return 1
+        if len(pairs) > 1 and not args.video_name and not args.file:
+            print("[YouTube] Multiple video files found:")
+            for i, (video_path, metadata_path) in enumerate(pairs):
+                print(f"  {i+1}. {video_path.name}")
+            print("Specify which video using the name or --file")
+            return 1
+
+        video_path, metadata_path = pairs[0]
+        scheduled_time = natural_language_to_datetime(args.when)
+        if not scheduled_time:
+            print(f"[YouTube] Could not parse time expression: '{args.when}'")
+            print("Exemplos: 'amanhã às 19h' | 'sexta às 18:30' | 'dia 5 às 12:00'")
+            return 1
+
+        if not args.yes:
+            metadata = manager.parse_metadata_file(metadata_path)
+            print("[YouTube] About to schedule on TikTok via Buffer:")
+            print(f"  Title: {metadata['title']}")
+            print(f"  Video: {video_path.name}")
+            print(f"  When: {scheduled_time.strftime('%A, %d/%m/%Y %H:%M')} "
+                  f"America/Sao_Paulo")
+            print("  Mode: automatic (publicação automática)")
+            response = input("\nProceed with scheduling? (y/N): ")
+            if response.lower() not in ['y', 'yes']:
+                print("[YouTube] Scheduling cancelled")
+                return 0
+
+        try:
+            result = manager.tiktok_buffer(video_path, metadata_path, scheduled_time,
+                                           force=args.force)
+            print(f"\n[YouTube] TikTok scheduling done!")
+            print(f"  Buffer post: {result['post_id']}")
+            print(f"  Scheduled: {result['scheduled_at']}")
+            return 0
+        except Exception as e:
+            print(f"[YouTube] TikTok scheduling failed: {e}")
+            return 1
+
+    elif args.command == 'tiktok-buffer-cancel':
+        if not args.yes:
+            response = input(f"Cancel Buffer scheduling for '{args.target}'? (y/N): ")
+            if response.lower() not in ['y', 'yes']:
+                print("[YouTube] Cancel operation cancelled")
+                return 0
+        try:
+            if manager.tiktok_buffer_cancel(args.target):
+                return 0
+            return 1
+        except Exception as e:
+            print(f"[YouTube] Cancel failed: {e}")
+            return 1
+
+    elif args.command == 'tiktok-buffer-fill':
+        if not args.yes:
+            response = input("Top up the TikTok queue in Buffer? (y/N): ")
+            if response.lower() not in ['y', 'yes']:
+                print("[YouTube] Fill cancelled")
+                return 0
+        try:
+            manager.tiktok_buffer_fill(limit=args.limit, hour=args.hour)
+            return 0
+        except Exception as e:
+            print(f"[YouTube] Fill failed: {e}")
+            return 1
+
+    elif args.command == 'tiktok-caption-sync':
+        execute = bool(args.yes)
+        if execute:
+            response = input(
+                "Atualizar a legenda dos posts já agendados no Buffer? (y/N): ")
+            if response.lower() not in ['y', 'yes']:
+                print("[YouTube] Sync cancelado")
+                return 0
+        try:
+            res = manager.tiktok_caption_sync(execute=execute)
+        except Exception as e:
+            print(f"[YouTube] tiktok-caption-sync falhou: {e}")
+            return 1
+
+        mode = 'APLICADO' if execute else 'DRY-RUN (sem --yes, nada foi alterado)'
+        print(f"\n[YouTube] Legenda Buffer sync — {mode}")
+        print(f"  iguais (não precisa mudar): {len(res['same'])}")
+        label = 'atualizados' if execute else 'a atualizar'
+        print(f"  {label}: {len(res['updated'])}")
+        for stem, post_id in res['updated']:
+            print(f"    - {stem}  ({post_id})")
+        if res['skipped']:
+            print(f"  ignorados: {len(res['skipped'])}")
+            for stem, why in res['skipped']:
+                print(f"    - {stem}: {why}")
+        if res['missing']:
+            print(f"  fora da fila do Buffer (já publicou ou cancelou): "
+                  f"{len(res['missing'])}")
+            for stem, post_id in res['missing']:
+                print(f"    - {stem}  ({post_id})")
         return 0
 
     else:

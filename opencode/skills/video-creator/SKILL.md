@@ -101,7 +101,7 @@ AMARELO: #FFD700 (URL do site)
 
 ### Elementos
 - **Meio**: Texto do roteiro (branco, 48px, sombra)
-- **Inferior**: "FVS7 MARKETING DIGITAL" (branco, 32px) + "www.fvs7.com.br" (amarelo, 36px) - ambos centralizados na parte inferior
+- **Inferior**: "FVS7 MARKETING DIGITAL" (branco, 32px) + "fvs7.com.br/diagnostico-gratuito" (amarelo, 36px) - ambos centralizados na parte inferior
 
 ## FLUXO DE TRABALHO
 
@@ -183,7 +183,7 @@ python make_video.py \
 - `--audio`: Ativa narração ElevenLabs (sem argumento) ou usa áudio customizado
 - `--search-images`: Busca imagens no Pexels
 - `--search-query`: Query de busca para imagens (IMPORTANTE: usar query específica de marketing/digital/analytics)
-- `--page-url`: URL específica da página para aparecer na descrição do vídeo (ex: https://fvs7.com.br/landing-pages/clinicas/)
+- `--page-url`: URL da página de conversão da descrição (ex: https://fvs7.com.br/landing-pages/clinicas/). A UTM é acrescentada automaticamente; sem esse argumento a descrição cai em `fvs7.com.br/diagnostico-gratuito`
 - `--output`: Caminho de saída
 - `--images`: Imagens próprias (DEVE seguir as regras de imagem da skill - sem logos do Instagram/Facebook/Meta)
 
@@ -261,6 +261,17 @@ fvs7.com.br/diagnostico-gratuito
 | `utm_medium` | `shorts` | Fixo para Shorts |
 | `utm_campaign` | `{VIDEO_ID}` | `ds8O7QfE6EA` |
 | `utm_content` | `{NICHE}` | `clinicas`, `contadores`, `advogados` |
+
+**Como a UTM chega lá** (não escrever à mão):
+
+1. `make_video.py` já grava a UTM no `.txt`, com
+   `utm_campaign = <nome do arquivo>` (slug) — ver `with_youtube_utm()`
+2. `youtube-growth/add_utm_to_description()` **reescreve** a URL de
+   diagnóstico no upload e promove `utm_campaign` para o `video_id` real
+3. Idempotente: segunda passada não duplica link nem UTM
+
+Landing pages com `--page-url` saem com a UTM daquela página; a regra 1
+aplica igual, e o uploader não duplica se já existir `utm_source=`.
 
 **Nomes de nicho para utm_content**:
 - `clinicas` — clínicas de estética, dermatologia, etc.
@@ -390,32 +401,50 @@ Uma landing page rápida e estratégica converte mais.
 
 Mais conversões com menos investimento.
 
-Solicite uma análise gratuita em fvs7.com.br
+Solicite seu diagnóstico gratuito.
+Link na bio e na descrição.
 ```
 
 ## COMENTÁRIOS AUTOMÁTICOS
 
-### Status: PENDENTE - Autenticação Necessária
-Para adicionar comentários via API, é necessário re-autenticar com o escopo `youtube.force-ssl`. O token atual não possui essa permissão.
+### Status: ATIVO (`youtube.force-ssl` já no token)
+O token em `~/.config/opencode/credentials/youtube-token.json` já tem
+`youtube.force-ssl`, então a API aceita inserir comentários.
 
-**Solução**: Adicionar comentários manualmente via YouTube Studio ou re-autenticar com novos escopos quando possível.
+Rodar pela skill `youtube-growth` (não reimplementar aqui):
 
-### Regra: Comentário Pinned Automático
-Ao publicar/agendar um vídeo, **SEMPRE** adicionar um comentário fixo com:
+```bash
+# um vídeo
+python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py \
+  --yes comment <nome_ou_video_id>
+
+# listar os pendentes
+python3 ~/.config/opencode/skills/youtube-growth/check_24h.py
+```
+
+O texto é montado por `build_pinned_comment()` em `youtube_growth.py`
+(≤997 chars, link com `utm_campaign=<video_id>`) e fica registrado no
+histórico (`comment_id`), então rodar de novo é no-op.
+
+Comentário **automático**: dispara sozinho em `publish-now`.
+Nos demais casos, rodar o `comment` depois que o vídeo estiver público —
+logo após o `upload` o vídeo está `private` e o YouTube recusa comentário.
+
+### Regra: Comentário com CTA
+Todo vídeo **público** deve receber **um** comentário com:
 1. **Hook** → Pergunta ou afirmação que gera engajamento
-2. **CTA** → Link para diagnóstico grátis
+2. **CTA** → Link para diagnóstico grátis (UTM com o `video_id`)
 3. **Prova social** → Número de clientes ou resultados
 4. **Emoji** → Chamar atenção visual
 
 ### Template de Comentário
 ```
-🎯 Quer resultado assim na sua empresa?
+🎯 <título do vídeo> — o que está travando o seu resultado?
 
-👉 Acesse: fvs7.com.br/diagnostico-gratuito
-📊 Diagnóstico gratuito em 15 minutos
-💼 +150 empresas atendidas | 4.9/5 avaliação
+👉 Diagnóstico grátis em 15 minutos: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign={VIDEO_ID}&utm_content={NICHE}
+📊 +150 projetos entregues | 4.9/5 avaliação dos clientes
 
-#GoogleAds #MarketingDigital
+Qual desses pontos mais se parece com a sua situação? Comenta aqui 👇
 ```
 
 ### Limitação da API YouTube

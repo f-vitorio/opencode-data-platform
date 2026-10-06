@@ -64,6 +64,10 @@ HOOK (número + dor, ≤8 palavras)   ← 0–3s, crítico para retenção
 - Tom conversacional mas profissional
 - Benefício antes de característica
 - CTA claro e simples
+- CTA do último segmento: **"Link na bio e na descrição."** — nenhum link é
+  clicável em Shorts nem em TikTok (legenda/comentário é texto puro), então o
+  vídeo manda para os dois lugares de cada plataforma. Não dite "fvs7.com.br"
+  nem a URL inteira: ninguém digita URL assistindo vídeo curto.
 - Sem auto-promoção ("nós", "nossa empresa")
 - Foco no cliente ("você", "seu negócio")
 - Acentuação correta em todas as legendas (nunca texto incompleto)

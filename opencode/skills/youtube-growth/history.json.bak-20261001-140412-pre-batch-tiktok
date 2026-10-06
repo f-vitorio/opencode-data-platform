@@ -12,19 +12,7 @@
     "published_at": "2026-09-20T13:37:41",
     "status": "published",
     "privacy_status": "public",
-    "niche": "clinicas",
-    "duration": 22.610667,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe92a78266773d757843d5",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874277/tiktok-shorts/clinicas_video.mp4",
-      "caption_chars": 161,
-      "scheduled_at": "2026-10-01T19:00:00-03:00",
-      "buffer_due_at": "2026-10-01T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:04:40"
-    },
-    "comment_id": "Ugw-pwFFNLRQHepavWR4AaABAg",
-    "commented_at": "2026-10-03T14:18:46"
+    "niche": "clinicas"
   },
   "auditoria_google_ads_simple": {
     "video_id": "JXuiU3_9-ZM",
@@ -54,19 +42,7 @@
     "published_at": "2026-09-22T03:00:16",
     "status": "published",
     "privacy_status": "public",
-    "niche": "marketing",
-    "duration": 53.936,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe92bb2a1fd5dd08afcffe",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874296/tiktok-shorts/3_erros_google_ads.mp4",
-      "caption_chars": 287,
-      "scheduled_at": "2026-10-02T19:00:00-03:00",
-      "buffer_due_at": "2026-10-02T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:04:59"
-    },
-    "comment_id": "Ugy21DYgDOfOJghO87p4AaABAg",
-    "commented_at": "2026-10-03T14:18:47"
+    "niche": "marketing"
   },
   "clinicas_erro_landing_page": {
     "video_id": "sqW6e5YExUg",
@@ -84,22 +60,16 @@
     "niche": "clinicas",
     "duration": 60.301333,
     "tiktok": {
-      "status": "scheduled",
+      "status": "prepared",
       "caption_file": "/home/fvitorio/Videos/video-maker/clinicas_erro_landing_page.tiktok.txt",
-      "caption_chars": 488,
+      "caption_chars": 357,
       "video_file": "/home/fvitorio/Videos/video-maker/clinicas_erro_landing_page.mp4",
       "prepared_at": "2026-10-01T12:58:30",
       "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790873264/tiktok-shorts/clinicas_erro_landing_page.mp4",
-      "updated_at": "2026-10-01T14:05:15",
+      "updated_at": "2026-10-01T13:52:37",
       "cancelled_post_id": "6abe8fab5a657f22ab6005b6",
-      "cancelled_scheduled_at": "2026-10-02T19:00:00-03:00",
-      "buffer_post_id": "6abe92cb5a657f22ab608cf4",
-      "scheduled_at": "2026-10-03T19:00:00-03:00",
-      "buffer_due_at": "2026-10-03T22:00:00.000Z",
-      "caption_synced_at": "2026-10-03T14:18:14"
-    },
-    "comment_id": "UgyWsWdH1kNlbjdk1ll4AaABAg",
-    "commented_at": "2026-10-03T14:18:48"
+      "cancelled_scheduled_at": "2026-10-02T19:00:00-03:00"
+    }
   },
   "antes_depois_lp": {
     "video_id": "Sfw0g0FHBUQ",
@@ -114,20 +84,7 @@
     "published_at": "2026-09-22T19:00:29",
     "status": "published",
     "privacy_status": "public",
-    "niche": "landing_pages",
-    "duration": 70.88,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe92e12a1fd5dd08afd61b",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874334/tiktok-shorts/antes_depois_lp.mp4",
-      "caption_chars": 414,
-      "scheduled_at": "2026-10-04T19:00:00-03:00",
-      "buffer_due_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:05:37",
-      "caption_synced_at": "2026-10-03T14:18:14"
-    },
-    "comment_id": "UgwbNYg_wCKpAc25DL14AaABAg",
-    "commented_at": "2026-10-03T14:18:48"
+    "niche": "landing_pages"
   },
   "framework_lp": {
     "video_id": "nUxgS1vdmsE",
@@ -142,20 +99,7 @@
     "published_at": "2026-09-23T03:00:14",
     "status": "published",
     "privacy_status": "public",
-    "niche": "marketing",
-    "duration": 84.010667,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe930cc8c5aa56d9d2a1e4",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874377/tiktok-shorts/framework_lp.mp4",
-      "caption_chars": 406,
-      "scheduled_at": "2026-10-05T19:00:00-03:00",
-      "buffer_due_at": "2026-10-05T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:06:20",
-      "caption_synced_at": "2026-10-03T14:18:15"
-    },
-    "comment_id": "Ugx7sMTDLIOfiqAhWwx4AaABAg",
-    "commented_at": "2026-10-03T14:18:49"
+    "niche": "marketing"
   },
   "depoimento_clinicas_resultado": {
     "video_id": "NImfFc_lxZ0",
@@ -185,20 +129,7 @@
     "published_at": "2026-09-23T15:00:29",
     "status": "published",
     "privacy_status": "public",
-    "niche": "advogados",
-    "duration": 55.346667,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe93272a1fd5dd08afdc6a",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874404/tiktok-shorts/video_advogados.mp4",
-      "caption_chars": 467,
-      "scheduled_at": "2026-10-06T19:00:00-03:00",
-      "buffer_due_at": "2026-10-06T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:06:47",
-      "caption_synced_at": "2026-10-03T14:18:16"
-    },
-    "comment_id": "UgzelmFa6_jQA_acw2p4AaABAg",
-    "commented_at": "2026-10-03T14:18:50"
+    "niche": "advogados"
   },
   "video_contadores": {
     "video_id": "8VzhZhwvqFw",
@@ -213,20 +144,7 @@
     "published_at": "2026-09-24T03:00:22",
     "status": "published",
     "privacy_status": "public",
-    "niche": "contadores",
-    "duration": 52.733333,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe9349c8c5aa56d9d2aa2b",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874430/tiktok-shorts/video_contadores.mp4",
-      "caption_chars": 465,
-      "scheduled_at": "2026-10-07T19:00:00-03:00",
-      "buffer_due_at": "2026-10-07T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:07:21",
-      "caption_synced_at": "2026-10-03T14:18:16"
-    },
-    "comment_id": "Ugwj5NDFZ10VVBM4XQZ4AaABAg",
-    "commented_at": "2026-10-03T14:18:51"
+    "niche": "contadores"
   },
   "video_tracking": {
     "video_id": "Mp6LesigixA",
@@ -243,20 +161,7 @@
     "privacy_status": "public",
     "niche": "tracking",
     "replaced_by": "KiDBeTL4p9g",
-    "pending_cancel_reason": "cancelled",
-    "duration": 53.261333,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe9367c8c5aa56d9d2acd9",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874467/tiktok-shorts/video_tracking.mp4",
-      "caption_chars": 443,
-      "scheduled_at": "2026-10-08T19:00:00-03:00",
-      "buffer_due_at": "2026-10-08T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:07:51",
-      "caption_synced_at": "2026-10-03T14:18:18"
-    },
-    "comment_id": "Ugw-kOuBaKYO7JqrJdt4AaABAg",
-    "commented_at": "2026-10-03T14:18:52"
+    "pending_cancel_reason": "cancelled"
   },
   "video_imobiliarias": {
     "video_id": "cAt1dH4Fsyg",
@@ -273,20 +178,7 @@
     "privacy_status": "public",
     "niche": "imobiliarias",
     "replaced_by": "iGC3h_ISKaA",
-    "pending_cancel_reason": "cancelled",
-    "duration": 52.376,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe937d114676b96a05abd7",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874491/tiktok-shorts/video_imobiliarias.mp4",
-      "caption_chars": 466,
-      "scheduled_at": "2026-10-09T19:00:00-03:00",
-      "buffer_due_at": "2026-10-09T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:08:13",
-      "caption_synced_at": "2026-10-03T14:18:17"
-    },
-    "comment_id": "UgyWRsX5oxvc94Nflm94AaABAg",
-    "commented_at": "2026-10-03T14:18:52"
+    "pending_cancel_reason": "cancelled"
   },
   "video_auditoria_gratis": {
     "video_id": "qNh9Rt7uqIY",
@@ -322,20 +214,7 @@
     "privacy_status": "public",
     "niche": "esteticistas",
     "replaced_by": "B0QaHuWQLOs",
-    "pending_cancel_reason": "cancelled",
-    "duration": 51.229333,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abe9394a73dd7ce83e197e5",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874514/tiktok-shorts/video_esteticistas.mp4",
-      "caption_chars": 460,
-      "scheduled_at": "2026-10-10T19:00:00-03:00",
-      "buffer_due_at": "2026-10-10T22:00:00.000Z",
-      "updated_at": "2026-10-01T14:08:36",
-      "caption_synced_at": "2026-10-03T14:18:16"
-    },
-    "comment_id": "UgxFAbyqa9cBJ4ewsdd4AaABAg",
-    "commented_at": "2026-10-03T14:18:53"
+    "pending_cancel_reason": "cancelled"
   },
   "video_velocidade": {
     "video_id": "ux6pZyLwHhc",
@@ -351,20 +230,7 @@
     "privacy_status": "public",
     "niche": "landing_pages",
     "replaced_by": "WVPyhmqFNkg",
-    "pending_cancel_reason": "cancelled",
-    "duration": 50.952,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6abf9e6d79e44b20b32c8400",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874529/tiktok-shorts/video_velocidade.mp4",
-      "caption_chars": 415,
-      "scheduled_at": "2026-10-11T19:00:00-03:00",
-      "buffer_due_at": "2026-10-11T22:00:00.000Z",
-      "updated_at": "2026-10-02T09:07:09",
-      "caption_synced_at": "2026-10-03T14:18:18"
-    },
-    "comment_id": "UgyG380-Fj0o1BFv9bB4AaABAg",
-    "commented_at": "2026-10-03T14:18:54"
+    "pending_cancel_reason": "cancelled"
   },
   "video_fisioterapeutas": {
     "video_id": "4F4Enr6jvkg",
@@ -381,17 +247,7 @@
     "privacy_status": "private",
     "niche": "fisioterapeutas",
     "replaced_by": "8A8YNLEvoxE",
-    "pending_cancel_reason": "cancelled",
-    "duration": 48.421333,
-    "tiktok": {
-      "status": "prepared",
-      "caption_file": "/home/fvitorio/Videos/video-maker/video_fisioterapeutas.tiktok.txt",
-      "caption_chars": 420,
-      "copy_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=shorts&utm_campaign=tiktok&utm_content=video_fisioterapeutas",
-      "bio_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=social&utm_campaign=perfil&utm_content=bio",
-      "video_file": "/home/fvitorio/Videos/video-maker/video_fisioterapeutas.mp4",
-      "prepared_at": "2026-10-03T13:32:08"
-    }
+    "pending_cancel_reason": "cancelled"
   },
   "video_psicologos": {
     "video_id": "8MCgs3uPT6U",
@@ -424,20 +280,7 @@
     "privacy_status": "public",
     "niche": "negocios_locais",
     "replaced_by": "m_2Cqp8PqiA",
-    "pending_cancel_reason": "cancelled",
-    "duration": 53.4,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6ac0eff0ad7fd83bc5f0b9ba",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874552/tiktok-shorts/video_negocios_locais.mp4",
-      "caption_chars": 430,
-      "scheduled_at": "2026-10-12T19:00:00-03:00",
-      "buffer_due_at": "2026-10-12T22:00:00.000Z",
-      "updated_at": "2026-10-03T09:07:12",
-      "caption_synced_at": "2026-10-03T14:18:17"
-    },
-    "comment_id": "UgylHGhnsKnb1QGS2cN4AaABAg",
-    "commented_at": "2026-10-03T14:18:55"
+    "pending_cancel_reason": "cancelled"
   },
   "outubro_01_google_ads_3_erros": {
     "video_id": "0uLgfmxaECM",
@@ -1375,21 +1218,7 @@
         "note": "Se views==0 -> re-up com t\u00edtulo vencedor (n\u00famero+dor+especificidade). Se >0, manter e avaliar reten\u00e7\u00e3o gate >60% antes de escalar/reativar guardados.",
         "video_id": "deeDrwxpI3c"
       }
-    ],
-    "comment_id": "UgxSVWV_KVX0iCYhYzt4AaABAg",
-    "commented_at": "2026-10-03T14:18:56",
-    "duration": 23.114667,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6ac2416d11a7340ba025bee4",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874566/tiktok-shorts/esteticistas.mp4",
-      "caption_chars": 369,
-      "copy_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=shorts&utm_campaign=tiktok&utm_content=esteticistas",
-      "bio_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=social&utm_campaign=perfil&utm_content=bio",
-      "scheduled_at": "2026-10-13T19:00:00-03:00",
-      "buffer_due_at": "2026-10-13T22:00:00.000Z",
-      "updated_at": "2026-10-04T09:07:09"
-    }
+    ]
   },
   "teste_hook_contadores": {
     "video_id": "TE3kdBr_H2I",
@@ -1403,21 +1232,7 @@
     "scheduled_at": null,
     "published_at": "2026-09-23T20:00:21",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgyWWFqUinQEbfSl7IF4AaABAg",
-    "commented_at": "2026-10-03T14:18:56",
-    "duration": 51.845333,
-    "tiktok": {
-      "status": "scheduled",
-      "buffer_post_id": "6ac3934b53279f4f19c044fa",
-      "video_url": "https://res.cloudinary.com/pdueozhk/video/upload/v1790874586/tiktok-shorts/teste_hook_contadores.mp4",
-      "caption_chars": 696,
-      "copy_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=shorts&utm_campaign=tiktok&utm_content=teste_hook_contadores",
-      "bio_url": "https://fvs7.com.br/diagnostico-gratuito?utm_source=tiktok&utm_medium=social&utm_campaign=perfil&utm_content=bio",
-      "scheduled_at": "2026-10-14T19:00:00-03:00",
-      "buffer_due_at": "2026-10-14T22:00:00.000Z",
-      "updated_at": "2026-10-05T09:08:43"
-    }
+    "privacy_status": "public"
   },
   "hook_video_tracking": {
     "video_id": "KiDBeTL4p9g",
@@ -1431,9 +1246,7 @@
     "scheduled_at": "2026-09-24T21:00:00",
     "published_at": "2026-09-24T18:00:00",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgynGLjgfKEiqw6Jfyp4AaABAg",
-    "commented_at": "2026-10-03T14:18:57"
+    "privacy_status": "public"
   },
   "hook_video_imobiliarias": {
     "video_id": "iGC3h_ISKaA",
@@ -1461,9 +1274,7 @@
     "scheduled_at": "2026-09-25T21:00:00",
     "published_at": "2026-09-25T18:00:00",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgwJeE_98XpVKWEsD054AaABAg",
-    "commented_at": "2026-10-03T14:18:58"
+    "privacy_status": "public"
   },
   "hook_video_esteticistas": {
     "video_id": "B0QaHuWQLOs",
@@ -1490,9 +1301,7 @@
     "uploaded_at": "2026-09-23T18:18:16.241161",
     "published_at": "2026-09-26T18:00:32",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgyBNPdjCxpe3UBdIfZ4AaABAg",
-    "commented_at": "2026-10-03T14:18:58"
+    "privacy_status": "public"
   },
   "hook_video_fisioterapeutas": {
     "video_id": "8A8YNLEvoxE",
@@ -1519,9 +1328,7 @@
     "uploaded_at": "2026-09-23T18:19:17.018000",
     "published_at": "2026-09-27T18:00:36",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgwzExxyIrxuRUr7oUV4AaABAg",
-    "commented_at": "2026-10-03T14:18:59"
+    "privacy_status": "public"
   },
   "hook_video_negocios_locais": {
     "video_id": "xclcaUY3-W0",
@@ -1534,9 +1341,7 @@
     "uploaded_at": "2026-09-24T09:37:04.210931",
     "published_at": "2026-09-28T18:00:36",
     "status": "published",
-    "privacy_status": "public",
-    "comment_id": "UgyQyUy2TAzttU3zGJB4AaABAg",
-    "commented_at": "2026-10-03T14:19:00"
+    "privacy_status": "public"
   },
   "quer_resultados_reais_com_google_ads_e_landing_pages": {
     "video_id": "R3xonKBmeyA",
@@ -1546,9 +1351,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads + Landing Page: Resultados Reais\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=R3xonKBmeyA&utm_content=landing_pages",
-    "comment_id": "UgyQjcs47yT__SPbqZB4AaABAg",
-    "commented_at": "2026-10-03T14:19:00"
+    "description": "Google Ads + Landing Page: Resultados Reais\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=R3xonKBmeyA&utm_content=landing_pages"
   },
   "trafego_pago_como_gerar_leads_qualificados": {
     "video_id": "qaaQREjuTkA",
@@ -1558,9 +1361,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Tr\u00e1fego Pago: Como Gerar Leads Qualificados\n\n\ud83c\udfaf Quer resultados reais com Google Ads e Landing Pages?\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage #Gest\u00e3oDeTr\u00e1fego #Leads #Convers\u00e3o #SEO #FVS7\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=qaaQREjuTkA&utm_content=marketing",
-    "comment_id": "Ugxv-PCdweIYBivBf5l4AaABAg",
-    "commented_at": "2026-10-03T14:19:01"
+    "description": "Tr\u00e1fego Pago: Como Gerar Leads Qualificados\n\n\ud83c\udfaf Quer resultados reais com Google Ads e Landing Pages?\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage #Gest\u00e3oDeTr\u00e1fego #Leads #Convers\u00e3o #SEO #FVS7\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=qaaQREjuTkA&utm_content=marketing"
   },
   "como_transformar_cliques_em_clientes_com_google_ads": {
     "video_id": "N7AyjhEd_qE",
@@ -1570,9 +1371,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads: Transforme Cliques em Clientes\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=N7AyjhEd_qE&utm_content=marketing",
-    "comment_id": "UgzU8BRlCjVXawdY9n54AaABAg",
-    "commented_at": "2026-10-03T14:19:02"
+    "description": "Google Ads: Transforme Cliques em Clientes\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=N7AyjhEd_qE&utm_content=marketing"
   },
   "google_ads_landing_page_a_formula_para_mais_vendas": {
     "video_id": "Knjw_BwI2EM",
@@ -1582,9 +1381,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads + Landing Page: A F\u00f3rmula para Mais Vendas\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage #Gest\u00e3oDeTr\u00e1fego #Leads #Convers\u00e3o #SEO #FVS7\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=Knjw_BwI2EM&utm_content=marketing",
-    "comment_id": "UgyuPmgMWWJMD2T7-Gx4AaABAg",
-    "commented_at": "2026-10-03T14:19:03"
+    "description": "Google Ads + Landing Page: A F\u00f3rmula para Mais Vendas\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage #Gest\u00e3oDeTr\u00e1fego #Leads #Convers\u00e3o #SEO #FVS7\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=Knjw_BwI2EM&utm_content=marketing"
   },
   "clinicas_converta_mais_agendamentos": {
     "video_id": "nQMPd9RKalo",
@@ -1594,9 +1391,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Cl\u00ednicas: Converta Mais Agendamentos\n\n\ud83c\udfaf Quer resultados reais com Google Ads e Landing Pages?\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=nQMPd9RKalo&utm_content=clinicas",
-    "comment_id": "Ugxyhn2YO6yfZ847uVV4AaABAg",
-    "commented_at": "2026-10-03T14:19:04"
+    "description": "Cl\u00ednicas: Converta Mais Agendamentos\n\n\ud83c\udfaf Quer resultados reais com Google Ads e Landing Pages?\n\nA FVS7 Growth \u00e9 especializada em transformar tr\u00e1fego pago em leads e clientes para seu neg\u00f3cio.\n\n\u2705 Google Ads gerenciado por especialistas\n\u2705 Landing pages r\u00e1pidas e otimizadas para convers\u00e3o\n\u2705 Tracking completo: WhatsApp, formul\u00e1rios e GA4\n\u2705 Otimiza\u00e7\u00e3o semanal com base em dados reais\n\n\ud83d\udcca Resultados comprovados:\n\u2022 +150 projetos entregues\n\u2022 4.9/5 avalia\u00e7\u00e3o dos clientes\n\u2022 Nota 100% no GTmetrix\n\n\ud83d\udd25 Seu an\u00fancio pode gerar o clique. Sua p\u00e1gina precisa gerar o resultado.\n\n\ud83d\udc49 Acesse agora: https://fvs7.com.br/\n\n\ud83d\udcde Fale conosco: https://fvs7.com.br/atendimento/\n\n#GoogleAds #MarketingDigital #Tra\u00e1fegoPago #LandingPage\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=nQMPd9RKalo&utm_content=clinicas"
   },
   "desperdicio_no_google_ads_como_economizar_r_5_000_mes": {
     "video_id": "tH_jbKIOi8g",
@@ -1606,9 +1401,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads: Desperd\u00edcio que Custa R$5.000/M\u00eas\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=tH_jbKIOi8g&utm_content=marketing",
-    "comment_id": "Ugz5_bl9cyv4HVxMc-x4AaABAg",
-    "commented_at": "2026-10-03T14:19:04"
+    "description": "Google Ads: Desperd\u00edcio que Custa R$5.000/M\u00eas\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=tH_jbKIOi8g&utm_content=marketing"
   },
   "cliques_sem_vendas_3_erros_que_custam_caro_no_google_ads": {
     "video_id": "3XhjuXiDCHA",
@@ -1618,9 +1411,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads: 3 Erros de Cliques sem Vendas\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=3XhjuXiDCHA&utm_content=marketing",
-    "comment_id": "UgyKJyGQnUhJH08FwSF4AaABAg",
-    "commented_at": "2026-10-03T14:19:05"
+    "description": "Google Ads: 3 Erros de Cliques sem Vendas\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=3XhjuXiDCHA&utm_content=marketing"
   },
   "maquinas_de_conversao_como_transformar_clicks_em_clientes": {
     "video_id": "K0mF3SuFd0U",
@@ -1630,9 +1421,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Convers\u00e3o: Como Transformar Cliques em Clientes\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=K0mF3SuFd0U&utm_content=landing_pages",
-    "comment_id": "UgwzUeRf0uyHgAQyFa94AaABAg",
-    "commented_at": "2026-10-03T14:19:05"
+    "description": "Convers\u00e3o: Como Transformar Cliques em Clientes\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=K0mF3SuFd0U&utm_content=landing_pages"
   },
   "google_ads_crm_por_que_voce_perde_40_dos_leads": {
     "video_id": "hCLuPr4u0Io",
@@ -1642,9 +1431,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads + CRM: Por que Voc\u00ea PERDE 40% dos Leads\n\nVoc\u00ea investe em Google Ads mas os resultados n\u00e3o aparecem no fechamento de contratos? O problema pode n\u00e3o ser a sua campanha, mas a falta de um processo comercial estruturado com CRM.\n\nNeste v\u00eddeo, desmistificamos a ideia de que o tr\u00e1fego pago faz milagres sozinho. Entenda como a integra\u00e7\u00e3o entre Google Ads e CRM pode: \u2705 Reduzir drasticamente o seu Custo por Aquisi\u00e7\u00e3o (CAC). \u2705 Aumentar a velocidade de atendimento (o lead n\u00e3o esfria). \u2705 Alimentar o algoritmo do Google com dados de convers\u00e3o real (Convers\u00e3o Offline). \u2705 Acabar com a depend\u00eancia do dono no operacional de vendas.\n\nSe voc\u00ea \u00e9 empres\u00e1rio e quer escalar seu faturamento com previsibilidade, este v\u00eddeo \u00e9 o guia definitivo para entender a metodologia da FVS7.\n\n\ud83d\ude80 QUER AUDITAR SEU GOOGLE ADS E PROCESSO COMERCIAL? Fale com nossos consultores de elite: https://fvs7.com.br/\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=hCLuPr4u0Io&utm_content=marketing",
-    "comment_id": "Ugw3tlD-9P4f-suzt1R4AaABAg",
-    "commented_at": "2026-10-03T14:19:06"
+    "description": "Google Ads + CRM: Por que Voc\u00ea PERDE 40% dos Leads\n\nVoc\u00ea investe em Google Ads mas os resultados n\u00e3o aparecem no fechamento de contratos? O problema pode n\u00e3o ser a sua campanha, mas a falta de um processo comercial estruturado com CRM.\n\nNeste v\u00eddeo, desmistificamos a ideia de que o tr\u00e1fego pago faz milagres sozinho. Entenda como a integra\u00e7\u00e3o entre Google Ads e CRM pode: \u2705 Reduzir drasticamente o seu Custo por Aquisi\u00e7\u00e3o (CAC). \u2705 Aumentar a velocidade de atendimento (o lead n\u00e3o esfria). \u2705 Alimentar o algoritmo do Google com dados de convers\u00e3o real (Convers\u00e3o Offline). \u2705 Acabar com a depend\u00eancia do dono no operacional de vendas.\n\nSe voc\u00ea \u00e9 empres\u00e1rio e quer escalar seu faturamento com previsibilidade, este v\u00eddeo \u00e9 o guia definitivo para entender a metodologia da FVS7.\n\n\ud83d\ude80 QUER AUDITAR SEU GOOGLE ADS E PROCESSO COMERCIAL? Fale com nossos consultores de elite: https://fvs7.com.br/\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=hCLuPr4u0Io&utm_content=marketing"
   },
   "sua_lp_nao_vende_este_erro_queima_seu_orcamento": {
     "video_id": "YF_fkkCHp5M",
@@ -1654,9 +1441,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Landing Page N\u00e3o Vende? Este Erro Queima Or\u00e7amento\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=YF_fkkCHp5M&utm_content=landing_pages",
-    "comment_id": "Ugy5MbF-hHI3jj5ixHB4AaABAg",
-    "commented_at": "2026-10-03T14:19:07"
+    "description": "Landing Page N\u00e3o Vende? Este Erro Queima Or\u00e7amento\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=YF_fkkCHp5M&utm_content=landing_pages"
   },
   "google_ads_sem_conversao_o_erro_esta_no_seu_site": {
     "video_id": "EDC8Um-TV58",
@@ -1666,9 +1451,7 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Google Ads Sem Convers\u00e3o? O ERRO Est\u00e1 no Seu Site\n\n\ud83d\udea8 POR QUE SEU GOOGLE ADS N\u00c3O CONVERTE? O ERRO EST\u00c1 NO SEU SITE!\nSe voc\u00ea investe em tr\u00e1fego pago e mesmo assim n\u00e3o v\u00ea vendas, leads ou contatos chegando, o problema pode n\u00e3o estar nos an\u00fancios \u2014 mas sim no seu site. Neste v\u00eddeo voc\u00ea vai entender exatamente o que est\u00e1 impedindo suas campanhas de gerar resultados reais e como corrigir isso rapidamente.\n\nAqui voc\u00ea vai descobrir como pequenas falhas na estrutura da p\u00e1gina, copy, velocidade e experi\u00eancia do usu\u00e1rio podem destruir sua convers\u00e3o e fazer seu investimento em Google Ads ir embora sem retorno.\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83d\udccc INTRODU\u00c7\u00c3O\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nEste v\u00eddeo mostra, de forma direta, por que campanhas no Google Ads n\u00e3o convertem e como identificar os erros mais comuns em sites e landing pages que afastam clientes e reduzem drasticamente o ROI.\n\nPrincipais aprendizados:\n\u2022 Por que tr\u00e1fego n\u00e3o significa vendas  \n\u2022 Como o site impacta diretamente o custo por lead  \n\u2022 O papel da p\u00e1gina de destino na performance do Google Ads  \n\u2022 O que precisa existir em um site que converte  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83c\udfaf CONTE\u00daDO DO V\u00cdDEO\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nVoc\u00ea vai entender na pr\u00e1tica:\n\n\u2714\ufe0f Os erros mais comuns em sites que recebem tr\u00e1fego pago  \n\u2714\ufe0f Por que seu CPC pode estar alto sem necessidade  \n\u2714\ufe0f O que faz uma landing page converter mais  \n\u2714\ufe0f Estrutura ideal de p\u00e1ginas voltadas para vendas  \n\u2714\ufe0f Elementos que aumentam a taxa de convers\u00e3o imediatamente  \n\u2714\ufe0f Como alinhar an\u00fancio + p\u00e1gina + oferta para gerar clientes  \n\nDestaques importantes:\n\u2022 Copy fraca reduz convers\u00e3o drasticamente  \n\u2022 Falta de prova social diminui confian\u00e7a  \n\u2022 Sites lentos aumentam abandono  \n\u2022 Layout confuso destr\u00f3i resultados  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83d\ude80 QUER GERAR CLIENTES DE VERDADE?\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nSe voc\u00ea quer transformar seus acessos em vendas e fazer o Google Ads trabalhar a seu favor:\n\n\ud83d\udc4d Curta o v\u00eddeo  \n\ud83d\udd14 Inscreva-se no canal  \n\ud83d\udce4 Compartilhe com quem investe em tr\u00e1fego pago  \n\ud83d\udcac Comente se voc\u00ea j\u00e1 anuncia e n\u00e3o tem resultado  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=EDC8Um-TV58&utm_content=marketing",
-    "comment_id": "UgzZu6PToKPrpSLgNqB4AaABAg",
-    "commented_at": "2026-10-03T14:19:08"
+    "description": "Google Ads Sem Convers\u00e3o? O ERRO Est\u00e1 no Seu Site\n\n\ud83d\udea8 POR QUE SEU GOOGLE ADS N\u00c3O CONVERTE? O ERRO EST\u00c1 NO SEU SITE!\nSe voc\u00ea investe em tr\u00e1fego pago e mesmo assim n\u00e3o v\u00ea vendas, leads ou contatos chegando, o problema pode n\u00e3o estar nos an\u00fancios \u2014 mas sim no seu site. Neste v\u00eddeo voc\u00ea vai entender exatamente o que est\u00e1 impedindo suas campanhas de gerar resultados reais e como corrigir isso rapidamente.\n\nAqui voc\u00ea vai descobrir como pequenas falhas na estrutura da p\u00e1gina, copy, velocidade e experi\u00eancia do usu\u00e1rio podem destruir sua convers\u00e3o e fazer seu investimento em Google Ads ir embora sem retorno.\n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83d\udccc INTRODU\u00c7\u00c3O\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nEste v\u00eddeo mostra, de forma direta, por que campanhas no Google Ads n\u00e3o convertem e como identificar os erros mais comuns em sites e landing pages que afastam clientes e reduzem drasticamente o ROI.\n\nPrincipais aprendizados:\n\u2022 Por que tr\u00e1fego n\u00e3o significa vendas  \n\u2022 Como o site impacta diretamente o custo por lead  \n\u2022 O papel da p\u00e1gina de destino na performance do Google Ads  \n\u2022 O que precisa existir em um site que converte  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83c\udfaf CONTE\u00daDO DO V\u00cdDEO\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nVoc\u00ea vai entender na pr\u00e1tica:\n\n\u2714\ufe0f Os erros mais comuns em sites que recebem tr\u00e1fego pago  \n\u2714\ufe0f Por que seu CPC pode estar alto sem necessidade  \n\u2714\ufe0f O que faz uma landing page converter mais  \n\u2714\ufe0f Estrutura ideal de p\u00e1ginas voltadas para vendas  \n\u2714\ufe0f Elementos que aumentam a taxa de convers\u00e3o imediatamente  \n\u2714\ufe0f Como alinhar an\u00fancio + p\u00e1gina + oferta para gerar clientes  \n\nDestaques importantes:\n\u2022 Copy fraca reduz convers\u00e3o drasticamente  \n\u2022 Falta de prova social diminui confian\u00e7a  \n\u2022 Sites lentos aumentam abandono  \n\u2022 Layout confuso destr\u00f3i resultados  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\ud83d\ude80 QUER GERAR CLIENTES DE VERDADE?\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\nSe voc\u00ea quer transformar seus acessos em vendas e fazer o Google Ads trabalhar a seu favor:\n\n\ud83d\udc4d Curta o v\u00eddeo  \n\ud83d\udd14 Inscreva-se no canal  \n\ud83d\udce4 Compartilhe com quem investe em tr\u00e1fego pago  \n\ud83d\udcac Comente se voc\u00ea j\u00e1 anuncia e n\u00e3o tem resultado  \n\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=EDC8Um-TV58&utm_content=marketing"
   },
   "landing_page_que_vende_o_segredo_que_95_ignoram": {
     "video_id": "nHlM5tiQ1RA",
@@ -1678,8 +1461,6 @@
     "status": "published",
     "privacy_status": "public",
     "source": "backfill-20260924",
-    "description": "Landing Page que VENDE: O Segredo que 95% Ignoram\n\n\ud83d\udc49 Precisa de uma Landing Page que converte? Solicite seu or\u00e7amento: https://fvs7.com.br/\n\n Voc\u00ea investe em Google Ads mas n\u00e3o v\u00ea retorno? O problema pode estar na sua p\u00e1gina de destino. Neste v\u00eddeo, mostramos como a FVS7 transforma sites comuns em m\u00e1quinas de vendas usando copywriting e design de alta performance.\n\nSe voc\u00ea busca por cria\u00e7\u00e3o de landing page, especialista em Google Ads ou quer saber como aumentar o ROI da sua empresa, este v\u00eddeo foi feito para voc\u00ea.\n\n#LandingPage #GoogleAds #MarketingDigital #VendasOnline #FVS7 #CRO\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=nHlM5tiQ1RA&utm_content=landing_pages",
-    "comment_id": "UgxJ9zcb3PuQS8Uh0pt4AaABAg",
-    "commented_at": "2026-10-03T14:19:09"
+    "description": "Landing Page que VENDE: O Segredo que 95% Ignoram\n\n\ud83d\udc49 Precisa de uma Landing Page que converte? Solicite seu or\u00e7amento: https://fvs7.com.br/\n\n Voc\u00ea investe em Google Ads mas n\u00e3o v\u00ea retorno? O problema pode estar na sua p\u00e1gina de destino. Neste v\u00eddeo, mostramos como a FVS7 transforma sites comuns em m\u00e1quinas de vendas usando copywriting e design de alta performance.\n\nSe voc\u00ea busca por cria\u00e7\u00e3o de landing page, especialista em Google Ads ou quer saber como aumentar o ROI da sua empresa, este v\u00eddeo foi feito para voc\u00ea.\n\n#LandingPage #GoogleAds #MarketingDigital #VendasOnline #FVS7 #CRO\n\n\ud83d\udc49 Diagn\u00f3stico Gr\u00e1tis: https://fvs7.com.br/diagnostico-gratuito?utm_source=youtube&utm_medium=shorts&utm_campaign=nHlM5tiQ1RA&utm_content=landing_pages"
   }
 }

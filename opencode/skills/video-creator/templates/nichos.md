@@ -39,7 +39,7 @@ e previsibilidade na sua agenda.
 ### Segmento 7 - CTA
 ```
 Solicite uma análise gratuita para o seu caso.
-Acesse fvs7.com.br
+Link na bio e na descrição.
 ```
 
 ---
@@ -92,7 +92,7 @@ em que estão prontos para contratar.
 ### Segmento 6 - CTA
 ```
 Descubra como atrair mais clientes pelo Google.
-Acesse fvs7.com.br
+Link na bio e na descrição.
 ```
 
 ---
@@ -134,7 +134,7 @@ e sua agenda lotada de reuniões.
 ### Segmento 5 - CTA
 ```
 Solicite uma análise gratuita da sua presença digital.
-Acesse fvs7.com.br
+Link na bio e na descrição.
 ```
 
 ---
@@ -175,7 +175,7 @@ Mais leads, custo mais baixo, e resultados mensuráveis.
 ### Segmento 5 - CTA
 ```
 Quira transformar seu tráfego em clientes.
-Acesse fvs7.com.br
+Link na bio e na descrição.
 ```
 
 ---
@@ -217,7 +217,7 @@ Sem desperdício, com previsibilidade.
 ### Segmento 5 - CTA
 ```
 Descubra quanto você pode economizar.
-Acesse fvs7.com.br
+Link na bio e na descrição.
 ```
 
 ---
