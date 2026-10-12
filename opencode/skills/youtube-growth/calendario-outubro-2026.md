@@ -1,7 +1,11 @@
 # Calendário de Conteúdo YouTube — Outubro 2026
 ## FVS7 Growth
 
-> **Atualizado em 26/09/2026** — escala para **2 vídeos/dia** autorizada pelo gestor.
+> **Atualizado em 06/10/2026** — escala para **2 vídeos/dia** autorizada pelo gestor.
+> **Lote-piloto (06/10):** os 7 slots das 18:00 de 07–13/10 trocaram de vídeo:
+> `DIVc777Wuhg`, `o2kDyCQRJLU`, `Ha32HDYWhYw`, `TI-iFAZVk_E`, `jgun_Cv8GFk`,
+> `L59Hk3s6EqY`, `bUF6msnAPnE` ficaram privados (`uploaded`) e serão reagendados
+> a partir de 14/10. Substitutos: os 7 `piloto_*` (ver `teste-piloto-retencao.md`).
 > Fonte: YouTube Data API (**73 agendamentos confirmados**, 0 divergência com o `history.json`).
 
 ---
@@ -47,11 +51,11 @@
 | Dom 4 Out | 18:00 | Landing Page: Como Aumentamos Conversão em 6x | LP | `yYp_n4Xbes4` |
 | Seg 5 Out | 18:00 | Clínicas: Pacientes Perdidos Todo Dia (Erro Comum) | Clínicas | `hzh2kTGIwJA` |
 | Ter 6 Out | 18:00 | Fisioterapeutas: Método para Agenda em 30 Dias | Fisioterapia | `1AOpexUqNs0` |
-| Qua 7 Out | 18:00 | Psicólogos: Marketing Ético para Consultório | Psicologia | `DIVc777Wuhg` |
-| Qui 8 Out | 18:00 | Landing Page: Formulários que Convertem - 3 Princípios | LP | `o2kDyCQRJLU` |
-| Sex 9 Out | 18:00 | Imobiliárias: Vender e Alugar com Página Própria | Imobiliárias | `Ha32HDYWhYw` |
-| Sáb 10 Out | 18:00 | Esteticistas: 50+ Procedimentos/Mês na Agenda | Estética | `TI-iFAZVk_E` |
-| Dom 11 Out | 18:00 | Negócio Local: Clientes Locais em 7 Dias (GMB) | Neg. Locais | `jgun_Cv8GFk` |
+| Qua 7 Out | 18:00 | Psicólogos: Agenda Cheia com Google Ads Ético | Psicologia | `eKzogqwLXgk` |
+| Qui 8 Out | 18:00 | Landing Page: 6x Mais Conversões com 3 Correções | LP | `9D8-_9pL4OQ` |
+| Sex 9 Out | 18:00 | Advogados: 7 em 10 Clientes Vêm do Google | Advogados | `bxyVcvzezB8` |
+| Sáb 10 Out | 18:00 | Fisioterapeutas: 3 Erros que Esvaziam a Agenda | Fisioterapia | `Rtq5sWfxGT4` |
+| Dom 11 Out | 18:00 | Google Meu Negócio: 7 Dias para Clientes Locais | Neg. Locais | `GEVKydtk2rE` |
 | Sex 16 Out | 18:00 | Clínicas: De Vazia a Lotada - Depoimento (Outubro) | Clínicas | `l6aDZgqsmlU` |
 | Sáb 17 Out | 18:00 | Google Ads: Quality Score 10/10 - Como Alcançar | Marketing | `LwTUFYEL_pA` |
 | Dom 18 Out | 18:00 | Landing Page: LCP até 1s = Mais Conversão | LP | `Fq81qncfSSM` |
@@ -120,8 +124,8 @@ Os 7 vídeos antes marcados como deletados voltaram; **12, 14 e 15/10 ficam com 
 | Data | Hora (UTC) | Título | Stem | Video ID |
 |------|-----------|--------|------|----------|
 | Seg 12 Out | 18:00Z | Google Ads: Segmentação Avançada que Ninguém Usa | outubro_23_google_ads_segmentacao | `QKGhztZj3e0` |
-| Seg 12 Out | 21:00Z | Clínicas: Landing Page que Aumenta Conversão em 5x | outubro_24_clinicas_conversao_5x | `L59Hk3s6EqY` |
-| Ter 13 Out | 21:00Z | Tráfego Pago: Como Escalar de 0 a 500 Leads/Mês | outubro_25_trafego_pago_500 | `bUF6msnAPnE` |
+| Seg 12 Out | 21:00Z | Clínicas: Anúncio de R$2.000 Não Enche a Agenda | piloto_06_clinicas | `K5Mpw3g9O7w` |
+| Ter 13 Out | 21:00Z | Tráfego Pago: R$1.500 Vira 3x Mais Leads | piloto_07_trafego_pago | `cgNkHGxvF0E` |
 | Qua 14 Out | 18:00Z | Google Ads: Pesquisa de Palavras-chave que Converte | outubro_26_google_ads_keyword_research | `s_ykiN87VCQ` |
 | Qua 14 Out | 21:00Z | Contadores: 3x Leads PJ - Estratégia Tributária | outubro_27_contadores_3x_leads_pj | `2XpUDk3tgPA` |
 | Qui 15 Out | 18:00Z | Landing Page: Headlines que Vendem - Teste A/B Real | outubro_28_lp_headline_converte | `Ec_OMWPC8bI` |

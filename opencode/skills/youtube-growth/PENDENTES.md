@@ -1,6 +1,26 @@
 # PENDENTES — YouTube Shorts FVS7
 
-Atualizado: 2026-09-29 16:45 BRT
+Atualizado: 2026-10-06 22:05 BRT
+
+## Lote-piloto de retenção (06/10/2026) — executado
+
+- [x] 7 roteiros novos em `~/video-maker/roteiros/piloto-retencao/` (65–68 palavras,
+      hook afirmativo ≤8 palavras com número+dor, 6 segmentos ≤78 chars, sem URL falada).
+- [x] 7/7 validados no validador de roteiro; 7/7 `seo-audit` PASS; 7/7 duration gate PASS
+      (durações 24,6–27,9s).
+- [x] Agendados 1/dia às **18:00 BRT (21:00Z), 07–13/10**:
+      `eKzogqwLXgk`, `9D8-_9pL4OQ`, `bxyVcvzezB8`, `Rtq5sWfxGT4`, `GEVKydtk2rE`,
+      `K5Mpw3g9O7w`, `cgNkHGxvF0E` (ver `teste-piloto-retencao.md`).
+- [x] **7 slots antigos das 18h cancelados** (voltaram a `private`/`uploaded`, nada
+      perdido): `DIVc777Wuhg`, `o2kDyCQRJLU`, `Ha32HDYWhYw`, `TI-iFAZVk_E`,
+      `jgun_Cv8GFk`, `L59Hk3s6EqY`, `bUF6msnAPnE`.
+- [ ] **Re-agendar esses 7 cancelados para depois de 13/10** (livres: 18:00 BRT de
+      14/10 em diante; 15:00 BRT de 14/10 já tem `QKGhztZj3e0` em 12/10, checar conflito).
+- [x] Corrigido: os 7 saíram primeiro às 15:00 BRT (o script grava o horário recebido
+      como UTC) → reagendados com `schedule-existing --when "dia N às 21:00"` e
+      confirmados via `videos.list(status.publishAt)`.
+- [ ] Leitura do teste: 14–20/10 (`check_24h.py` + baseline em `teste-piloto-retencao.md`).
+- [ ] Calendário: `calendario-outubro-2026.md` ainda não reflete a troca dos slots 18h.
 
 ## Plano de 5 ações (29/09/2026) — status
 
