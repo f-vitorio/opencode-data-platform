@@ -61,9 +61,12 @@ TIKTOK_HOST_FOLDER = "tiktok-shorts"  # pasta pública no Cloudinary
 # também uma URL curta para quem copiar/colar — essa sim é rastreável.
 LANDING_URL = "https://fvs7.com.br/diagnostico-gratuito"
 
+# URL da bio do TikTok: o campo de link do perfil tem limite de 80 caracteres,
+# por isso aponta para a home com UTMs enxutas (74 chars). Canal GA4:
+# Organic Social (source=tiktok + medium=organic).
 TIKTOK_BIO_URL = (
-    f"{LANDING_URL}?utm_source=tiktok&utm_medium=social"
-    "&utm_campaign=perfil&utm_content=bio"
+    "https://fvs7.com.br/?utm_source=tiktok"
+    "&utm_medium=organic&utm_campaign=bio"
 )
 
 # Regex pega a URL com ou sem esquema e com ou sem query já montada.

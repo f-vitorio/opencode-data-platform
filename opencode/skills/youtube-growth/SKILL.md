@@ -358,7 +358,7 @@ python3 ~/.config/opencode/skills/youtube-growth/youtube_growth.py tiktok-publis
 
 | URL | Onde entra | UTM |
 |---|---|---|
-| `TIKTOK_BIO_URL` = `fvs7.com.br/diagnostico-gratuito?...&utm_campaign=perfil&utm_content=bio` | bio do perfil (**única clicável**) | `tiktok / social / perfil / bio` |
+| `TIKTOK_BIO_URL` = `fvs7.com.br/?utm_source=tiktok&utm_medium=organic&utm_campaign=bio` (74 chars — cabe no campo de link do perfil, limite 80) | bio do perfil (**única clicável**) | `tiktok / organic / bio / —` |
 | `tiktok_utm_url(stem)` = mesma landing `...&utm_medium=shorts&utm_campaign=tiktok&utm_content=<stem>` | linha "Copie e cole" da legenda | `tiktok / shorts / tiktok / <stem>` |
 
 O GA4 traz a distribuição: `bio` = cliques no link do perfil,
